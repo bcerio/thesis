@@ -1,0 +1,90 @@
+\mode<presentation> {
+\usetheme{CambridgeUS}
+\usecolortheme{whale}
+}
+
+\setbeamercolor{frametitle}{fg=black}
+
+\newcommand{\met}{\ensuremath{E_{\rm T}^{miss}}}
+\newcommand{\ttbar}{\ensuremath{t\bar t}}
+\newcommand{\dr}{\ensuremath{\Delta R}}
+\newcommand{\mtt}{\ensuremath{m_{\ttbar}}}
+\newcommand{\wjets}{\ensuremath{W{\rm +jets}}}
+\newcommand{\zjets}{\ensuremath{Z{\rm +jets}}}
+
+\newcommand{\pythia}{{\sc Pythia}}
+\newcommand{\herwig}{{\sc Herwig}}
+\newcommand{\sherpa}{{\sc Sherpa}}
+\newcommand{\alpgen}{{\sc Alpgen}}
+\newcommand{\madgraph}{{\sc MadGraph}}
+\newcommand{\acermc}{{\sc AcerMC}}
+\newcommand{\powheg}{{\sc Powheg}}
+\newcommand{\mcatnlo}{{\sc MC@NLO}}
+\newcommand{\tauola}{{\sc Tauola}}
+\newcommand{\photos}{{\sc Photos}}
+\newcommand{\mstw}{MSTW2008}
+
+\newcommand{\loosepp}{{\ttfamily loose++}}
+\newcommand{\mediumpp}{{\ttfamily medium++}}
+\newcommand{\tightpp}{{\ttfamily tight++}}
+
+\newcommand{\sbr}{\ensuremath{\sigma \times {\rm BR}}}
+\newcommand{\zp}{\ensuremath{Z^\prime}}
+\newcommand{\kkg}{\ensuremath{g_{KK}}}
+
+
+\newcommand{\smallr}{small-$R$}
+\newcommand{\larger}{large-$R$}
+\newcommand{\dsplit}{\ensuremath{\sqrt{d_{12}}}}
+\newcommand{\mt}{\ensuremath{m_T}}
+
+\newcommand{\bh}{{\ttfamily BumpHunter}}
+\newcommand{\sqrts}{\ensuremath{\sqrt{s}}}
+\newcommand{\ifb}{\ensuremath{{\rm fb}^{-1}}}
+\newcommand{\geant}{{\sc Geant}}
+
+\newcommand{\hlink}[2]{{\color{blue} \hyperlink{#1}{#2}}}
+\newcommand{\backto}[2]{\hyperlink{#1}{\beamerbutton{back to #2}}}
+
+
+\DeclareMathOperator{\sgn}{sgn}
+
+\usepackage{graphicx}
+\graphicspath{{./fig/}}
+
+\usepackage{verbatim}
+\usepackage{feynmf}
+
+% fix spacing in outlines
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{}
+\makeatother
+
+\setbeamertemplate{section in toc shaded}[default][60]
+
+
+\AtBeginSection[]{
+\begin{frame}<beamer>
+\frametitle{Outline}
+\tableofcontents[
+  currentsection,
+  sectionstyle=show/shaded,
+  subsectionstyle=show/show/hide,
+  subsubsectionstyle=hide
+]
+\end{frame}
+}
+
+\setbeamertemplate{section in toc}[ball unnumbered]
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+\title[\ttbar\ Resonances]
+{A Search for \ttbar\ Resonances in the Lepton Plus Jets Channel
+from Proton-Proton Collisions at $\sqrt{s} = 8$~TeV with the ATLAS
+Detector}
+
+\author{Chris Pollard}
+\institute[Duke]{Duke University}
+\date{2014 07 24}

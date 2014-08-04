@@ -1,0 +1,506 @@
+\chapter{Theoretical Background}
+\label{chap:theory}
+
+This chapter gives a brief introduction to the Standard Model, models
+beyond the Standard Model relevant to this thesis, and the physics of
+proton collisions.
+
+\section{The Standard Model}
+
+The Standard Model (SM) of particle physics is the most widely
+accepted theory for predicting the interactions of elementary
+particles.
+It describes all known fundamental particles and the strong and
+electroweak forces.
+
+\subsection{Particles and interactions}
+Particles in the SM are split into two categories: fermions with
+half-integer spin and bosons with integer spin.
+The fermions are further divided into those that have color and
+interact via the strong force (quarks), and those that do not
+(leptons).
+There are three generations of both quarks and leptons which are
+generally grouped in order of increasing mass.
+This is shown in Table~\ref{chap:theory:tab:smfermions}.
+Quarks have non-integer charge and are grouped into ``up-type'' ($u$,
+$c$, $t$, with charge $+2/3$) and ``down-type'' ($d$, $s$, $b$, with
+charge $-1/3$) varieties.
+Leptons are grouped by their charges: electrons ($e$), muons
+($\mu$), and tau leptons ($\tau$) carry negative charge, and there is
+a corresponding chargeless neutrino ($\nu_\ell$) for each charged
+lepton.
+Antiparticles have identical masses but opposite charges.
+The fermion type is sometimes referred to as its flavor.
+
+\begin{table}[]
+\centering
+\caption{The Standard Model fermions.}
+\label{chap:theory:tab:smfermions}
+\begin{tabular}{|l | c | c | c|}
+\hline
+\hline
+\multirow{2}{*}{Quarks} & $u^{+2/3}$ & $c^{+2/3}$ & $t^{+2/3}$ \\
+                        & $d^{-1/3}$ & $s^{-1/3}$ & $b^{-1/3}$ \\
+\hline
+\multirow{2}{*}{Leptons} & $e^-$ & $\mu^-$ & $\tau^-$ \\
+                         & $\nu_e$ & $\nu_\mu$ & $\nu_\tau$ \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+There are four vector bosons in the Standard Model which mediate
+interactions between particles.
+Gluons ($g$) interact with quarks and other gluons through the strong
+force described by quantum chromodynamics (QCD); they are massless.
+Photons ($\gamma$) and the massive weak bosons ($W^\pm$, $Z$) mediate
+the electroweak interaction, a unification of the electromagnetic
+and weak theories by Glashow, Salam, and Weinberg~\cite{bib:glashow,
+bib:weinberg, bib:salam}.
+The $W$ and $Z$ bosons interact with all fermion flavors and each
+other.
+Photons are massless and only couple the charged fermions and the $W$
+boson.
+
+%% unnecessary
+\begin{comment}
+\begin{table}[]
+\centering
+\caption{The Standard Model vector bosons}
+\begin{tabular}{| c | c |}
+\hline
+\hline
+Interaction & Boson \\
+\hline
+Strong & $g$ \\
+\hline
+\multirow{3}{*}{Electroweak} & $\gamma$ \\
+                             & $W^\pm$ \\
+                             & $Z$ \\
+\hline
+\hline
+\end{tabular}
+\end{table}
+\end{comment}
+%%%%%
+
+The Higgs boson, which was the last predicted SM particle that had not
+been confirmed, was recently observed by experiments using collision
+data from the Large Hadron Collider
+(LHC)~\cite{bib:atlashiggs,bib:cmshiggs}.
+In the SM, interactions with the Higgs field are responsible for the masses of
+quarks, charged leptons, and the $W$ and $Z$ bosons.
+
+%% Detailed information regarding all particles and interactions can be
+%% found in the most recent publication of the Particle Data
+%% Group~\cite{bib:pdg}.
+
+\subsection{Quantum chromodynamics}
+
+Quantum chromodynamics describes the interactions of particles with a
+color quantum number: the quarks and gluons.
+Its dynamics are determined by the SU(3) gauge symmetry group.
+Quarks and gluons have never been observed as free particles; rather,
+they hadronize into mesons and baryons on the timescale
+$1/\Lambda_{QCD}$, where $\Lambda_{QCD} \sim 200$~MeV is the QCD
+scale.
+All mesons and baryons (or, collectively, hadrons) are color singlet.
+
+The strength of QCD interactions is dictated by the strong coupling,
+$\alpha_S$, which runs with the square of the momentum transfer,
+$Q^2$, between interacting particles.
+For interactions with a low momentum transfer $\alpha_S$ is large, and
+QCD predictions are difficult to calculate due to the non-perturbative
+nature of the interaction.
+At high momentum transfer, however, $\alpha_S$ is sufficiently small for
+the computation of rigorous perturbative predictions.
+The coupling $\alpha_S$ diverges in perturbation theory at
+$\Lambda_{QCD}$.
+
+\subsection{Electroweak interactions}
+
+The Standard Model electroweak theory is governed by the
+SU(2)$_L \times$U(1) symmetry groups that characterize the
+interactions of the electroweak vector bosons with quarks and
+leptons.
+The generators of these groups are the weak isospin, $T$, and the
+hypercharge, $Y = 2(Q-T_3)$, where $Q$ is the electric charge and
+$T_3$ is the third component of the weak isospin operator.
+$g_1$ and $g_2$ are the couplings corresponding to the U(1) and
+SU(2)$_L$ symmetry groups.
+
+The physical gauge boson fields can be written in terms of the pure
+SU(2)$_L$ and U(1) bosons, $W^i_\mu$ and $B_\mu$:
+
+\begin{align}
+      A_\mu & = B_\mu \cos\theta_W + W_\mu^3 \sin\theta_W \\
+    W^+_\mu & = \frac{1}{\sqrt 2} (W^1_\mu - iW_\mu^2) \\
+    W^-_\mu & = \frac{1}{\sqrt 2} (W^1_\mu + iW_\mu^2) \\
+      Z_\mu & = - B_\mu \sin\theta_W + W_\mu^3 \cos\theta_W
+\end{align}
+
+\noindent where $A_\mu$ is the photon field, $W^\pm_\mu$ are the $W$
+boson fields, $Z_\mu$ is the $Z$ boson field, and
+$\theta_W = \arctan(g_1/g_2) = \arccos(m_W/m_Z)$ is the weak mixing
+angle.
+Since the SU(2)$_L$ symmetry only applies to left-handed fermions,
+right-handed fermions do not interact with the $W$ bosons and only
+interact with the $Z$ boson through the original U(1) $B_\mu$ boson.
+
+The Higgs mechanism describes the process of electroweak symmetry
+breaking (EWSB), by which the $W$ and $Z$ bosons acquire mass.
+As a direct result, the Higgs boson emerges as an excitation above its
+vacuum expectation value, $v$.
+A summary of the fermion Yukawa couplings, $y_f$, to the Higgs is
+shown in Figure~\ref{chap:theory:fig:fermmass}~\cite{bib:fermmass}.
+Fermion masses are defined in terms of the Yukawa couplings as
+
+\begin{equation}
+    m_f = \frac{v}{\sqrt{2}} y_f.
+\end{equation}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{theory/fermmass.png}
+    \caption[Fermion Yukawa couplings to the Higgs boson]
+    {Yukawa couplings of the quarks and charged leptons to the Higgs
+        boson, $y_f = m_f/(v/\sqrt{2})$.
+        Note the range of the scales covered.
+        The top quark is the only fermion with a Yukawa coupling on
+        the order of the weak scale,
+        $v/\sqrt{2}$~\cite{bib:fermmass}.
+    }
+\label{chap:theory:fig:fermmass}
+\end{figure}
+
+
+\section{Models with \ttbar\ resonances}
+\label{chap:theory:sec:models_with_ttbar_resonances}
+
+Although the Standard Model has been very successful at predicting and
+describing recent experimental results in particle physics, it does
+not explain all known physical phenomena.
+The gravitational force is yet to be successfully integrated into
+the framework of quantum field theory (QFT), and dark matter, dark
+energy, the asymmetry between matter and antimatter, and the
+discrepancy between the electroweak ($\sim1$~TeV) and Planck
+($\sim10^{16}$~TeV) scales (the hierarchy problem) all pose questions
+that the Standard Model cannot answer at present.
+
+Numerous models which tackle one or more of these issues have been
+developed, and a subset of these predict significant deviations from
+the Standard Model at the TeV scale.
+Colliders such as the Tevatron and the LHC and their associated
+detectors aim to carefully probe the predictions of new models by
+producing very energetic particle interactions.
+Two such models that are used as benchmarks in the \ttbar\ resonances
+search presented in Chapter~\ref{chap:ttbarres} are introduced in the
+following sections.
+
+\subsection{Massive $Z^\prime$ boson through topcolor assisted
+technicolor}
+\label{chap:theory:sec:zprimetheory}
+
+The top quark's large mass suggests that it may play a role in the
+mechanism for electroweak symmetry breaking.
+Topcolor assisted technicolor models generate EWSB through the
+formation of a condensate of top
+quarks~\cite{bib:topcolor,bib:topcolor1,bib:topcolor2}.
+
+In these models, there are two SU(3) gauge symmetry groups, one which
+couples preferentially, for example, to the first- and
+second-generation quarks (SU(3)$_1$), and one preferentially to the
+third (SU(3)$_2$).
+These symmetries are broken to yield the SU(3)$_{QCD}$ gauge symmetry of the
+strong interaction: SU(3)$_{1} \times$SU(3)$_2 \to$SU(3)$_{QCD}$.
+
+However, this formulation predicts degenerate masses of the top and
+bottom quarks at approximately 600~GeV~\cite{bib:topcolor3}.
+Various corrective methods have been implemented to break the
+mass degeneracy and reduce the top mass to its observed value.
+The salient feature of each of them is the introduction of, and
+subsequent breaking of, additional U(1) gauge symmetry groups.
+These new symmetry groups, U(1)$_1$ and U(1)$_2$, also couple
+preferentially to the first two generations and the third generation,
+respectively, and are broken to yield the U(1) gauge symmetry of the
+Standard Model: U(1)$_1 \times$U(1)$_2 \to$U(1)$_{Y}$.
+This gives rise to a new massive vector boson that, in order to break
+the degeneracy of the top and bottom quarks with the appropriate mass
+hierarchy, results in an attractive force for \ttbar\ condensates and
+a repulsive one for $b\bar b$ condensates.
+Due to its similarities with the SM $Z$ boson---it is a neutral,
+massive vector boson---it is referred to as a \zp\ boson.
+
+There is some freedom in the model: the pairing of generations in the
+symmetry groups is arbitrary.
+The combination with the most enhanced production cross sections at a
+proton collider makes the first and third generations couple strongly
+to the first SU(3)$_1 \times$U(1)$_1$, while the second generation of
+quarks to the second set of symmetry groups.
+This is named Model IV in Ref.~\cite{bib:topcolor4}.
+
+The width of the new \zp\ boson is also a free parameter in the model.
+Figure~\ref{chap:theory:fig:zpxsecs} shows the cross section times
+branching ratio of the topcolor $Z^\prime$ boson decaying to \ttbar\
+pairs for $\sqrt{s} = 8$~TeV proton-proton collisions.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{theory/zpxsecs.eps}
+    \caption[Cross sections times branching ratios of topcolor
+        $Z^\prime \to \ttbar$ in 8~TeV proton collisions]
+    {Cross sections times branching ratios of the topcolor
+        $Z^\prime \to \ttbar$ in $\sqrt{s} = 8$~TeV proton-proton
+        collisions for various masses and widths of the new
+        boson~\cite{bib:topcolor3}.
+    }
+\label{chap:theory:fig:zpxsecs}
+\end{figure}
+
+\subsection{Kaluza-Klein gluon excitation in Randall-Sundrum models}
+\label{chap:theory:sec:kkgtheory}
+
+In the Standard Model, particle fields are confined to the
+conventional four dimensions of space-time.
+However, the possibility of small, compact additional spatial
+dimensions has not been ruled out by current experiments.
+The momentum of a particle propagating in an extra dimension will
+manifest itself as apparent additional mass, and the mass spectrum
+will be discrete if the dimension is compact.
+These discrete modes are called Kaluza-Klein
+excitations~\cite{bib:kaluza, bib:klein}.
+
+Randall-Sundrum (RS) models address the hierarchy problem through the
+introduction of warped extra dimensions~\cite{bib:rs}.
+The extra dimension, or ``bulk,'' connects the usual TeV scale
+space-time, the infrared (IR) ``brane,'' with the observed spectrum
+of particle masses to a Planck scale UV brane, on which the
+gravitational and electroweak scales are unified.
+The metric in this space is defined as
+
+\begin{equation}
+    ds^2 = e^{-2k|y|} \eta_{\mu\nu} dx^\mu dx^\nu - dy^2,
+\end{equation}
+
+\noindent where $k$ is the curvature of the warped extra dimension, 
+and $y$ is the coordinate in the extra dimension.
+$y = 0$ is defined as the location of the UV brane, and the IR brane
+is at $y = r$.
+
+Due to the exponential dependence of the metric on $y$, masses on the
+TeV scale brane, $m$, are related to the more fundamental masses on
+the Planck scale brane, $m_0$, by 
+
+\begin{equation}
+    m = e^{-kr\pi} m_{0}.
+\end{equation}
+
+\noindent Standard model particles are mostly localized close to the
+UV brane to account for their small masses; the top quark is
+accordingly farthest from $y=0$.
+
+The first indication that such an extra dimension exists will likely
+be through observation of the Kaluza-Klein excitation of Standard
+Model fields in the bulk.
+At the LHC, the production of high-energy gluons makes the bulk
+excitation of the gluon (\kkg) have a relatively higher cross section
+than other excitations.
+Since the gluon excitation is localized near the IR brane, the wave
+function overlap between the \kkg\ and the top quark is much higher
+than its overlap with other particles.
+Therefore, the dominant decay mode of the Kaluza-Klein gluon in this
+particular model is to \ttbar\ pairs, provided the mass of the first
+excitation is at least twice $m_{top}$.
+
+Figure~\ref{chap:theory:fig:kkgxsecs} shows the total production cross
+section of Kaluza-Klein gluons and their branching ratios for this
+model as a function of the apparent mass of the excitation.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{theory/kkgxsecs.eps}
+    \includegraphics[width=0.45\textwidth]{theory/kkgbrs.eps}
+    \caption[Production cross sections and branching ratios of Randall-Sundrum
+    $\kkg \to \ttbar$ in LHC proton-proton collisions]
+    {The production cross section (left) and branching ratios
+        (right) of Randall-Sundrum Kaluza-Klein gluon excitations in
+        LHC proton-proton collisions as a function of the \kkg\
+    mass~\cite{bib:kkgxsecs}.}
+\label{chap:theory:fig:kkgxsecs}
+\end{figure}
+
+\section{The physics of proton collisions}
+
+Protons are composite particles, made up of constituent quarks and
+gluons which, at sufficient momentum transfer, individually undergo
+interactions with other particles.
+In proton collisions these interactions are described chiefly by
+quantum chromodynamics.
+
+
+\subsection{Low-$Q^2$ QCD at the LHC}
+
+Although the LHC was designed to probe physics at center-of-mass
+energies well above $\sim 10$~GeV, most proton collisions at the LHC
+involve momentum exchange that is below this scale.
+When low-energy collisions take place simultaneously with the
+high-energy collisions, their effect on the reconstruction of the
+high-energy collision must be taken into account.
+These simultaneous collisions are known as pile-up events, and their
+cross sections and kinematics are calculated using models implemented
+with Monte Carlo techniques~\cite{bib:pileupevents}.
+
+
+\subsection{Hard scatter events}
+
+At high momentum transfer, the collision of two protons can be treated
+as a direct interaction between their constituent quarks and gluons
+(partons).
+To model this correctly, the internal structure of the proton must be
+understood.
+
+This is chiefly accomplished through the deep inelastic scattering
+(DIS) of a lepton and a proton.
+In DIS experiments, a lepton interacts directly with a parton inside
+the proton; the interaction cross section and scattered lepton
+kinematics as a function of the momentum transferred are sensitive to
+the proton's structure.
+The data from $ep$ experiments (e.g.\ ZEUS and H1 at
+HERA~\cite{bib:hera}), $\mu p$ experiments (BCDMS~\cite{bib:bcdms},
+E665~\cite{bib:E665}), and $\nu p$ experiments
+(CHORUS~\cite{bib:chorus}, NuTeV~\cite{bib:nutev}), are used to
+derive parton distribution functions (PDFs).
+PDFs describe the probability of a parton of a certain flavor to carry
+the fractional momentum, $x$, of the proton at a momentum transfer
+$Q^2$.
+
+Results from fixed target experiments, lepton-proton colliders, and
+hadron colliders (primarily for high-$Q^2$) are combined and fit to
+obtain an accurate representation of the proton structure over a range
+of $x$ and $Q^2$.
+Figure~\ref{chap:theory:fig:pdfs} shows the \mstw NNLO
+PDFs~\cite{bib:mstw} at two exemplary energy scales.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.90\textwidth]{theory/pdfs.png}
+    \caption[\mstw\ parton distributions functions and their
+    uncertainties]
+    {Distributions of $x$ times the parton distributions
+        $f(x)$ and their associated uncertainties using the \mstw NNLO
+        parameterization at a scale of 10~GeV$^2$ (left) and
+        10,000~GeV$^2$ (right)~\cite{bib:pdg}.
+}
+\label{chap:theory:fig:pdfs}
+\end{figure}
+
+\subsection{Top quark pair production and decays}
+
+High-$Q^2$ collisions at the LHC produce a variety of final state
+particles at different rates.
+Figure~\ref{chap:theory:fig:smprocs} summarizes the cross sections of
+a selection of the SM processes as a function of the center-of-mass
+energy of the collision.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{theory/smprocs.png}
+    \caption[Production cross sections of SM processes in proton
+    collisions]
+    {Production cross sections of selected SM processes in proton
+        collisions as a function of the proton-proton center-of-mass
+        energy~\cite{bib:collphenom}.
+    Processes whose production is dominated by QCD interactions are
+    colored red or blue.
+    Electroweak processes are green and magenta.
+}
+\label{chap:theory:fig:smprocs}
+\end{figure}
+
+At leading order there are two primary production processes for
+\ttbar\ pairs: quark-antiquark annihilation and the fusion of two
+gluons.
+Gluon-gluon fusion accounts for about 80\% of the \ttbar\ production
+cross section at the LHC\@.
+The diagrams corresponding to these processes are shown in
+Figure~\ref{chap:theory:fig:ttbardiagrams}.
+The total \ttbar\ cross section with $\sqrts = 8$~TeV proton-proton
+collisions is $238.1^{+23.3}_{-25.2}$~pb at next-to-next-to leading
+order according to HATHOR~\cite{bib:hathor}.
+
+The mass of the top quark as measured by the Tevatron experiments is
+$173.20\pm0.87$~GeV~\cite{bib:mtop}, and its lifetime is on the order
+of $10^{-24}$~s.
+Since its lifetime is smaller than the QCD timescale,
+$1/\Lambda_{QCD}$, the top quark does not hadronize, but immediately
+decays to a $W$ boson and a $b$ quark with a branching fraction of
+greater than 99.9\%.
+Because of this, the top quark decay mode is almost entirely dependent
+on the decay of its $W$ boson daughter.
+
+$W$ bosons decay approximately 10\% of the time to each charged lepton
+and its corresponding neutrino.
+The other 70\% of $W$ decays result in a quark and antiquark of
+different flavors.
+Given the $W$ boson decay modes, about 44\% of \ttbar\ pairs result in
+the production of exactly one lepton.
+Figure~\ref{chap:theory:fig:ttbardecaychannels} illustrates the
+\ttbar\ decay modes pictorially.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.90\textwidth]{theory/ttbardiagrams.png}
+    \caption[Dominant production modes of \ttbar\ pairs at the LHC]
+    {The dominant production modes of \ttbar\ pairs at the
+        LHC~\cite{bib:ttbardiagrams}.
+        The left-most diagram illustrates quark-antiquark annihilation
+        to produce \ttbar\ pairs.
+        The other three plots, from left to right, show $s$-, $t$-,
+        and $u$-channel \ttbar\ production from the fusion of two
+        gluons.
+    }
+\label{chap:theory:fig:ttbardiagrams}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{theory/ttbardecaychannels.pdf}
+    \caption[Decay modes of \ttbar\ pairs]
+    {Decay modes of \ttbar\ pairs.
+        The dilepton, lepton plus jets, and all-hadronic decay modes
+        account for 10.5, 43.8, and 45.7\% \ttbar\ decays,
+    respectively.}
+\label{chap:theory:fig:ttbardecaychannels}
+\end{figure}
+
+
+\ttbar\ events are therefore characterized by the production of two
+high-$p_T$ $b$ quarks and two $W$ bosons.
+The analysis presented in Chapter~\ref{chap:ttbarres} reconstructs
+\ttbar\ pairs in the single lepton channel, in which one $W$ boson
+decays to a charged lepton and a neutrino and the other to two quarks.
+
+Since the initial state particles in proton collisions are quarks and
+gluons, leptons and neutrinos are only created through electroweak
+processes at the LHC\@.
+The dominant non-\ttbar\ background process which mimics \ttbar\
+events in the single lepton channel is \wjets\ production, wherein the
+$W$ boson decays leptonically.
+Although the $\wjets\to\ell\nu+$jets cross section is larger than that of
+\ttbar\ at the LHC, additionally searching for a final state
+consistent with 4 quarks, two of them being high-$p_T$ $b$ quarks,
+reduces the \wjets\ background significantly.
+
+\begin{comment}
+
+\subsection{Other relevant processes in the single lepton channel}
+
+Lepton production can occur from the prompt decays of heavy bosons, as
+takes place in the top quark decay chain, or through non-prompt
+processes, such as photon conversions, Dalitz decays, and the weak
+decays of heavy flavor (usually $b$ or $c$) quarks.
+Distinguishing leptons  prompt and non-prompt 
+
+However, there 
+\end{comment}

@@ -1,0 +1,413 @@
+\chapter{The Large Hadron Collider and the ATLAS Detector}
+\label{chap:lhcatlas}
+
+\section{The Large Hadron Collider}
+\label{chap:lhcatlas:sec:lhc}
+
+The Large Hadron Collider accelerates two beams of protons to 4~TeV
+each, producing collisions at a center-of-mass energy of 8~TeV.
+Its single-beam energy is expected to reach 6.5~TeV in 2015 operations.
+The LHC is located at the European Council for Nuclear Research
+(CERN) campus, near Geneva, Switzerland, and its beamline ring is
+27~km in circumference and buried between 50 and 175~m under parts of
+both Switzerland and France.
+
+Protons are initially accelerated linearly by the Linac 2, then are
+ramped up in energy by the Proton Synchrotron Booster, the Proton
+Synchrotron, and the Super Proton Synchrotron, and finally are
+deposited into the main LHC beam pipes.
+Superconducting dipole and quadrupole magnets respectively bend and
+focus the beams.
+Protons move in bunches around the ring, and each bunch is about
+30~cm long; almost 3000 bunches can travel around the ring at a given
+time.
+
+The two beams circulate counter to each other and are crossed at four
+interaction points where collisions occur.
+In 2012 data taking, an average of approximately 20 proton-proton
+interactions took place for each pair of bunches that crossed at these
+locations.
+Four primary detectors are arrayed around the ring at the interaction
+points.
+Two of these, ATLAS and the Compact Muon Solenoid (CMS), are
+general-purpose detectors capable of probing a wide variety of physics
+processes.
+The data presented in this thesis were collected with the ATLAS
+detector, which is discussed in detail below.
+
+
+\section{The ATLAS Detector}
+
+The ATLAS (A Toroidal LHC ApparatuS) detector measures properties of
+final state particles created by the LHC's proton-proton
+collisions~\cite{bib:ATLASAtTheLHC}.
+A schematic of the detector is shown in Figure~\ref{chap:lhcatlas:fig:atlas}.
+The ATLAS coordinate system, its three major sub-detectors (the inner
+detector, calorimeters, and muon system), and the trigger system are
+described in this chapter.
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{lhcatlas/atlas.eps}
+\caption[Schematic of the ATLAS detector]
+{Schematic of the ATLAS detector
+\label{chap:lhcatlas:fig:atlas}
+}
+\end{center}
+\end{figure}
+
+
+\subsection{Coordinate system}
+\label{chap:lhcatlas:sec:coordsys}
+
+ATLAS uses a right-handed coordinate system with the origin defined by
+the location of the nominal interaction point.
+The $z$-axis is aligned with the beam, the positive $x$-axis points
+from the interaction point to the center of the LHC ring, and the
+positive $y$-direction is defined upwards.
+The azimuthal angle, $\phi$, is measured from the positive $x$-axis
+around the beam, with the positive $y$-axis at $\phi = \pi/2$;\@ the
+radial distance is given by $R = \sqrt{x^2 + y^2}$.
+The polar angle, $\theta$, is measured from the positive $z$-axis with
+the $x$-$y$ plane at $\theta = \pi/2$.
+The rapidity, $\xi = \ln \sqrt{(E + p_z)/(E - p_z)}$, is a convenient
+angular coordinate because differences in $\xi$ are Lorentz invariant
+under boosts along the beam axis.
+For massless particles, this reduces to the pseudorapidity,
+$\eta = -\ln \tan(\theta/2) = \ln \sqrt{(|{\mathbf p}| +
+    p_z)/(|{\mathbf p}| - p_z)}$.
+The angular distance measure
+$\dr = \sqrt{\Delta \eta^2 + \Delta \phi^2}$ is similarly invariant.
+
+The detector is split into three regions: one central 
+barrel region ($|\eta| < 1.5$) and two forward ($|\eta| > 1.5$)
+end-cap regions.
+Transverse quantities, e.g.\ the transverse momentum $p_T$ and
+transverse energy $E_T$, incorporate only vector components projected
+onto the $x$-$y$ plane unless stated otherwise.
+
+
+\subsection{Inner detector}
+\label{chap:lhcatlas:sec:innerdetector}
+
+The ATLAS inner detector (ID) tracks charged particles as they leave
+the interaction vertex.
+It is made up of three subsystems: the Pixel Detector (pixels),
+the Semiconductor Tracker (SCT), and the Transition
+Radiation Tracker (TRT).
+Figures~\ref{chap:lhcatlas:fig:innerdetbarrel}
+and~\ref{chap:lhcatlas:fig:innerdetendcap} show schematics of the inner
+detector barrel and end-cap regions, respectively.
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{lhcatlas/innerdetbarrel.eps}
+\caption[Schematic of the ATLAS inner detector barrel region]
+{Schematic of the ATLAS inner detector barrel region with a central
+    track traversing the inner detector subsystems
+\label{chap:lhcatlas:fig:innerdetbarrel}
+}
+\end{center}
+\end{figure}
+
+
+The entire inner detector is surrounded by a large solenoid magnet
+which induces a nearly-constant 2 Tesla magnetic field in the $z$
+direction.
+The transverse momentum of a charged particle traversing the inner
+detector is directly proportional to the radius of curvature of its
+track.
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{lhcatlas/innerdetendcap.eps}
+\caption[Schematic of the ATLAS inner detector end-cap region]
+{Schematic illustrating the ATLAS inner detector end-cap region with
+    forward ($\eta = 1.4$ and $\eta = 2.2$) tracks traversing the
+    inner detector subsystems
+\label{chap:lhcatlas:fig:innerdetendcap}
+}
+\end{center}
+\end{figure}
+
+
+\subsubsection{The pixel detector and silicon tracker}
+%% TODO
+%% change to $R\phi$
+
+The pixel subsystem is closest to the beam pipe and is composed  of
+three layers of silicon, each pixel measuring approximately 50
+$\mu$m $\times$ 400 $\mu$m in the $R$-$\phi$ and $z$ directions,
+respectively.
+There are more than 80 million readout channels, one for each pixel.
+In the central region of the detector, the pixels form concentric
+cylinders around the beam pipe;\@ they are arranged in disks
+perpendicular to the beam in the end-cap regions.
+Due to its granularity, very precise position measurements are
+possible, with an intrinsic resolution of 10~$\mu$m in the $\phi$
+direction and 115~$\mu$m in the $z$ ($R$) direction in the barrel
+(end-cap).
+The first pixel layer is about 50~mm  from the center of the beam
+pipe.
+Its proximity to the interaction point is especially useful for
+differentiating tracks which originate at the primary interaction
+from decays-in-flight.
+
+The SCT surrounds the pixel detector and is comprised of about 6
+million channels read out from strips of silicon.
+There are four double-layers of strips, allowing for a possible eight
+crossings by each track.
+The closest of these layers is approximately 300~mm from the beam.
+The intrinsic resolution of each strip detector is 17~$\mu$m in $\phi$
+and 580~$\mu$m in $z$ ($R$) in the barrel (end-cap).
+
+\subsubsection{Transition radiation tracker}
+The TRT is the largest inner detector subsystem, filling the space
+between 0.5~m and 1.0~m from the beam out to $|\eta| = 2.0$.
+It is made of long 4 mm-diameter straws filled with a mixture of
+Xe (70\%), CO$_2$ (27\%), and O$_2$ (3\%) gas.
+The TRT is divided into four sections: two in the barrel region
+separated by the $z = 0$ plane and one in each end-cap.
+Straws are oriented parallel to the beam in the barrel and arrayed
+radially outward in the end-caps.
+Beyond this course segmentation in $z$, only $R$-$\phi$ information
+is available for each hit in the TRT;\@ the intrinsic $R$-$\phi$
+resolution per straw is 130 $\mu$m.
+
+As a charged particle moves through a TRT straw it ionizes the
+enclosed gas.
+The resulting free electrons drift to the central anode wire, further
+ionizing the gas as they do so.
+Drifting ions induce a current on it which is subsequently read out.
+Thin layers of polypropylene foam fill the space between TRT straws to
+produce transition radiation, causing photons to be emitted as charged
+particles cross the boundary between materials with different indices
+of refraction.
+The amount of radiation emitted at the material interfaces grows with
+the $\gamma$-factor of the charged particle.
+
+
+\subsection{Calorimeters}
+\label{chap:lhcatlas:sec:calos}
+
+The ATLAS detector has two calorimeter subsystems: the electromagnetic
+(EM) calorimeter and the hadronic calorimeters (HCAL).
+Their coverage reaches to $|\eta| = 4.9$, and their design is
+complementary to that of the inner detector for the purpose of
+precision electron, photon, jet, and \met\ measurements.
+It is important that electromagnetic and hadronic showers are
+fully-contained by the respective calorimeter for accurate particle
+reconstruction and to prevent punch-through into the muon system.
+The calorimeters are a total of 11 interaction lengths ($\lambda$)
+thick at $\eta = 0$, which allows them to adequately perform in both
+respects.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{lhcatlas/calorimeters.eps}
+\caption[Schematic of the ATLAS calorimeters]
+{Schematic of the ATLAS calorimeters
+\label{chap:lhcatlas:fig:calorimeters}
+}
+\end{center}
+\end{figure}
+
+
+\subsubsection{Electromagnetic Calorimeter}
+The EM calorimeter is sectioned into one barrel ($|\eta| < 1.475$) and
+two end-cap ($1.375 < |\eta| < 3.2$) regions.
+It is made up of alternating absorbing (lead) and active (liquid
+argon) layers arranged in an accordion pattern as shown in
+Figure~\ref{chap:lhcatlas:fig:accordion}.
+This layout provides uniform resolution in $\phi$ while avoiding
+cracks in coverage due to electronics and other services.
+In total, the EM calorimeter is approximately 22 radiation lengths
+($X_0$) thick in the barrel and more than 24 $X_0$ in the end-caps.
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{lhcatlas/accordion.eps}
+\caption[Schematic of the electromagnetic calorimeter accordion
+structure]
+{Schematic of the electromagnetic calorimeter accordion
+structure
+\label{chap:lhcatlas:fig:accordion}
+}
+\end{center}
+\end{figure}
+
+
+There are three active layers for $0 < |\eta| < 2.5$ (the precision
+measurement region) and two at higher eta, $2.5 < |\eta| < 3.2$.
+Corrections for electron and photon energy losses in the inner
+detector are made using a liquid argon presampling layer out to
+$|\eta| = 1.8$.
+
+In order to achieve good angular resolution, the closest layer to the
+inner detector is finely granulated, particularly in $\eta$ ($\Delta
+\eta \times \Delta \phi = 0.0031 \times 0.01$ for $|\eta| < 1.40$).
+It is approximately 4 $X_0$ thick.
+The primary sampling layer surrounds the first layer and, at 16
+$X_0$ thick, absorbs most of the energy from the electromagnetic shower.
+It is less finely segmented in $\eta$ than the first, but more so in
+$\phi$ ($\Delta \eta \times \Delta \phi = 0.025 \times 0.025$ for
+$|\eta| < 1.40$).
+The third layer is more coarsely segmented ($\Delta \eta \times \Delta
+\phi = 0.050 \times 0.025$), but provides further containment and
+longitudinal shower shape information.
+
+The design energy resolution of the EM calorimeter for electrons and
+photons in both the barrel and end-caps is given by
+
+\begin{equation}
+\frac{\sigma_E}{E} = \frac{10\%}{\sqrt{E/\mathrm{GeV}}} \oplus 0.7\%.
+\end{equation}
+
+% http://www-library.desy.de/preparch/desy/proc/proc10-01/meng.pdf
+
+
+\subsubsection{Hadronic calorimeters}
+
+There are three ATLAS hadronic calorimeters: the tile calorimeter, the
+hadronic end-cap calorimeter, and the forward calorimeter (FCal).
+
+The tile calorimeter is made of steel as the absorber and
+scintillating tiles as the active medium.
+It is situated just outside the electromagnetic calorimeter
+from a radius of 2.28~m to 4.25~m, or $7.4 \lambda$.
+It has coverage out to $|\eta| = 1.7$ and is divided into a central
+barrel ($|\eta| < 1.0$) and two forward extended barrels
+($0.8 < |\eta| < 1.7$).
+Each barrel contains 64 $\Delta \phi \approx 0.1$ wedges of steel and
+scintillator.
+The wedges are divided into three longitudinal layers of thickness
+1.5, 4.1, and 1.8 $\lambda$ (1.5, 2.6, and 3.3 $\lambda$) in the
+central (extended) barrel(s).
+
+The hadronic end-cap calorimeter is a sampling calorimeter made of
+copper and liquid argon and covers the eta range
+$1.5 < |\eta| < 3.2$.
+It is divided into two wheels (one front and one rear) in each
+end-cap, each wheel consisting of two longitudinal sections, and each
+section segmented into 32 wedge-shaped modules.
+Readout cells vary in size depending on the $\eta$ range:
+$\Delta \eta \times \Delta \phi = 0.1 \times 0.1$ for
+$|\eta| < 2.5$ and $0.2 \times 0.2$ otherwise.
+
+The FCal provides coverage over the eta range $3.1 < |\eta| < 4.9$ and
+is segmented into three distinct layers: one with copper as the
+absorber and two with tungsten; liquid argon is the sampling material
+in each.
+The copper/argon layer is located closest to the interaction point and
+is optimized for detecting electromagnetic showers.
+The second and third tungsten layers primarily measure hadronic
+activity.
+
+
+\subsection{Muon system}
+\label{chap:lhcatlas:sec:muonsystem}
+
+The outermost sub-detector of ATLAS is the muon system, which detects
+and measures charged particles that leave the calorimeter systems out
+to an $|\eta|$ of 2.7.
+Precision tracking chambers and fast trigger chambers respectively
+fulfill its primary purposes: to accurately measure and trigger on
+high-momentum muons.
+
+Muon trajectories are bent by large superconducting toroid magnets
+located outside the hadronic calorimeter.
+Central ($|\eta| < 1.4$) and forward ($1.6 < |\eta| < 2.7$) muons are
+chiefly deflected by barrel and end-cap toroid magnets, respectively;
+transition region ($1.4 < |\eta| < 1.6$) muons are deflected by
+fields from both sets of magnets.
+This geometry produces a magnetic field that is generally
+perpendicular to the muon tracks, which is ideal for momentum
+measurements.
+
+Three layers of precision tracking chambers measure muon trajectories
+across the covered $\eta$ range.
+In the barrel region, monitored drift tube (MDT) chambers filled with
+Ar and CO$_2$ gas are arranged in concentric cylinders surrounding
+the beam.
+Each chamber is composed of between three and eight layers of drift
+tubes with an approximate spatial resolution of 35 $\mu$m per
+chamber.
+In the end-caps, the tracking chambers are laid out in disks
+perpendicular to the beam.
+MDTs make up all three layers out to $|\eta| = 2.0$.
+Due to the higher particle flux in the forward region, cathode-strip
+chambers (CSCs), which have significantly better time resolution than
+MDTs, make up the first tracking layer for $|\eta| > 2.0$.
+
+Complementary to the precision tracking chambers, fast trigger
+chambers provide track information within tens of nanoseconds of a
+particle traversal.
+The central ($|\eta| < 1.05$) muon trigger system employs three layers
+of resisitive plate chambers (RPCs) arranged in concentric cylinders,
+each with the possibility of recording two hits per track, while
+forward ($1.05 > |\eta| > 2.40$) muons pass through up to seven layers
+of thin gap chambers (TGCs).
+In addition to providing quick readout for trigger purposes,
+track information from RPCs and TGCs is combined with that from the
+precision tracking chambers to improve muon momentum measurements.
+
+The total momentum resolution in the muon spectrometer is
+approximately 10\% for 1~TeV muons, but accurate momentum and charge
+measurements are possible over a wide range of muon energies, from
+3~GeV to 3~TeV.
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{lhcatlas/muonsystem.eps}
+\caption[Schematic of the ATLAS muon system]
+{Schematic of the ATLAS muon systems
+\label{chap:lhcatlas:fig:muonsystem}
+}
+\end{center}
+\end{figure}
+
+
+\subsection{Trigger systems}
+\label{chap:lhcatlas:sec:trigger}
+
+The purpose of the ATLAS trigger system is to quickly identify
+potentially interesting collision events delivered by the LHC\@.
+The trigger is broken down into three progressively stricter selection
+levels, Level-1 (L1), Level-2 (L2), and event filter (EF).
+The L2 and EF triggers are known collectively as the high-level
+triggers (HLT).
+
+The L1 trigger identifies events with high-$p_T$ muons, electrons,
+photons, jets, and $\tau$-leptons in addition to high \met\ in order
+to reduce the event rate from that delivered by the LHC (40~MHz)
+to about 75~kHz, taking less than 2.5~$\mu$s per decision.
+It uses a subset of the available detectors to define these objects:
+the muon trigger chambers and coarse-grained calorimeter information.
+At L1, calorimeter energy deposits are summed over towers, which
+incorporate all longitudinal cells in a given
+$\Delta \eta \times \Delta \phi = 0.1 \times 0.1$ region, but
+electromagnetic and hadronic towers are reported separately.
+Regions of interest (RoIs) in $\eta$-$\phi$ space around objects
+passing certain criteria (e.g.\ an energy threshold) are also
+designated by the L1 trigger and passed to the HLT\@.
+
+The high-level triggers filter events based on all detector data,
+including tracking information, contained in the RoIs defined by
+the L1 trigger.
+Since the HLT operates at a lower event rate, particle, jet, and
+\met\ definitions are refined using the additional detector
+information available, and tighter requirements (e.g.\ higher
+thresholds) are imposed on the objects in question.
+For example, complete calorimeter granularity is available at HLT, so
+jet and \met\ definitions are improved from L1.
+A basic tracking algorithm is run on inner detector hit data at L2,
+while at EF it is feasible to leverage the full offline tracking
+machinery outlined in Section~\ref{chap:reconstruction:sec:tracking}.
+Combined, the L2 and EF triggers reduce the event rate from 75~kHz to
+approximately 200~Hz, and about 1~MB per selected event is stored to
+disk.

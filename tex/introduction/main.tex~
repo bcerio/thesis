@@ -1,0 +1,52 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+The Standard Model has been immensely successful at describing
+experimental results in particle physics.
+The recent discovery of the Higgs boson was the latest observation to
+confirm what it had predicted well in advance.
+
+However, the Standard Model is known to be an incomplete description
+of nature.
+Colliders such as the Tevatron and the Large Hadron Collider
+have been assembled to test the Standard Model at high energy scales
+in search of discrepancies between its predictions and experimental
+observation.
+Although no significant deviations between the two have yet been
+exposed in the realm of particle physics, dark matter, gravity, and
+the hierarchy problem all hint that there is a more fundamental
+theory waiting to be uncovered.
+
+The top quark is peculiar among the fermions in that its mass is on
+the order of the weak energy scale.
+This not only makes it an interesting subject of study in and of
+itself, it suggests that it may have a larger role to play than it
+has been given in the Standard Model.
+In this thesis a search for the resonant production of top quark pairs
+beyond the Standard Model in proton-proton collisions is presented.
+Collision data were collected from the Large Hadron Collider with the
+ATLAS detector, and the subsequent analysis and interpretation of
+these data are presented herein.
+
+The document is organized as follows.
+Chapter 2 introduces the Standard Model (SM) as well as extensions to
+the Standard Model that are tested in this thesis.
+The physics of proton collisions and the production of top quark pairs
+at the Large Hadron Collider (LHC) are also discussed.
+Chapter 3 describes the two primary components of the experimental
+setup: the LHC and the ATLAS detector.
+The ATLAS subdetectors are discussed in detail.
+Monte Carlo (MC) techniques are employed to simulate LHC proton
+collisions and the interactions of the resulting particles with the
+experimental apparatus.
+This is described in Chapter 4.
+The reconstruction of particles traversing ATLAS is discussed in
+Chapter 5.
+The focus of this thesis is Chapter 6, in which a search for
+resonant top pair production beyond the Standard Model (BSM) is
+presented: the analysis strategy, estimation of the background
+processes, uncertainties in the measurement, and final results.
+Chapter 7 describes techniques developed for the reconstruction of
+energetic top quarks.
+Finally, Chapter 8 details studies of the expected ATLAS sensitivity
+to BSM physics under the High Luminosity LHC upgrade scenario.

@@ -1,0 +1,170 @@
+\usepackage{atlasphysics}
+
+\usepackage{graphicx}
+\graphicspath{{./fig/}}
+
+\usepackage{subfigure}
+
+\usepackage{lineno}
+%% \linenumbers
+
+\usepackage{hyperref}
+
+\usepackage{verbatim}
+
+\usepackage{amsmath}
+
+\usepackage{multirow}
+
+\title{Evidence of Vector Boson Fusion Higgs Boson Production in the $WW\rightarrow{l\nu l\nu}$ decay channel with the ATLAS detector}
+\author{Benjamin Cerio}
+
+\department{Physics}
+
+\supervisor{Ashutosh Kotwal}
+
+\member{Ayana Arce}
+\member{Stefan Bass}
+\member{Christopher Walter}
+\member{Ying Wu}
+
+\copyrighttext{All rights reserved except the rights granted by the \\
+   \href{http://creativecommons.org/licenses/by-nc/3.0/us/}
+        {Creative Commons Attribution-Noncommercial License}
+}
+
+\newcommand{\metrel}{\ensuremath{E_{\mathrm{T, rel}}^{\rm miss, CAL}}\xspace}
+\newcommand{\mpt}{\ensuremath{p_{\mathrm{T}}^{\rm miss}}\xspace}
+\newcommand{\mptrel}{\ensuremath{p_{\mathrm{T, rel}}^{\rm miss}}\xspace}
+\newcommand{\calomet}{\ensuremath{E_{\mathrm{T}}^{\rm miss, CAL}}\xspace}
+\newcommand{\calometrel}{\ensuremath{E_{\rm T,rel}^{\rm miss, CAL}}\xspace}
+\newcommand{\trkmet}{\ensuremath{E_{\rm T}^{\rm miss, TRK}}\xspace}
+\newcommand{\trkmetrel}{\ensuremath{E_{\rm T,rel}^{\rm miss, TRK}}\xspace}
+\newcommand{\vmet}{\ensuremath{\boldsymbol{E}_{\mathrm{T}}^{\rm miss}}\xspace}
+\newcommand{\metstvf}{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss, STVF}}}\xspace}
+\newcommand{\metrelstvf}{\ensuremath{E_{\mathrm{T, rel}}^{\rm miss,STVF}}\xspace}
+\newcommand{\jcorrptmiss}{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss,J-TRK}}}\xspace}
+\newcommand{\jcorrptmissrel}{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss,J-TRK}}}\xspace}
+\newcommand{\ptmiss}{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss,TRK}}}\xspace}
+\def\etmissCellOut{$E_{\mathrm{T}}^{\mathrm{miss,CellOut}}$}
+\def\etmissSoftL{$E_{\mathrm{L}}^{\mathrm{miss,CellOut}}$}
+\def\etmissSoftT{$E_{\mathrm{P}}^{\mathrm{miss,CellOut}}$}
+\def\ptsoft{$E_{\mathrm{T,soft}}^{\mathrm{miss,trk}}$}
+\def\pthard{$P_{\mathrm{T,hard}}^{\mathrm{miss,trk}}$}
+\def\trkmetL{$P_{\mathrm{T,soft}}^{\mathrm{L,miss,trk}}$}
+\def\trkmetT{$P_{\mathrm{T,soft}}^{\mathrm{T,miss,trk}}$}
+
+\newcommand{\mT}{\ensuremath{m_{\rm T}}\xspace}
+\newcommand{\vpT}{\ensuremath{\boldsymbol{p}_{\mathrm{T}}}}
+\newcommand{\vpTll}{\ensuremath{\boldsymbol{p}_{\rm T}^{\ell\ell}}}
+\newcommand{\pTll}{\ensuremath{\pT^{\ell\ell}}\xspace}
+\newcommand{\ptll}{\pTll\xspace}
+\newcommand{\pTsublead}{\ensuremath{p_{\mathrm{T}}^{\rm sublead}}\xspace}
+\newcommand{\pTlead}{\ensuremath{p_{\mathrm{T}}^{\rm lead}}\xspace}
+\newcommand{\pTZ}{\ensuremath{\pT^{Z}}\xspace}
+\newcommand{\dphill}{\ensuremath{\Delta\phi_{\ell\ell}}\xspace}
+\newcommand{\detall}{\ensuremath{\Delta\eta_{\ell\ell}}\xspace}
+\newcommand{\dphilr}{\ensuremath{\Delta\phi_{\ell\ell,\mbox{recoil}}}}
+\newcommand{\dR}{\ensuremath{\Delta R}}
+\newcommand{\mll}{\ensuremath{m_{\ell\ell}}\xspace}
+\newcommand{\mjj}{\ensuremath{m_{jj}}\xspace}
+\newcommand{\pTjj}{\ensuremath{p_{\rm T}^{jj}}\xspace}
+\newcommand{\dyjj}{\ensuremath{\Delta Y_{jj}}\xspace}
+\newcommand{\pTtot}{\ensuremath{p_{\rm T}^{\rm tot}}\xspace}
+\newcommand{\vpTtot}{\ensuremath{{\bf p}_{\rm T}^{\rm tot}}\xspace}
+\newcommand{\njets}{\ensuremath{N_{\rm jets}}\xspace}
+\newcommand{\lhood}{\ensuremath{{\cal L}}}
+\newcommand{\hwwlnln}{\ensuremath{H{\rightarrow\,}WW^{(\ast)}{\rightarrow\,}\ell\nu\ell\nu}\xspace}
+\newcommand{\wwlnln}{\ensuremath{WW^{(\ast)}{\rightarrow\,}\ell\nu\ell\nu}}
+\newcommand{\wjets}{$W$~+~jets\xspace}
+\newcommand{\zjets}{$Z$~+~jets\xspace}
+
+\newcommand{\ZeroJet}{\ensuremath{N_\textrm{jet}\,{=}\,0}\xspace}
+\newcommand{\OneJet}{\ensuremath{N_\textrm{jet}\,{=}\,1}\xspace}
+\newcommand{\TwoJet}{\ensuremath{N_\textrm{jet}\,{\ge}\,2}\xspace}
+\newcommand{\ZeroOneJet}{\ZeroJet\ and ${=}\,1$\xspace}
+\newcommand{\ZeroOneJetSimple}{\ensuremath{N_\textrm{jet}\,{\le}\,1}\xspace}
+\newcommand{\OneTwoJetSimple}{\ensuremath{N_\textrm{jet}\,{\ge}\,1}\xspace}
+\newcommand{\OneTwoJet}{\OneJet\ and ${\ge}\,2$\xspace}
+\newcommand{\AllJet}{\ZeroJet, ${=}\,1$, and ${\ge}\,2$\xspace}
+\newcommand{\Dzero} {\rm{D}\O}
+\newcommand{\toprule}{\hline}
+\newcommand{\bottomrule}{\hline}
+\newcommand{\pttot}{\ensuremath{p_{\mathrm{T}}^{\rm tot}}\xspace}
+\newcommand{\dphillMET}{\ensuremath{\Delta\phi_{\ell\ell,\MET}}\xspace}
+\newcommand{\frecoil}{\ensuremath{f_{\text{recoil}}}\xspace}
+\newcommand{\frecoilext}{\ensuremath{f_{\text{recoil}}^{\rm extended}}\xspace}
+\newcommand{\Ztautau}{\ensuremath{Z/\mathrm{DY}\rightarrow \tau\tau}\xspace}
+\newcommand{\ZDYll}{\ensuremath{Z/\mathrm{DY}\rightarrow ee/\mu\mu}\xspace}
+% \newcommand{\Zee}{\ensuremath{Z/\gamma^{*} \rightarrow ee}}
+% \newcommand{\Zmm}{\ensuremath{Z/\gamma^{*} \rightarrow \mu\mu}}
+\newcommand{\Zgll}{\ensuremath{Z/\gamma^{*} \rightarrow \ell\ell}\xspace}
+\newcommand{\Zgee}{\ensuremath{Z/\gamma^{*} \rightarrow ee}\xspace}
+\newcommand{\Zgmm}{\ensuremath{Z/\gamma^{*} \rightarrow \mu\mu}\xspace}
+\newcommand{\Zgeemm}{\ensuremath{Z/\gamma^{*} \rightarrow ee/\mu\mu}\xspace}
+\newcommand{\Ztt}{\ensuremath{Z/\gamma^{*} \rightarrow \tau\tau}\xspace}
+\newcommand{\Zgtt}{\ensuremath{Z/\gamma^{*} \rightarrow \tau\tau}\xspace}
+\newcommand{\zg}{\ensuremath{Z\gamma}\xspace}
+\newcommand{\DF}{\ensuremath{e\mu+\mu e}~}
+\newcommand{\SameF}{\ensuremath{ee+\mu\mu}~}
+\newcommand{\Njet}{\ensuremath{N_{\textrm{jet}}}\xspace}
+\newcommand{\Nbjet}{\ensuremath{N_{b\textrm{-jet}}}\xspace}
+\newcommand{\mtautau}{\ensuremath{m_{\tau\tau}}\xspace}
+\newcommand{\mtt}{\mtautau}
+\newcommand{\Ncentjet}{\ensuremath{N_{\textrm{central-jet}}}\xspace}
+\newcommand{\pTllj}{\ensuremath{\pT^{\ell\ell,jets}}}
+\newcommand{\ZDY}{\ensuremath{Z/\mathrm{DY}}}
+\newcommand{\NFt}{\ensuremath{NF\mathrm{\tau}}}
+\newcommand{\NFVBF}{\ensuremath{NF\mathrm{VBF}}}
+\newcommand{\emme}{\ensuremath{e\mu/\mu e}\xspace}
+\newcommand{\eemm}{\ensuremath{ee/\mu\mu}\xspace}
+\newcommand{\Emu}{\ensuremath{e\mu}}
+\newcommand{\Ee}{\ensuremath{ee}}
+\newcommand{\Mumu}{\ensuremath{\mu\mu}}
+\newcommand{\Mue}{\ensuremath{\mu e}}
+\newcommand{\muhat}{\ensuremath{\hat{\mu}}}
+\newcommand{\METphiC}{\ensuremath{E_{\mathrm{T, \phi-centrality}}^{\rm miss}}\xspace}
+\newcommand{\SumMlj}{\ensuremath{\sum_{\ell,j} M_{\ell j}}\xspace}
+\newcommand{\pTtottrackj}{\ensuremath{p_{\mathrm{T}}^{\rm tot,track,jetCorr}}\xspace}
+\newcommand{\lepEtaCen}{\ensuremath{\eta_{\mathrm{lep}}} centrality\xspace}
+
+% mu and npv
+\newcommand{\nvtx}{\ensuremath{N_{Vtx}}}
+\newcommand{\Mu}{$\mu$~}
+
+% from Nika's VBF top studies
+\newcommand{\POWHEG}{P\textsc{owheg}\xspace}
+\newcommand{\PYTHIA}{P\textsc{ythia}\xspace}
+\newcommand{\HERWIG}{H\textsc{erwig}\xspace}
+\newcommand{\ALPGEN}{A\textsc{lpgen}\xspace}
+\newcommand{\MADGRAPH}{MadGraph\xspace}
+\newcommand{\MCATNLO}{MC@NLO\xspace}
+\newcommand{\aMCATNLO}{aMC@NLO\xspace}
+\newcommand{\GGTOWW}{G\textsc{G2WW}\xspace}
+\newcommand{\SHERPA}{S\textsc{herpa}\xspace}
+\newcommand{\JIMMY}{J\textsc{immy}\xspace}
+\newcommand{\HDECAY}{H\textsc{decay}\xspace}
+\newcommand{\GEANT}{G\textsc{eant}\xspace}
+\newcommand{\PHOTOS}{P\textsc{hotos}\xspace}
+\newcommand{\MCFM}{MCFM\xspace}
+
+\newcommand{\sbr}{\ensuremath{\sigma \times {\rm BR}}}
+\newcommand{\zp}{\ensuremath{Z^\prime}}
+\newcommand{\kkg}{\ensuremath{g_{KK}}}
+
+
+\newcommand{\smallr}{small-$R$}
+\newcommand{\larger}{large-$R$}
+\newcommand{\dsplit}{\ensuremath{\sqrt{d_{12}}}}
+\newcommand{\mt}{\ensuremath{m_T}}
+
+\newcommand{\bh}{{\ttfamily BumpHunter}}
+\newcommand{\sqrts}{\ensuremath{\sqrt{s}}}
+
+
+
+\DeclareMathOperator{\sgn}{sgn}
+
+
+% set subsubsection numbering.
+\setcounter{secnumdepth}{3}

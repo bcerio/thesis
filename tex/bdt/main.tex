@@ -183,7 +183,7 @@ function was chosen to be the negative binomial log-likelihood
 \noindent Since this function grows linearly with $-F(\vect{x}_n)y_n$, it performs
 better with noisy data. 
 
-\section{BDTs in VBF \hwwlnln}
+\section{BDT in VBF \hwwlnln}
 
 The VBF \hwwlnln final state is composed many of correlated physics
 objects. In selecting a signal-rich phase space region, cuts are
@@ -241,9 +241,10 @@ performance of a given BDT. The BDT inputs were pruned from a set of
 inputs are described in detail in Chapter YY. 
 
 In the TMVA BDT implementation, there are parameters which can be
-adjusted to achieve maximal performance and robustness. There is not a
-general theory to refer to since there is a diverse range of possible
-input sets and event collections. For this reason, a brute force
+adjusted to achieve maximal performance and robustness. The optimal BDT parameter set is a
+function of the number of inputs, the number of events in the training
+set, and the shapes of the input distributions. There is not a general
+prescription for tuning a BDT for a given training set. For this reason, a brute force
 optimization was performed on the BDT parameters. The DOFs in the
 parameter space were the number of trees in the forest, the maximum
 tree depth, the minimum number of events per node, the shrinkage, and
@@ -283,4 +284,36 @@ optimal performance are shown in Table~\ref{chap:bdt:tab:bdt_settings}.
 \end{center}
 \end{table}
 
-\subsection{Overtraining test}
+\subsection{Cross-validation and overtraining test}
+
+Classifiers are typically trained and applied on statistically
+independent samples. In the VBF analysis, Monte Carlo samples are used
+in both the training of the BDT and the prediction of the BDT
+response. In order to reduce susceptibility to statistical
+fluctuations, all available MC events are used in the final
+prediction. To avoid using the same set of events for training and in
+the prediction a technique known as cross-validation is used. The full
+MC sample is split into two statistically independent subsamples--
+even events and odd events. One BDT is trained on even events and
+applied to odd events, while one is trained on odd events and applied
+to even events. The two BDTs are identical apart from the events in
+the training set used to define the BDT. 
+
+\begin{figure}[h]
+    \centering
+    \subfigure[Overtraining check for BDT 1]{
+    \includegraphics[width=0.49\textwidth]{bdt/overtraining_check1.pdf}
+    \label{chap:bdt:fig:overtraining1}
+    }
+    \subfigure[Overtraining check for BDT 2]{
+    \includegraphics[width=0.49\textwidth]{bdt/overtraining_check2.pdf}
+    \label{chap:bdt:fig:overtraining2}
+    }
+    \caption[Boosted decision tree overtraining check.]{Overtraining
+      check for optimized boosted decision tree. Training set is shown
+    in hatched distributions, while statistically independent test set
+    is shown with points. First two background bins are scaled by 20.0
+    and 2.0, respectively. Signal normalization multiplied by a factor
+    of 50.}
+\label{chap:bdt:fig:overtraining}
+\end{figure}

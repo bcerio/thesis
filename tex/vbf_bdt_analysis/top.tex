@@ -1,0 +1,64 @@
+
+Top background is comprised mainly of \ttbar~(Figure), with $s$ and $t$
+channel single top and $Wt$ contributions as well (denoted ST). The parton
+level process for \ttbar~is simulated in
+\POWHEG at NLO in QCD, while \PYTHIAns 6 is used for parton showering and
+hadronization. The LO PDF set CTEQ6L1 is used with \PERUGIA 2011 as
+the underlying event tune. Past iterations of the VBF analysis in this
+decay channel used \MCATNLO to model
+\ttbar~\cite{bib:hww_moriond_2013}, but \POWHEGns +\PYTHIA models jet
+kinematic distributions better in the VBF phase space region. However, leptons generated in
+\MCATNLO model the data better than \POWHEG. To account for these
+modelling differences, theoretical uncertainties are assigned to the
+predicted \ttbar~yield in the signal region. For ST,
+$s$ channel and $Wt$ use \POWHEGns +\PYTHIAns 6 as well, while
+\textsc{AcerMC}+\PYTHIAns 6 is used to model $t$-channel ST. The same PDF
+and UE tune is used for all top processes. 
+
+The \ttbar~normalization is scaled to the cross section for $pp$
+collisions at \sqrts$=8$ \tev~for a top quark mass of
+$172.5 \gev/c^2$, $\sigma_{t\bar{t}}=252.9^{+15.3}_{-16.3}$~pb. This value has been
+calculated at NNLO in QCD including a resummation of
+next-to-next-to-leading logarithmic (NNLL) soft gluon
+terms~\cite{bib:Cacciari:2011hy,bib:Beneke:2011mq,bib:Baernreuther:2012ws,bib:Czakon:2012zr,bib:Czakon:2012pz,bib:Czakon:2013goa,bib:Czakon:2011xx}.
+The total cross section for \ttbar~has been measured to be
+$237.7\pm11.3$~pb in the leptonic decay channel with one
+electron and one muon in the final
+state~\cite{bib:ttbar_cross_section}, agreeing with the
+theory calculation within the QCD scale uncertainties. The $s$ channel
+ST, $t$ channel ST, and $Wt$ normalizations are also scaled to the
+NNLO and NNLL cross sections of $5.61\pm0.22$~pb~\cite{bib:Kidonakis:2010tc},
+$87.76^{+3.44}_{-1.91}$~pb~\cite{bib:Kidonakis:2011wy}, and
+$22.37\pm1.52$~pb~\cite{bib:Kidonakis:2010ux}, respectively. These
+computations are compatible with the respective measurements in
+ATLAS~\cite{bib:tchan_cross_section,bib:Wt_cross_section}. 
+
+In spite of the high level of agreement observed between theory
+calculations and ATLAS top measurements, the top normalization is
+constrained using a top-rich control region (CR). The cross section
+measurements in
+ATLAS,~\cite{bib:ttbar_cross_section,bib:Wt_cross_section}, require
+the selected jets to be central ($|\eta|<2.5$), whereas in the VBF
+analysis, due to the signal topology, the $\eta$ requirement is looser,
+$|\eta|<4.5$. Dedicated top measurements have yet to probe this region
+to test existing theoretical models, motivating the use of a
+data-driven top estimate. Because the kinematic
+shapes are similar for \ttbar~and ST, these processes share a common
+normalization. All of the selection cuts applied in the SR are also
+applied in the top CR, with the exception of the BJV. Instead of
+requiring zero $b$-tags, exactly one $b$-tag is required, enriching
+this region with top background while while minimizing contamination from
+sources without heavy flavor quarks in the final state. The top CR is
+subdivided into BDT bins, and the top
+normalization is computed separately in each bin. This approach is
+used because the BDT spans a large and relatively unknown region of
+phase space, and there is no \textit{a priori} reason to assume that the
+normalization is constant across the BDT spectrum. The normalization
+factor in BDT bin $i$ can be expressed as
+
+\begin{equation}
+\label{chap:analysis:equation:top_nf}
+NF_i = \frac{N_{data}^{CR} - N_{non-top}^{CR}}{N_{top}}
+\end{equation}
+
+

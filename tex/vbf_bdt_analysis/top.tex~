@@ -1,0 +1,38 @@
+
+Top background is comprised mainly of \ttbar~(Figure), with $s$ and $t$
+channel single top and $Wt$ contributions as well (denoted ST). The parton
+level process for \ttbar~is simulated in
+\POWHEG at NLO, while \PYTHIAns 6 is used for parton showering and
+hadronization. The LO PDF set CTEQ6L1 is used with \PERUGIA 2011 as
+the underlying event tune. Past iterations of the VBF analysis in this
+decay channel used \MCATNLO to model
+\ttbar~\cite{bib:hww_moriond_2013}, but \POWHEGns +\PYTHIA models jet
+kinematic distributions better in the VBF phase space region. However, leptons generated in
+\MCATNLO model the data better than \POWHEG. To account for these
+modelling differences, we assign theoretical uncertainties. For ST,
+$s$ channel and $Wt$ use \POWHEGns +\PYTHIAns 6 as well, while
+\textsc{AcerMC}+\PYTHIAns 6 is used to model $t$-channel ST. The same PDF
+and UE tune is used for all top estimates. 
+
+The \ttbar~normalization is scaled to the cross section for $pp$
+collisions at \sqrts$=8$ \tev for a top quark mass of $172.5 \gev/c^2$,
+which is $\sigma_{t\bar{t}}=252.89$~pb. This value has been
+calculated at NNLO in QCD including a resummation of
+next-to-next-to-leading logarithmic (NNLL) soft gluon
+terms~\cite{bib:Cacciari:2011hy,bib:Beneke:2011mq,bib:Baernreuther:2012ws,bib:Czakon:2012zr,bib:Czakon:2012pz,bib:Czakon:2013goa,bib:Czakon:2011xx}.
+The total cross section for \ttbar~ has been measured to be
+$237.7\pm11.3$~pb in the purely leptonic decay channel with one
+electron and one muon in the final
+state~\cite{bib:ttbar_cross_section}, agreeing quite well with the
+theory calculation. The $s$ channel ST, $t$ channel ST, and $Wt$ normalizations are also scaled to the
+NNLO and NNLL cross sections of $5.61\pm0.22$~pb~\cite{bib:Kidonakis:2010tc},
+$87.76^{+3.44}_{-1.91}$~pb~\cite{bib:Kidonakis:2011wy}, and
+$22.37\pm1.52$~pb~\cite{bib:Kidonakis:2010ux}, respectively. These
+computations are also compatible with the respective measurements in
+ATLAS~\cite{bib:tchan_cross_section,bib:Wt_cross_section}.
+
+
+
+These processes contain at least one heavy flavor quark. Therefore, they can
+be efficiently suppressed by requiring that the number of $b$ tags in
+the event is zero.  

@@ -15,8 +15,9 @@
 \usepackage{amsmath}
 
 \usepackage{multirow}
+\usepackage{xspace}
 
-\title{Evidence of Vector Boson Fusion Higgs Boson Production in the $WW\rightarrow{l\nu l\nu}$ decay channel with the ATLAS detector}
+\title{Evidence of Vector Boson Fusion Higgs Boson production in the $WW\rightarrow{l\nu l\nu}$ decay channel with the ATLAS detector}
 \author{Benjamin Cerio}
 
 \department{Physics}
@@ -32,6 +33,14 @@
    \href{http://creativecommons.org/licenses/by-nc/3.0/us/}
         {Creative Commons Attribution-Noncommercial License}
 }
+
+
+\newcommand{\vect}[1]{\ensuremath{\boldsymbol{#1}}\xspace}
+\DeclareMathOperator{\sgn}{sign}
+\newcommand{\ignore}[1]{}
+\newcommand{\etmiss}{\ensuremath{E_{\mathrm{T}}^{\rm miss}}\xspace}
+%\newcommand{\ww2j}{$WW$~+~2j\xspace}
+\newcommand{\hww}{\ensuremath{H{\rightarrow\,}WW^{(\ast)}}\xspace}
 
 \newcommand{\metrel}{\ensuremath{E_{\mathrm{T, rel}}^{\rm miss, CAL}}\xspace}
 \newcommand{\mpt}{\ensuremath{p_{\mathrm{T}}^{\rm miss}}\xspace}
@@ -158,13 +167,7 @@
 \newcommand{\dsplit}{\ensuremath{\sqrt{d_{12}}}}
 \newcommand{\mt}{\ensuremath{m_T}}
 
-\newcommand{\bh}{{\ttfamily BumpHunter}}
 \newcommand{\sqrts}{\ensuremath{\sqrt{s}}}
-
-
-
-\DeclareMathOperator{\sgn}{sgn}
-
 
 % set subsubsection numbering.
 \setcounter{secnumdepth}{3}

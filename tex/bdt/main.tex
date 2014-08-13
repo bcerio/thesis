@@ -16,7 +16,7 @@ continuously-distributed, real-valued $y$. Machine
 learning techniques, and in particular decision trees, are increasingly used in
 particle physics for particle identification and event
 classification~\cite{bib:Roe:2004na}. At the LHC, BDTs have been used by both
-CMS and ATLAS (references). 
+ATLAS and CMS~\cite{bib:hww_mva,bib:htautau_mva,bib:Chatrchyan:2013zna}.%\cite{bib:hww_mva}\cite{bib:htautau_mva}\cite{bib:Chatrchyan:2013zna}. 
 
 \section{Decision tree learners}
 
@@ -218,9 +218,9 @@ BDT inputs, starting with a set of $50$(?) inputs. The inputs in this
 initial set were identified using a combination of physics intuition--
 i.e. knowledge of kinematic differences between the dominant
 backgrounds and signal-- past experience from the rectangular
-cut-based VBF analysis (reference to CONF note), and an exploration of
+cut-based VBF analysis~\cite{bib:hww_moriond_2013}, and an exploration of
 distributions shown to perform well in other MVA-based Higgs
-analyses (reference to H->tautau). The 50 inputs were then used to
+analyses~\cite{bib:htautau_mva}. The 50 inputs were then used to
 train a BDT, and the BDT performance was quantified by computing the
 Gaussian significance estimate, $\frac{S}{\sqrt{B}}$, obtained after
 cutting on the BDT response distribution at a value corresponding to a
@@ -292,21 +292,47 @@ in both the training of the BDT and the prediction of the BDT
 response. In order to reduce susceptibility to statistical
 fluctuations, all available MC events are used in the final
 prediction. To avoid using the same set of events for training and in
-the prediction a technique known as cross-validation is used. The full
+the prediction, a technique known as cross-validation is used. The full
 MC sample is split into two statistically independent subsamples--
 even events and odd events. One BDT is trained on even events and
 applied to odd events, while one is trained on odd events and applied
 to even events. The two BDTs are identical apart from the events in
 the training set used to define the BDT. 
 
+Ascertaining the level of overtraining for a BDT is done by plotting
+the BDT response distribution $F(\vect{x})$ for two statistically
+independent samples. Disagreement in the shape is evidence of
+overtraining. A comparison of the BDT response distributions for the
+training set (even events) and the test set (odd events) for BDT 1 is
+shown in Figure~\ref{chap:bdt:fig:overtraining1}, and the same for BDT
+2 is shown in Figure~\ref{chap:bdt:fig:overtraining2}. Signal, shown
+in red, peaks close to a BDT score of 1, and background in blue peaks
+at -1. The event yields are scaled to luminosity, with signal enhanced
+by a factor of 50. Because background peaks so sharply at -1, the
+first two background bins are scaled down by 20 and 2,
+respectively. The Kolmogorov-Smirnov goodness-of-fit test is used to
+quantify the level of agreement of the BDT response between the two
+subsamples. In this test, the null hypothesis is that the two
+distributions have the same underlying shape. For BDT 1, the signal
+(background) $p$-value is 0.021 (1.00) and for BDT 2, the $p$-values
+are 0.122 (0.96). These $p$-values indicate that there is some degree
+of overtraining for the signal. Looking at
+Figure~\ref{chap:bdt:fig:overtraining}, the discrepancy
+between the two subsamples lies at low BDT values that are not
+ultimately used in the analysis (Chapter XX). Moreover, because the
+same BDT function is applied to the signal prediction, background
+prediction, and the actual collision data, overtraining will not
+invalidate the statistical results of an analysis; it can only result
+in a suboptimal BDT.
+
 \begin{figure}[h]
     \centering
     \subfigure[Overtraining check for BDT 1]{
-    \includegraphics[width=0.49\textwidth]{bdt/overtraining_check1.pdf}
+    \includegraphics[width=0.6\textwidth]{bdt/overtraining_check1.pdf}
     \label{chap:bdt:fig:overtraining1}
     }
     \subfigure[Overtraining check for BDT 2]{
-    \includegraphics[width=0.49\textwidth]{bdt/overtraining_check2.pdf}
+    \includegraphics[width=0.6\textwidth]{bdt/overtraining_check2.pdf}
     \label{chap:bdt:fig:overtraining2}
     }
     \caption[Boosted decision tree overtraining check.]{Overtraining

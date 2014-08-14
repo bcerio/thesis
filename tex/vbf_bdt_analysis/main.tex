@@ -39,84 +39,15 @@ process is treated as a background.
 
 \subsection{Summary}
 
-Upon applying the commmon preselection and \etmiss cuts, the \Njet$\geq{2}$ bin is
-dominated by top background, shown in yellow in
-Figure~\ref{chap:analysis:fig:n_jet}, in both \emme and \eemm
-channels, accounting for 80$\%$ of the
-total background. In addition to top, the other backgrounds to VBF
-include $WW+$2j, ggF Higgs production, \ZDYll, \Ztautau, Non-$WW$
-diboson, $W+$jets and QCD processes. This analysis uses
-background-specific methods for estimating the contribution of a
-background in the signal region. For top and \ZDY, the normalization
-and BDT templates are estimated with background-rich control regions,
-and the kinematic shapes come from MC. For the backgrounds that arise
-from fake leptons, $W+$jets and QCD, the estimate is fully
-data-driven. And for the remaining backgrounds, the estimates rely
-purely on MC. Tables~\ref{chap:analysis:tab:back_summary_df}
-and~\ref{chap:analysis:tab:back_summary_sf} summarize the background
-estimation techniques that will be described in detail in the
-following sections. 
-
-\begin{figure}[h]
-    \centering
-    \subfigure[\emme channel]{
-    \includegraphics[width=0.45\textwidth]{analysis/emme_CutMETVBF_2_m_jet_n_mh125_log.eps}
-    \label{chap:analysis:fig:n_jet_emme}
-    }
-    \subfigure[\eemm channel]{
-    \includegraphics[width=0.45\textwidth]{analysis/eemm_CutMETVBF_2_m_jet_n_mh125_log.eps}
-    \label{chap:analysis:fig:n_jet_eemm}
-    }
-    \caption[\Njet distribution after \etmiss cuts]{\Njet distribution
-      after \etmiss cuts}
-\label{chap:analysis:fig:n_jet}
-\end{figure}
-
-\begin{table}
-\centering
-\begin{tabular}{|l|c|c|}
-\hline
-Background & Relative size & Estimation \\
-\hline
-WW & $\sim26\%$ & MC only \\
-$t\bar{t}$ & $\sim20\%$ & data+MC ($t\bar{t}$+ST CR) \\
-ggF Higgs & $\sim 15\%$ & MC only \\
-Z+jets (\Ztautau)& $\sim13\%$ & data+MC (Z CR) \\
-ZZ,WZ,W$\gamma$,W$\gamma^{*}$& $\sim11\%$ & MC only \\
-W+jets & $\sim5\%$ & data-driven \\
-QCD & $\sim5\%$ & data-driven \\
-single top & $\sim5\%$ & data+MC ($t\bar{t}$+ST CR) \\
-\hline
-\end{tabular}
-\caption{Background summary table for the \emme channel.}
-\label{chap:analysis:tab:back_summary_df}
-\end{table}
-
-\begin{table}
-\centering
-\begin{tabular}{|l|c|c|}
-\hline
-Background & Relative size & Estimation \\
-\hline
-Z+jets & $\sim48\%$ & data-driven (Z CR) \\
-$t\bar{t}$ & $\sim17\%$ & data+MC ($t\bar{t}$+ST CR) \\
-WW & $\sim15\%$ & MC only \\
-ggF Higgs & $\sim 8\%$ & MC only \\
-single top & $\sim5\%$ & data+MC ($t\bar{t}$+ST CR) \\
-W+jets & $\sim5\%$ & data-driven \\
-ZZ,WZ,W$\gamma$,W$\gamma^{*}$& $\sim2\%$ & MC only \\
-QCD & $\sim0\%$ & data-driven \\
-\hline
-\end{tabular}
-\caption{Background summary table for the \eemm channel.}
-\label{chap:analysis:tab:back_summary_sf}
-\end{table}
+%\input{tex/vbf_bdt_analysis/background_summary}
 
 \subsection{Top Quark Processes}
 
-\input{tex/vbf_bdt_analysis/top}
+%\input{tex/vbf_bdt_analysis/top}
 
-\subsection{SM $WW+$2j}
+\subsection{SM $WW+2\textrm{j}$}
+
+\input{tex/vbf_bdt_analysis/ww}
 
 \subsection{Gluon Fusion Higgs}
 

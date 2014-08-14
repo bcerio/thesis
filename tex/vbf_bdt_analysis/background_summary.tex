@@ -1,0 +1,63 @@
+
+Upon applying the commmon preselection and \etmiss cuts, the \Njet$\geq{2}$ bin is
+dominated by top background, shown in yellow in
+Figure~\ref{chap:analysis:fig:n_jet}, in both \emme and \eemm
+channels, accounting for 80\% of the
+total background. In addition to top, the other backgrounds to VBF
+include $WW+$2j, ggF Higgs production, \ZDYll, \Ztautau, Non-$WW$
+diboson, $W+$jets and QCD processes. This analysis uses
+background-specific methods for estimating the contribution of a
+background in the signal region. For top and \ZDY, the normalization
+and BDT templates are estimated with background-rich control regions,
+and the kinematic shapes come from MC. For the backgrounds that arise
+from fake leptons, $W+$jets and QCD, the estimate is fully
+data-driven. And for the remaining backgrounds, the estimates rely
+purely on MC. Table~\ref{chap:analysis:tab:back_summary} summarizes the background
+estimation techniques that will be described in detail in the
+following sections. 
+
+\begin{figure}[h]
+    \centering
+    \subfigure[\emme channel]{
+    \includegraphics[width=0.45\textwidth]{analysis/emme_CutMETVBF_2_m_jet_n_mh125_log.eps}
+    \label{chap:analysis:fig:n_jet_emme}
+    }
+    \subfigure[\eemm channel]{
+    \includegraphics[width=0.45\textwidth]{analysis/eemm_CutMETVBF_2_m_jet_n_mh125_log.eps}
+    \label{chap:analysis:fig:n_jet_eemm}
+    }
+    \caption[\Njet distribution after \etmiss cuts]{\Njet distribution
+      after \etmiss cuts}
+\label{chap:analysis:fig:n_jet}
+\end{figure}
+
+\begin{table}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\resizebox{0.8\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|}
+\hline
+Process & Rel. Size - \emme & Rel. Size \eemm & Estimation \\
+\hline
+\hline
+\ttbar~ & 31\% & 16\% & \POWHEG~+~\PYTHIA6 MC, CR \\
+$WW$ & 19\% & 9\% & \SHERPA,~\GGTOWW MC \\
+ggF Higgs & 10\%  & 4\% & \POWHEG~+~\PYTHIA8 MC \\
+single top & 6\% & 3\% & \POWHEG~+~\PYTHIA6 MC, CR \\
+\ZDYll & 0\% & 57\% & \ALPGEN~+~\HERWIG, ABCD method \\
+\Ztautau & 10\% & 4\% & \ALPGEN~+~\HERWIG, CR \\
+EW $Z$ & 2\% & 1\% & \SHERPA MC \\
+$W$+jets/QCD & 13\% & 2\% & data-driven \\
+$WZ$/$ZZ$ & & & \POWHEG~+~\PYTHIA,~\SHERPA MC \\
+$W$$\gamma$/$\gamma^*$ & & & \ALPGEN~+~\HERWIG, \SHERPA MC \\
+\hline
+\end{tabular}
+}
+\caption[Background summary.]{Backgrounds in the signal
+region. Relative size in each flavor channel, as well as the
+estimation method is shown.}
+\label{chap:analysis:tab:back_summary}
+\end{table}
+
+
+

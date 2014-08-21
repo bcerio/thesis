@@ -1,0 +1,195 @@
+
+The analysis is performed on $pp$ collision data recorded by the ATLAS
+detector, discussed in detail in section XX. Data are partitioned in
+time into runs and if the detector subsytems are functioning
+sufficiently well in for a given run (should I go into more detail?),
+the data for that run are included. This thesis focuses on
+20.3~fb$^{-1}$ of data collected in 2012 at \sqrts$=8$~\tev. For the
+final statistical results, a smaller dataset of
+4.5~fb$^{-1}$ at \sqrts$=7$~\tev is included. This analysis is briefly
+discussed in section XX. 
+
+Monte Carlo simulations are relied on for the prediction of signal and
+background observables. The hard scattering process, subsequent
+showering and hadronization of final state quarks and gluons, and the
+response of the detector are all simulated with MC programs. The
+absolute predictions are then obtained by scaling the MC distributions
+by the factor $\frac{\mathcal{L}\cdot{\sigma}}{N_{\mathrm{total}}}$,
+where $\mathcal{L}$ is the integrated luminosity, $\sigma$ is the best
+available cross section calculation for the process, and
+$N_{\mathrm{total}}$ is the total number of events generated, or in
+the case of weighted MC, the sum of
+weights. Table~\ref{chap:analysis:tab:mc_summary} summarizes the MC
+programs used for each signal and background process, as well as the
+cross section to which the prediction is scaled. Each cross section
+includes the relevant branching fraction for the $\ell\nu\ell\nu$
+final state integrated over all lepton combinations. 
+
+\begin{table}[h]
+  \centering
+%{\small
+\resizebox{0.8\textwidth}{!}{
+  \begin{tabular}{llrr}
+    \hline
+    Process & Generator & \hspace*{-3mm}$\sigma\cdot\mathrm{Br}$(8TeV)
+  (pb) \\%\hspace*{-3mm}$\sigma\cdot\mathrm{Br}$(7TeV) (pb)\\
+    \hline\hline
+    VBF $H\rightarrow WW$  & \POWHEG~+~\PYTHIAns8 & $36\cdot 10^{-3}$ \\%& $28\cdot 10^{-3}$ \\
+    ggF $H\rightarrow WW $  & \POWHEG~+~\PYTHIAns8 & 0.435\\% &  0.341 \\
+    $WH/ZH$ $H\rightarrow WW $ & \PYTHIAns8 (\PYTHIAns6) & $25\cdot 10^{-3}$ \\% & $21\cdot 10^{-3}$ \\
+    \hline
+    $\ttbar$ dileptonic & \POWHEG~+\PYTHIAns6 & 26.6 \\%& 18.6\\
+    % single top NB: sum s-ch, t-ch, Wt
+    $tW/tb$ leptonic      & \POWHEG~+~\PYTHIAns6 & 4.17\\% & 3.15
+    $tqb$ leptonic        & \textsc{AcerMC}~+~\PYTHIAns6 & 28.4\\% & 20.7\\         % checked
+    QCD $WW + 2$ jets & \SHERPA & 0.568\\% & - \\
+    EW $WW + 2$ jets & \SHERPA & 0.039\\% & 0.027\\
+    $gg\rightarrow WW$ & \GGTOWW~+~\HERWIG & 0.20\\% & 0.14\\
+    % W+jets NB: BR to single lepton flavour multiplied by 3 flavours
+    inclusive $W$ & \ALPGEN~+~\HERWIG & $37\cdot 10^{3}$\\% & $31\cdot 10^{3}$\\
+    % Z/gamma*+jets NB: BR to single lepton flavour multiplied by 3 flavours
+    inclusive $Z/\gamma^{\star} (m_{ll} \ge 10 GeV)$ & \ALPGEN~+~\HERWIG & $16.5\cdot 10^{3}$\\% & $14.9\cdot 10^{3}$\\
+    EW $Z/\gamma^{\star}$ & \SHERPA & 5.36 (inc. t-ch)\\% & 2.26\\
+    $W(Z/\gamma^{\ast}) $     & \POWHEG~+~\PYTHIAns8 & 12.7\\% & 10.8\\
+    $W(Z/\gamma^{\ast}) (m_{(Z/\gamma^{\ast})} < 7~\GeV)\ $ & \SHERPA & 12.2\\% & 10.6 \\ % checked
+    $Z^{(\ast)}Z^{(\ast)} \to 4l(2l2\nu)$ & \POWHEG~+~\PYTHIAns8 & 0.73(0.50)\\% & 0.64(0.42)\\
+    EW $WZ + 2$ jets  & \SHERPA & $13\cdot 10^{-3}$\\% & $8.5\cdot 10^{-3}$\\
+    EW $ZZ + 2$ jets $(4l,ll\nu\nu)$ & \SHERPA & $73\cdot 10^{-5}(12\cdot 10^{-4})$\\% & $53\cdot 10^{-5}(8.8 \cdot 10^{-4})$\\
+    $W\gamma$ & \ALPGEN~+~\HERWIG & 369\\% & 313\\
+    $Z\gamma$($p_{T}^{\gamma} > 7GeV$) & \SHERPA & 163\\% & - \\
+    \hline
+  \end{tabular}
+}
+\caption[MC sample summary.]{MC sample summary with corresponding
+cross sections.}
+  \label{chap:analysis:tab:mc_summary}
+\end{table}
+
+The signal process, VBF Higgs production in the \ww decay channel, is
+modeled with \POWHEG~\cite{bib:Nason:2009ai} interfaced to \PYTHIAns8~\cite{bib:Sjostrand:2007gs} for the parton
+shower. The cross
+section is computed at NLO in QCD and EW~\cite{Ciccolini:2007jr,Ciccolini:2007ec,Arnold:2008rz}, with approximate
+NNLO QCD corrections~\cite{Bolzoni:2010xr}. The branching fraction for
+the \ww decay for this VBF process and the other Higgs processes in
+this analysis is derived from the \hdecay
+program~\cite{Djouadi:1997yw}. The final $\sigma\cdot{\mathrm{Br}}$~is
+0.036~pb at $m_H = 125$~\gev. Because $VH$ Higgs production probes the
+same Higgs coupling as VBF, these processes are lumped into
+signal. The cross sections for $ZH/WH$ are calculated at NNLO in
+QCD~\cite{Han:1991ia,Brein:2003wg} with NLO EW radiative
+corrections~\cite{Ciccolini:2003jy}. At $m_H = 125$~\gev the resulting
+cross sections are $\sigma_{ZH} = 9.4$~fb and $\sigma_{ZH} = 15.9$~fb
+for the processes in which the $W$ bosons from the Higgs decay
+leptonically. 
+
+The ggF$+2$j process is also simulated with \POWHEG~\cite{bib:Alioli:2008tz} interfaced with
+\PYTHIAns8. The cross section is computed at NNLO in
+QCD~\cite{Djouadi:1991tka,Dawson:1990zj,Spira:1995rr,Harlander:2002wh,Anastasiou:2002yz,Ravindran:2003um},
+with NLO electroweak corrections~\cite{Aglietti:2004nj,Actis:2008ug}
+and soft gluon resummations up to
+next-to-next-to-leading-log (NNLL)~\cite{Catani:2003zt}. Due
+to known deficiencies in the Higgs $p_T$ spectrum in \POWHEG, the
+Higgs $p_{\mathrm{T}}$ is re-weighted to the NLO + NNLL prediction
+from \HqT~\cite{deFlorian:2011xf}. The $\sigma\cdot{\mathrm{Br}}$ is
+0.435~pb, a factor of 12 larger than VBF. 
+
+Top background is comprised mainly of \ttbar, with smaller
+contributions from $s$ and $t$ channel single top and $Wt$. The
+hard scatter for \ttbar~is simulated in \POWHEG~\cite{bib:Frixione:2003ei} at NLO in QCD,
+while \PYTHIAns6~\cite{bib:Sjostrand:2006za} is used for parton showering and
+hadronization. The LO PDF set CTEQ6L1 is used with \PERUGIA~2011 as
+the underlying event tune. For ST,
+$s$ channel and $Wt$ use \POWHEGns~\cite{bib:Alioli:2009je,bib:Re:2010bp}~+~\PYTHIAns6 as well, while
+\textsc{AcerMC}~\cite{bib:Kersevan:2004yg}~+~\PYTHIAns6 is used to model $t$-channel ST. The same
+PDF and UE tune is used for all top processes. The
+\ttbar~normalization is scaled to the cross section for $pp$
+collisions at \sqrts~$=8$~\tev~for a top quark mass of
+$172.5 \gev/c^2$, $\sigma_{t\bar{t}}=252.9^{+15.3}_{-16.3}$~pb. This
+value has been calculated at NNLO in QCD including a resummation of
+NNLL soft gluon
+terms~\cite{bib:Cacciari:2011hy,bib:Beneke:2011mq,bib:Baernreuther:2012ws,bib:Czakon:2012zr,bib:Czakon:2012pz,bib:Czakon:2013goa,bib:Czakon:2011xx}.
+The total cross section for \ttbar~has been measured in ATLAS to be
+$237.7\pm11.3$~pb in the leptonic decay channel with one
+electron and one muon in the final
+state~\cite{bib:ttbar_cross_section}, agreeing with the
+theory calculation within the QCD scale uncertainties. The $s$ channel
+ST, $t$ channel ST, and $Wt$ normalizations are also scaled to the
+NNLO and NNLL cross sections of
+$5.61\pm0.22$~pb~\cite{bib:Kidonakis:2010tc},
+$87.76^{+3.44}_{-1.91}$~pb~\cite{bib:Kidonakis:2011wy}, and
+$22.37\pm1.52$~pb~\cite{bib:Kidonakis:2010ux}, respectively. These
+computations are compatible with the respective measurements in
+ATLAS~\cite{bib:tchan_cross_section,bib:Wt_cross_section}.
+
+Standard model production of a pair of $W$ bosons is split into two
+classes, depending on how the final state quarks and gluons are
+produced. ``QCD \ww'' jets come from QCD vertices, while ``EW \ww''
+jets are produced via electroweak couplings. The QCD \ww prediction is from \SHERPA
+1.4.1~\cite{bib:Gleisberg:2008ta}, which is used to
+simulate the hard-scatter, parton shower, and hadronization for all
+$q\bar{q}/qg/\bar{q}g\rightarrow{WW}$ diagrams. Events are generated
+at LO in QCD with up to three jets at matrix element level, and the
+$W$ bosons are forced to decay leptonically. The overall normalization is
+scaled to the total \ww cross section at \sqrts$=8$~\tev, as computed
+in \MCFM~\cite{bib:Campbell:2011bn}: $\sigma_{tot}(\wwlnln) = 5.679$~pb. Given that the branching
+fraction of $W\rightarrow{\ell\nu}$ is 0.1082 and there are nine
+lepton combinations, the corresponding total cross section is
+$\sigma_{tot}(\ww) = 53.90$~pb. The total \ww cross section has been
+measured in ATLAS in the \ww leptonic decay channels and the exclusive
+zero jet bin~\cite{bib:ww_cross_section}. The result, which includes
+resonant \ww production from $H$, is
+$\sigma_{tot}(WW) = 71.4^{+1.2}_{-1.2} \textrm{(stat)} ^{+5.0}_{-4.4}
+\textrm{(syst)}^{+2.2}_{-2.1}\textrm{(lumi)}$~pb, significantly larger
+than the \MCFM computation which includes $H$, $\sigma_{MCFM}(WW) =
+58.7^{+3.0}_{-2.7}$~pb. However, the ATLAS measurement is done in a
+phase space region that is orthogonal to this analysis, and in fact,
+the \MCFM calculation does not include diagrams with two partons in the final
+state. The normalization in the 2j bin relies on the LO jet
+multiplicity prediction from \SHERPA. For the production of
+$gg\rightarrow{WW}$ through a quark loop, the NLO generator \GGTOWW~\cite{bib:Binoth:2006mf} is
+used with the parton showering program
+\HERWIG~\cite{bib:Corcella:2000bw}, though this contribution is
+insignificant compared to the other $WW$ processes. 
+
+The EW \ww processes are also simulated with \SHERPA with exactly two
+jets in the hard scatter. The LO cross section for EW \ww with the
+$W$s decaying to leptons, computed in \SHERPA, is $\sigma(\wwlnln) =
+39.68$~fb. Events with Higgs couplings are not simulated; instead, the
+interference between Higgs and \ww processes is assessed as a
+uncertainty on the cross section. 
+
+Like $WW$, SM \zjets processes, also referred to as Drell Yan or
+$Z/\gamma^\ast$, are split into QCD and EW categories
+depending on the nature of the jets. QCD \zjets is simulated with the
+LO event generator \ALPGEN~\cite{bib:Mangano:2002ea} interfaced to
+\HERWIG. To enhance statistics, events are generated with a dilepton
+filter, requiring \mll$>10$~\gev, and a filter to select events with jets that are VBF-like (at
+least two jets with \pt$>15$~\gev, $|\eta| < 5.0$, \mjj$>200$~\gev,
+and \dyjj$>2.0$). To enhance statistics for events with a high \pt
+photon (\pt$>7$~\gev) in addition to the $Z$ boson, a dedicated
+\SHERPA sample is used, and the phase space overlap is removed at truth
+level. EW \zjets processes are modeled with \SHERPA, with a generator
+filter to select dilepton events with \mll$>7$~\gev. 
+
+Non-$WW$ diboson backgrounds are sub-dominant contributions in the VBF
+analysis. For $WZ/W\gamma^{\ast}$, events are generated in \POWHEG~\cite{bib:Melia:2011tj},
+which treats interference between $Z$ and $\gamma^{\ast}$ diagrams
+properly. Because \POWHEG can not produce events at low dilepton mass,
+the phase space in which $m_Z/\gamma^{\ast} < 7$~\gev is
+modeled with \SHERPA with up to one final state parton computed at the
+matrix element level. This prediction is then scaled to the NLO cross
+section computed in \MCFM. $ZZ$ processes are also modeled with
+\POWHEG. For the EW processes without QCD vertices at LO, \SHERPA is
+used for $WZ$, $W\gamma^{\ast}$, and $ZZ$. 
+
+(do I want to mention PDF sets and ME+PS shower matching?)
+
+The stable particles produced after the generation of the hard scatter
+and hadronization are then propagated through a full simulation of the
+ATLAS detector implemented in \GEANT. (Finish section after writing
+event recontruction section). 
+
+
+
+
+

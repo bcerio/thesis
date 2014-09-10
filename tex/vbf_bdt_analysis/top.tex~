@@ -1,38 +1,4 @@
 
-Top background is comprised mainly of \ttbar~(Figure), with $s$ and $t$
-channel single top and $Wt$ contributions as well (denoted ST). The parton
-level process for \ttbar~is simulated in
-\POWHEG at NLO in QCD, while \PYTHIAns 6 is used for parton showering and
-hadronization. The LO PDF set CTEQ6L1 is used with \PERUGIA 2011 as
-the underlying event tune. Past iterations of the VBF analysis in this
-decay channel used \MCATNLO to model
-\ttbar~\cite{bib:hww_moriond_2013}, but \POWHEGns +\PYTHIA models jet
-kinematic distributions better in the VBF phase space region. However, leptons generated in
-\MCATNLO model the data better than \POWHEG. To account for these
-modelling differences, theoretical uncertainties are assigned to the
-predicted \ttbar~yield in the signal region. For ST,
-$s$ channel and $Wt$ use \POWHEGns +\PYTHIAns 6 as well, while
-\textsc{AcerMC}+\PYTHIAns 6 is used to model $t$-channel ST. The same PDF
-and UE tune is used for all top processes. 
-
-The \ttbar~normalization is scaled to the cross section for $pp$
-collisions at \sqrts~$=8$~\tev~for a top quark mass of
-$172.5 \gev/c^2$, $\sigma_{t\bar{t}}=252.9^{+15.3}_{-16.3}$~pb. This value has been
-calculated at NNLO in QCD including a resummation of
-next-to-next-to-leading logarithmic (NNLL) soft gluon
-terms~\cite{bib:Cacciari:2011hy,bib:Beneke:2011mq,bib:Baernreuther:2012ws,bib:Czakon:2012zr,bib:Czakon:2012pz,bib:Czakon:2013goa,bib:Czakon:2011xx}.
-The total cross section for \ttbar~has been measured in ATLAS to be
-$237.7\pm11.3$~pb in the leptonic decay channel with one
-electron and one muon in the final
-state~\cite{bib:ttbar_cross_section}, agreeing with the
-theory calculation within the QCD scale uncertainties. The $s$ channel
-ST, $t$ channel ST, and $Wt$ normalizations are also scaled to the
-NNLO and NNLL cross sections of $5.61\pm0.22$~pb~\cite{bib:Kidonakis:2010tc},
-$87.76^{+3.44}_{-1.91}$~pb~\cite{bib:Kidonakis:2011wy}, and
-$22.37\pm1.52$~pb~\cite{bib:Kidonakis:2010ux}, respectively. These
-computations are compatible with the respective measurements in
-ATLAS~\cite{bib:tchan_cross_section,bib:Wt_cross_section}. 
-
 In spite of the high level of agreement observed between theory
 calculations and ATLAS top measurements, the top normalization is
 constrained using a top-rich control region (CR). The cross section
@@ -136,7 +102,7 @@ by the uncertainties on the top background.
    \includegraphics[width=0.4\textwidth]{fig/analysis/top_cr_validation/emme_CutTopControl_2jetinclZttVeto_contOLV_mh125_lin.eps}
   % \includegraphics[width=0.32\textwidth]{fig/analysis/top_cr_validation/emme_CutTopControl_2jetinclZttVeto_BDT_8var_mh125_lin.eps}
    \caption{Distributions
-   of \dphill, \mll, \dyjj, \mjj, \pTtot, \mT, \SumMlj, and \lepEtaCen
+   of \dphill, \mll, \dyjj, \mjj, \pTtot, \mT, \SumMlj, and \lepEtaCent
    in the \emme top CR after the $Z\rightarrow{\tau\tau}$ veto.}
   \label{chap:analysis:fig:bdt_inputs_topcr_df}
 \end{figure}
@@ -153,7 +119,7 @@ by the uncertainties on the top background.
    \includegraphics[width=0.4\textwidth]{fig/analysis/top_cr_validation/eemm_CutTopControl_2jetinclZttVeto_contOLV_mh125_lin.eps}
    %\includegraphics[width=0.48\textwidth]{fig/analysis/top_cr_validation/eemm_CutTopControl_2jetinclZttVeto_BDT_8var_mh125_lin.eps}
    \caption{Distributions
-   of \dphill, \mll, \dyjj, \mjj, \pTtot, \mT, \SumMlj, and \lepEtaCen
+   of \dphill, \mll, \dyjj, \mjj, \pTtot, \mT, \SumMlj, and \lepEtaCent
    in the \eemm top CR after the $Z\rightarrow{\tau\tau}$ veto.}
   \label{chap:analysis:fig:bdt_inputs_topcr_sf}
 \end{figure}
@@ -220,9 +186,13 @@ The largest theoretical uncertainty on top is the matrix element
 modeling uncertainty. The difference in the predicted $\alpha$ value
 is computed for three generators: \MCATNLO, \POWHEG, and \ALPGEN. The
 same PS program, \HERWIG, is used in each case. The largest difference,
-observed between \MCATNLO and \ALPGEN is assigned as the uncertainty,
-shown in Figure~\ref{chap:analysis:fig:alpha_ratio}. The uncertainties
-for the three BDT fit bins are 10\%, 12\%, and 21\%. 
+observed between \MCATNLO and \ALPGEN, is assigned as the
+uncertainty. Figure~\ref{chap:analysis:fig:alpha_ratio} displays the
+ratio $\alpha_{\MCATNLO}/\alpha{\ALPGEN}$ binned in BDT. The deviation
+of this ratio from unity is taken as the uncertainty-- 10\%, 12\%, and
+21\%, respectively. 
+
+Q: do I want to discuss \MCATNLO as an outlier?
 
 \begin{figure}[h]
   \centering

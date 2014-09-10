@@ -1,0 +1,230 @@
+
+The BDT algorithm, described in section XX, is well-suited for the
+classification of VBF signal and its associated backgrounds, as the
+final state includes many correlated physics objects. The BDT training
+algorithm builds a model $F(\vect{x})$ that maps the input variables
+\vect{x} to a number $y$ in the range [-1,1], with -1 corresponding to
+events that are background-like and 1 corresponding to those that are
+signal-like. Geometrically, exploiting differing correlations among
+BDT inputs in the signal and background, the BDT defines a signal-rich hypercube in
+phase space, with events that fall in the regions that are most pure
+in signal being assigned a $y$ value close to 1 and events falling on the
+periphery being de-weighted to lower values of $y$. In the following,
+the BDT response $y$ will be referred to as BDT or BDT score.
+
+\subsection{Higgs Decay}
+
+There are eight BDT
+inputs: \dphill, \mll, \mT, \mjj, \dyjj, \pTtot, \lepEtaCent,
+and \SumMlj. These can be categorized into those that are
+sensitive to the decay of the Higgs into two $W$ bosons and those that
+pick out the products of Higgs production via VBF. The
+quantity \dphill is an example of the former. As discussed in
+section XX, the final state leptons in the decay chain \hwwlnln fall close in
+azimuthal angle due to the spin of the SM Higgs boson and the V-A
+structure of the weak force. \dphill, which is the
+absolute value of the difference in $\phi$ between the two leptons,
+shown at the pre-selection stage in figure~\ref{chap:analysis:fig:bdt_inputs_mconly_df}, is peaked near zero
+for signal. This distribution is relatively flat for the dominant
+backgrounds top and $WW$. Another variable that picks out the Higgs
+decay topology is \mll. Because \mll~$\simeq|p_1||p_2|(1-\cos(\dphill))$
+and signal peaks at $\dphill \sim 0$, the signal lies at low
+values of \mll, while top, continuum $WW$ and \ZDY fall at higher
+values. 
+
+\begin{figure}[hb!]
+  \centering
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/emme_CutZttVeto_2jetincl_DPhill_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/emme_CutZttVeto_2jetincl_Mll_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/emme_CutZttVeto_2jetincl_DYjj_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/emme_CutZttVeto_2jetincl_Mjj_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/emme_CutZttVeto_2jetincl_Pttot_tr_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/emme_CutZttVeto_2jetincl_MT_tr_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/emme_CutZttVeto_2jetincl_SumOFMvaMLepxJety_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/emme_CutZttVeto_2jetincl_contOLV_mh125_lin.eps}
+   \caption{Distributions
+   of \dphill, \mll, \dyjj, \mjj, \pTtot, \mT, \SumMlj, and \lepEtaCent
+   in the \emme channel after pre-selection. Signal is scaled by a
+   factor of 50.}
+  \label{chap:analysis:fig:bdt_inputs_mconly_df}
+\end{figure}
+
+\begin{figure}[hb!]
+  \centering
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/eemm_CutZttVeto_2jetincl_DPhill_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/eemm_CutZttVeto_2jetincl_Mll_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/eemm_CutZttVeto_2jetincl_DYjj_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/eemm_CutZttVeto_2jetincl_Mjj_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/eemm_CutZttVeto_2jetincl_Pttot_tr_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/eemm_CutZttVeto_2jetincl_MT_tr_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/eemm_CutZttVeto_2jetincl_SumOFMvaMLepxJety_mh125_lin.eps}
+   \includegraphics[width=0.4\textwidth]{fig/analysis/bdt_input_mconly/eemm_CutZttVeto_2jetincl_contOLV_mh125_lin.eps}
+   \caption{Distributions
+   of \dphill, \mll, \dyjj, \mjj, \pTtot, \mT, \SumMlj, and \lepEtaCent
+   in the \eemm channel after pre-selection. Signal is scaled by a
+   factor of 50.}
+  \label{chap:analysis:fig:bdt_inputs_mconly_sf}
+\end{figure}
+
+The transverse mass (\mT)~\cite{bib:PhysRevD:43779,bib:Barr:2009mx} is
+designed to capture the mass of the Higgs and is therefore a powerful
+discriminant against non-resonant $WW$ background. With neutrinos in
+the final state, it is not possible to fully reconstruct the mass of
+the Higgs, $m_H = \sqrt{(p_{\ell 1} + p_{\ell 2} + p_{\nu 1} + p_{\nu
+2})^2}$, because the neutrino 4-vectors are not reconstructed. Instead,
+the invariant mass in the transverse direction is used. This quantity
+can be expressed as the sum of two 4-vectors: $m_T^2 = (p_{\ell\ell} +
+p_{\nu\nu})^2$. Expanding the sum yields
+
+\begin{equation}
+\label{chap:analysis:equation:mT_1}
+m_T^2 = m_{\ell\ell}^2 + m_{\nu\nu}^2 +
+2(E_{T}^{\ell\ell}E_{T}^{\nu\nu}-\vect{p}_T^{\,\ell\ell}\cdot\vect{p}_T^{\,\nu\nu}).
+\end{equation}
+
+\noindent In the above equation, the transverse energy $E_{T}^{\nu\nu}$
+is equivalent to \etmiss. Setting $m_{\nu\nu}^2 = E_{T}^{\nu\nu\,2} -
+|\vect{p}_T^{\nu\nu}|^2$, the definition in
+equation~\ref{chap:analysis:equation:mT_1} can be re-expressed as
+
+\begin{equation}
+\begin{aligned}
+\label{chap:analysis:equation:mT_2}
+m_T^2 & = E_{T}^{\ell\ell\,2} - |\vect{p}_T^{\ell\ell}|^2 +
+E_{T}^{\nu\nu\,2} - |\vect{p}_T^{\nu\nu}|^2 +
+2E_{T}^{\ell\ell}E_{T}^{\nu\nu} -
+2\vect{p}_T^{\,\ell\ell}\cdot\vect{p}_T^{\,\nu\nu} \\
+& = (E_{T}^{\ell\ell} + \etmiss)^2 - (\vect{p}_T^{\,\ell\ell} +
+\vect{E}_{\mathrm{T}}^{\rm miss})^2
+\end{aligned}
+\end{equation}
+
+\noindent
+where $E_{T}^{\ell\ell}$ and $\vect{p}_T^{\,\ell\ell}$ are the transverse
+energy and transverse momentum of the dilepton system,
+and $\vect{E}_{\mathrm{T}}^{\rm miss}$ is the track \etmiss vector. As defined
+above, if $H$ is at rest, \mT is bounded from above by $m_H$. This
+edge in the distribution is smeared out because the Higgs boson is not
+always produced at rest. Morever, the slope of the edge is lessened due to
+detector resolution effects and the finite, although small, decay
+width of $H$. The shape of the distribution for signal and background
+is shown in figure~\ref{chap:analysis:fig:bdt_inputs_mconly_df}. Due to its discrimating power against
+continuum $WW$ and its dependence on $m_H$, the \mT distribution is
+used in the binned likelihood fit for the 0,1j bins and the cut-based VBF
+analysis, instead of applying a cut on this distribution. 
+
+\subsection{VBF Topology}
+
+The remaining five BDT inputs isolate the region of phase space associated with
+the VBF topology. The defining characteristic of VBF is two ``tag''
+jets with a large rapidity gap. The rapidity distance between the two
+leading jets, \dyjj, is therefore used as a BDT input. As shown in
+figure~\ref{chap:analysis:fig:bdt_inputs_mconly_df}, signal peaks at \dyjj~$\sim 4.5$, with
+the \ttbar~peaking at \dyjj~$\sim 2$. The dijet invariant mass, \mjj, is also
+a BDT input. This quantity is a function of \dyjj:
+
+\begin{equation}
+%\renewcommand{\arraystretch}{1.2}
+\begin{aligned}
+\label{chap:analysis:equation:mjj}
+\mjj^2 & = m_{j1}^2 + m_{j2}^2 + 2\left [E_{\,\mathrm{T}}^{\,j1}E_{\,\mathrm{T}}^{\,j2}\cosh{(\dyjj)}
+- \vect{p}_{\,\mathrm{T}}^{\,j1}\cdot\vect{p}_{\,\mathrm{T}}^{\,j1}\right ] \\
+& \simeq 2p_{\,\mathrm{T}}^{\,j1}p_{\,\mathrm{T}}^{\,j2}\left
+[\cosh{(\dyjj)}-\cos{(\Delta{\phi}_{jj})}\right ].
+\end{aligned}
+\end{equation}
+
+\noindent
+The second equality assumes that the mass of each jet is small with
+respect to the jet \pt. Given that \mjj grows as $\cosh{(\dyjj)}$, and
+signal lies at high \dyjj, VBF also lies at high \mjj. In spite of the
+high degree of correlation between \dyjj and \mjj, \mjj contributes
+discriminating power through the other terms in
+equation~\ref{chap:analysis:equation:mjj}, namely the coefficient
+$p_{\,\mathrm{T}}^{\,j1}p_{\,\mathrm{T}}^{\,j2}$ and the
+$\cos{(\Delta{\phi}_{jj})}$ term. Jets from \ttbar~tend to be
+back-to-back, while VBF jets are fairly uniformly distributed in
+$\phi$. Therefore, on average, at a fixed \mjj, \dyjj is smaller
+for \ttbar. Moreover, the BJV favors \ttbar~events with an ISR jet and
+a b-jet outside of the tracking volume, resulting in a softer
+jet \pt~spectrum for \ttbar. The coefficient is therefore smaller on
+average, shifting the \mjj distribution to lower values. 
+
+Another BDT input that enhances the VBF signal is \pTtot, the modulus
+of the vector sum of all of the physics objects in the event:
+
+\begin{equation}
+\begin{aligned}
+\label{chap:analysis:equation:pttot}
+\pTtot = |\vpT^{l1}{+}\vpT^{\rm l2}{+}\vmet{+}\sum\vpT^{\rm
+jets}|.
+\end{aligned}
+\end{equation}
+
+\noindent
+The sum over jets runs over all jets that pass the jet selection
+criteria described in section~\ref{}. Jet-corrected \etmiss
+defines \vmet, and because this version of \etmiss is merely the
+vector sum of all of the physics objects in the event with an
+additional soft track term, there is cancellation in the above
+expression, resulting in
+
+\begin{equation}
+\begin{aligned}
+\label{chap:analysis:equation:pttot_2}
+\pTtot = |\vect{E}_{\mathrm{T,soft}}^{\mathrm{miss,trk}}|.
+\end{aligned}
+\end{equation}
+
+\noindent
+This quantity is the modulus of the vector sum of soft tracks
+falling outside of selected jets, which probes the amount of soft QCD
+radiation in a given event. Backgrounds with QCD jets have more soft
+gluon radiation and lie at larger values of \pTtot with respect to VBF
+events which have relatively little QCD activity. 
+
+Lepton eta centrality (\lepEtaCent) is an extension of the OLV
+discussed in section~\ref{subsec:vbf_select}. It is a measure of the
+centrality of the leptons with respect to the two tag jets, and is
+defined by the following equations:
+
+\begin{eqnarray}
+&& \eta_{l0} \, \textrm{cent.} = 2 \cdot
+|\frac{\eta_{l_0}-\bar{\eta}}{\eta_{j_0}-\eta_{j_1}}|  \nonumber\\
+&& \eta_{l1} \, \textrm{cent.} = 2 \cdot
+|\frac{\eta_{l_1}-\bar{\eta}}{\eta_{j_0}-\eta_{j_1}}|  \nonumber\\
+&&\nonumber \\
+&& \eta_{\mathrm{lep}} \, \textrm{centrality}
+= \eta_{l0} \, \textrm{cent.} + \eta_{l1} \, \textrm{cent.}.
+\label{eqn:contOLV_def}
+\end{eqnarray}
+
+\noindent
+where $\bar{\eta} = (\eta_{j_0}+\eta_{j_1})/2$. As defined above, for
+a given lepton, the quantity $\eta_{l} \, \textrm{cent.}$ is zero if
+the the lepton falls directly in between the tag jets, is less than
+one if the lepton falls at some $\eta$ value between the tag jets, and is greater than one if
+it falls outside of the tag jets. The OLV, which requires that one
+lepton falls outside of the pseudorapidity gap, is equivalent to
+applying the cuts $\eta_{l0} \, \textrm{cent.} < 1$ and 
+$\eta_{l1} \, \textrm{cent.} < 1$. After pre-selection, \lepEtaCent is therefore constrained to the range [0,2]. Because
+leptons in top processes fall closer to the $b$-jets, the top background
+events that do survive the OLV have leptons with $\eta_{l} \, \textrm{cent.}$ closer to
+one. The more central VBF leptons fall closer to $\bar{\eta}$
+and \lepEtaCent is smaller, as illustrated in figure~\ref{chap:analysis:fig:bdt_inputs_mconly_df}.
+
+The final BDT input is the sum of the lepton-jet invariant masses for
+all lepton-jet pairs, denoted \SumMlj. The sum runs over the two tag (leading)
+jets, and not the other selected jets. Like \lepEtaCent, this
+observable is designed to exploit the fact that VBF jets fall at high
+pseudorapidity, while the Higgs decay leptons are central. This large
+opening angle between the leptons and jets results in large $M_{\ell
+j}$ terms compared to background. 
+
+The BDT input distributions are shown for signal and background for
+the \emme (\eemm) channel in figure~\ref{chap:analysis:fig:bdt_inputs_mconly_df} (\ref{chap:analysis:fig:bdt_inputs_mconly_sf}). 
+
+\subsection{Input Performance}
+
+
+

@@ -1,0 +1,186 @@
+
+In the \eemm channel, the dominant background, \ZDY, is significantly
+suppressed by requiring the events to fall at high values of
+\etmiss. Processes which produce a $Z/\gamma^{*}$ in association with
+jets do not have ``real'' \etmiss from invisible final state
+particles. Instead, \etmiss arises due to the mismeasurement of
+leptons or jets in the final state, as well as soft QCD activity from the underlying
+event or pile-up. Such instrumental effects are difficult to model in
+MC simulation, motivating the use of data-driven approaches. 
+
+To correct for mismodeling of calorimeter-based \etmiss in \ZDY MC, the
+efficiency of the \calomet$>45$~\gev~cut is taken from data. After
+applying the common preselection cuts and the track \etmiss cut, the
+\mll-\etmiss plane is partitioned into four orthogonal regions, labeled A, B, C,
+and D (table~\ref{chap:analysis:tab:bdt_abcd_cartoon}). Regions C and D fall in the $Z$ peak ($|\mll -
+m_Z| < 15$~\gev), with region C at high \etmiss ($>45$~\gev) and
+region D at low \etmiss ($25 < $~\gev~$\etmiss$~$ <
+45$~\gev). Similarly, regions A and B fall at high and low \etmiss,
+respectively, but at low \mll (\mll$< 75$~\gev). In this way, region A
+corresponds to the \eemm SR. Region B is rich in \ZDY, with
+\textapprox{5$\%$} contamination from other backgrounds. Consequently,
+data from this control region is used to obtain the \ZDY template in
+region A. To extrapolate from region B to region A, the number of
+events is scaled by the \etmiss efficiency from regions C and D. The
+estimate in region A can be written,
+
+\begin{equation}
+\label{chap:analysis:equation:dy_est1}
+N_{\mathrm{DY},i}^A = \frac{N_{\mathrm{DY},\mathrm{data}}^{C}}{N_{\mathrm{DY},\mathrm{data}}^{D}}\dot{N_{\mathrm{DY},\mathrm{data},i}^{B}}
+\end{equation}
+
+\noindent
+where $N_{\mathrm{DY},\mathrm{data}}$ is the number of data events in the control
+region with the non-$\mathrm{DY}$ component, predicted by MC,
+subtracted. The index $i$ labels the BDT bin. The \etmiss efficiency
+is not binned in BDT-- i.e. the same ratio is applied for each bin. As
+for the top estimate, due to limited statistics in the high BDT bins,
+the control regions for these bins are merged. Therefore, the relative
+rates in these two bins are taken from the MC prediction. 
+
+\begin{table}
+\centering
+%\vspace{0.5cm}
+{\footnotesize
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        & \\
+        \textbf{Region A (SR)}                          &
+        \textbf{Region C }                           \\
+        & \\
+        $\calomet > 45 \GeV$                            & $\calomet >
+        45 \GeV$                          \\
+        $\mll < 75 \GeV$                                & $|\mll -
+        m_Z| < 15 \GeV$              \\
+        & \\
+        \hline
+        & \\
+        \textbf{Region B}             & \textbf{Region D} \\
+        & \\
+        $25 \GeV < \calomet < 45 \GeV$          & $25 \GeV < \calomet
+        < 45 \GeV$                        \\
+        $\mll < 75 \GeV$                                & $|\mll -
+        m_Z| < 15 \GeV$                      \\
+        & \\
+        \hline
+    \end{tabular} }
+\caption[Summary of the regions used for the data-driven \ZDY~estimate.]{Summary of the regions used for the data-driven
+  \ZDY~estimate (ABCD method).}
+\label{chap:analysis:tab:bdt_abcd_cartoon}
+\end{table}
+
+This so called ``ABCD method'' is predicated on two assumptions. The
+first is that the BDT response is not correlated to calorimeter
+\etmiss, allowing the BDT shape template to be taken from the low
+\etmiss CR. The second implicit assumption is that the calorimeter
+\etmiss cut efficiency is not correlated with \mll. This assumption
+is needed to apply the low to high \etmiss extrapolation factor from
+the $Z$ peak in the low \mll region. The validity of these two
+assumptions is empirically tested in MC, and any breakdown is
+accounted for in the assignment of systematics uncertainties. 
+
+The absence of a correlation between the BDT response and calorimeter \etmiss
+is due to the fact that jet-corrected \trkmet is used in the only two
+BDT inputs that depend on \etmiss, \mT and \pTtot. The linear
+correlation coefficients between the BDT inputs and both calorimeter
+and track \etmiss are shown
+in~\ref{chap:analysis:tab:bdt_met_corr}. With the exception of \mT,
+the correlation between calorimeter \etmiss and the BDT inputs is less
+than 0.1. To account for any correlation, the difference in the shape
+of the BDT template in regions A and B is taken as an
+uncertainty. This difference is computed in A{\sc lpgen}+H{\sc
+  erwig} and A{\sc lpgen}+P{\sc ythia}, and the largest uncertainty
+between the two MC generators is assigned. The template comparisons
+are shown in figure~\ref{chap:analysis:fig:bdt_met_corr}, with
+uncertainties corresponding to 4\%, 10\%, and 60\% in bins of BDT. 
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.2}
+%{\small
+%\resizebox{0.8\textwidth}{!}
+{
+\begin{tabular}{| l | c | c |}
+\hline
+BDT input & \calomet & \trkmet \\
+\hline
+\mT & 0.14 & 0.31 \\
+\pTtot & 0.00 & 0.07 \\
+\mjj & 0.08 & 0.11 \\
+\SumMlj & 0.08 & 0.10 \\
+\dphill & -0.04 & 0.02 \\
+\mll & 0.03 & 0.04 \\
+\lepEtaCent & 0.02 & 0.00 \\
+\dyjj & -0.02 & 0.05 \\
+\hline
+\end{tabular}
+}
+\caption[Linear correlation coefficients between BDT inputs and
+  \etmiss quantities for \ZDY.]{Linear correlation coefficients between BDT
+  inputs and \etmiss quantities for \ZDY.}
+\label{chap:analysis:tab:bdt_met_corr}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig/analysis/bdt_met_corr_herwig.eps}
+  \includegraphics[width=0.5\textwidth]{fig/analysis/bdt_met_corr_pythia.eps}
+   \caption[]{Comparison of BDT template for \ZDY in
+     $25 \gev < \etmiss< 45 \gev$~region (blue) and $\etmiss >
+     45 \gev$~region (red). The nominal \ZDY sample A{\sc lpgen}+H{\sc
+       erwig} is shown on the left and A{\sc lpgen}+P{\sc ythia} is on
+     the right.}
+  \label{chap:analysis:fig:bdt_met_corr}
+\end{figure}
+
+The second assumption, that the calorimeter \etmiss efficiency is not
+correlated to \mll, is true for the leading order $Z$+$2j$
+processes. However, for higher order processes with ISR, the
+lepton-jet system recoils against the QCD radiation, thereby
+increasing \mll. The soft hadronic activity associated with ISR is
+more susceptible to mismeasurement, translating to a larger calorimeter
+\etmiss resolution. With larger \etmiss tails and higher \mll in ISR
+events, a correlation between these two quantities is
+induced. Therefore, the efficiency of the \calomet$>45$~\gev~cut in the $Z$ peak is expected
+to be greater than that in the \mll$<75$~\gev~ region. The degree to
+which the efficiencies disagree is referred to as the non-closure of
+the method, and is quantified by
+
+\begin{equation}
+f_{\textrm{non-closure}} = \frac{N_A/N_B}{N_C/N_D}
+\label{chap:analysis:equation:abcd_nonclosure}
+\end{equation}
+
+\noindent
+where the event yields are taken from \ZDY MC. The \ZDY estimate in
+the SR, given by equation~\ref{chap:analysis:equation:dy_est1}, is
+scaled by this factor $f_{\textrm{non-closure}}$ to account for the
+\etmiss efficiency difference. Moreover, the difference between
+$f_{\textrm{non-closure}}$ and unity (17\%) is assigned as an
+uncertainty. (discuss study of non-closure in data?). The \etmiss
+efficiency in the $Z$ peak ($N_C/N_D$), as measured in data, is $0.43
+\pm 0.03$, which is constitent with the value from \ZDY MC of $0.47
+\pm 0.04$. The statistical uncertainty on this efficiency is taken as
+an uncertainty.
+
+There is a final uncertainty due to the fact that the relative yields
+in the last two bins are taken from MC. Three sources of uncertainty
+on the relative yields have been considered: (1) QCD scale, (2) parton
+shower, (3) PDF. Of these three sources, evaluated with \SHERPA, the
+largest is QCD scale, corresponding to an uncertainty of 11\% in the
+last BDT bin. The other two sources are neglected.
+
+The $Z$ boson processes in which the $Z$ decays to $\tau\tau$
+contribute in both the \emme and \eemm channels. The normalization of
+this background is taken from a control region that includes all of
+the preselection cuts with the exception of the
+$Z\rightarrow{\tau\tau}$ veto. Instead, $Z\rightarrow{\tau\tau}$ is
+enhanced by requiring that $|\mtt - m_Z| < 25 \gev$. Additionally, the
+cut $\mll < 80 \gev$~is applied to \emme events, and to pick out a
+more signal-like phase space region, $\textrm{BDT} > -0.48$ is
+required. In order to increase the statistics in this region, thereby
+decreasing the statistical uncertainty on the NF, the \emme and \eemm
+channels are merged for a common NF. The resulting NF is $0.9 \pm
+0.3$. The same normalization is applied across the BDT spectrum due to
+limited $Z\rightarrow{\tau\tau}$ statistics at high BDT. 

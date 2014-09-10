@@ -1,0 +1,112 @@
+
+Interesting scattering processes nearly always include charged
+particles in the final state. The two tracking systematics in ATLAS, the ID and the muon
+system, are designed to measure the trajectories of these charged
+particles, from which momentum 4-vectors are derived. A track is fully
+specified by five parameters $\vect{\alpha} = ()$. In the following section,
+the algorithms for fitting these parameters from detector hits will be
+described. 
+
+\subsection{Inside-out Tracks}
+
+The primary tracking algorithm in ATLAS builds tracks starting with
+hits in the pixel detectors, and progressively adding hits at larger
+$r$ values. This is known as the inside-out track reconstruction
+paradigm~\cite{bib:Cornelissen:2007vba}. Starting with hits from the pixel and SCT detectors,
+collectively known as the silicon detectors, clusters of contiguous
+hits are identified and associated with a coordinate in space. The
+track-finding algorithm is seeded by a group of three clusters in
+different layers that is consistent with a track. This seed defines a
+``road'' along which the track candidate is built. The track
+trajectory is propagated through the detector in a Kalman filter based
+approach~\cite{bib:Fruhwirth:1987fm}. At the $k^{\textrm{th}}$ detector layer, the hit
+that is most consistent with the track parameters from the previous
+layer is assigned to the track. The track parameter vector is then
+updated with the new hit included, yielding $\vect{\alpha}_k$. The propagation to the subsequent
+layer is then given by
+
+\begin{equation}
+\vect{\alpha}_{k+1} = M_k\vect{\alpha}_{k} + \vect{\epsilon}_{k}
+\end{equation}
+
+\noindent
+where $M_k$ is the linear map representing the magnetic field between the
+two detector layers, and $\epsilon_{k}$ is a stochastic term that
+accounts for multiple scattering of the charged particle. The
+procedure is then repeated at layer $k+1$. The above approach for
+fitting the track parameter vector is equivalent to a global minimum
+least-squares fit. 
+
+After all of the seeds have been evaluated by the Kalman-filter
+algorithm, ambiguities are removed from the resulting track candidate
+collection. These ambiguities include track candidates that share one
+or more hits, are incomplete, or include hits that arise from more
+than one charged particle. In order to resolve these ambiguities, the
+tracks are first refitted using a detector geometry with a more
+realistic description of the detector material. Each track is then
+assigned a score that quantifies the quality of the track. Tracks with
+more hits receive higher scores, and these scores are weighted
+according to the precision of the detector subsystem in which the hit
+reside. Given the high intrinsic efficiencies of the silicon
+detectors, if a hit is absent along a track trajectory, the track
+score is penalized. After track scoring, hits that are shared by more
+than one track are assigned to the track with higher score. The
+remaining track is then refitted and re-scored. Tracks that fail to
+pass a score threshold are discarded.
+
+The silicon only track candidates that pass the quality threshold are
+the seeds for the extension of the track into the TRT. In
+the first pass, the silicon hits that define the track seed for the
+TRT extension are not changed. Again, the Kalman filter approach is
+used to map the track from one detector surface to another. Along the
+trajectory, TRT hits are added depending on the distance between the
+Kalman filter prediction and the actual hit location. With the TRT hits
+identified, the track is refitted with the hits from all
+subdetectors-- silicon and TRT. In this pass, the silicon hits are
+allowed to vary. The score of the refitted track is compared to that of
+the silicon only track, and if it is smaller, the silicon only track
+is retained, with the hits from the TRT as outliers, but still
+associated to the track. If the score of the refitted track is larger,
+this new track is retained. 
+
+\subsection{Outside-in Tracks}
+
+Because the inside-out algorithm is seeded by silicon clusters
+associated to a primary vertex, it fails to find tracks arising from
+secondary decays that occur late in the silicon system or in the
+TRT. These tracks include those associated with electrons
+from photon conversions and charged hadrons or leptons from hadron
+decays. To recover secondary tracks, an outside-in algorithm, starting
+in the TRT, is used in concert with the inside-out algorithm. 
+
+Since TRT hits do not have information about the global $z$
+coordinate in the barrel, it is not possible to use pattern-finding
+procedure based on three-dimensional space coordinates as is done in
+inside-out tracking. Instead, the TRT hits are projected to the
+$r-\phi$ plane in which they form straight lines. The hits are then Hough
+transformed~\cite{bib:Duda:1972uht} to the parameter
+space of a line, where the coordinate are the $y$-intercept, or the
+initial $\phi$ of the line, and the slope, or $1/p_{\textrm{track}}$,
+where $p_{\textrm{track}}$ is the momentum of the track. In this
+space, track candidates appear as maxima at their respective
+($\phi_0,1/p_{\textrm{track}}$) coordinates. This technique, which
+defines the hit $r-\phi$ coordinate to be the center of the straw,
+fails to incorporate information about the drift time. In a second
+step, the track candidates are refitted with a Kalman-filter-based
+algorithm that incorporates information about the drift time, thereby
+improving the accuracy of the fitted track parameters. 
+
+The final step of the outside-in track reconstruction algorithm is the
+extension of the TRT segments into the silicon tracker (need good
+reference for this). Scanning longitudinally in a small $r-\phi$ wedge
+defined by the TRT segment, the algorithm searches for at least two
+clusters of SCT hits in the three outmost layers of the
+SCT. Once found, the curvature defined by these two three-dimensional
+points and the first TRT hit in the TRT segment is computed, and if
+the result is unreasonable, the two clusters are disregarded. The SCT
+clusters that are retained seed the track-fitting algorithm,
+propagating the track to smaller $r$ and extracting the fitted track
+parameters. 
+
+\subsection{Vertex Reconstruction}
+

@@ -1,0 +1,124 @@
+
+The ATLAS calorimeter system, described in section~\ref{chap:lhc_atlas:sec:calorimeter}, is crucial
+for reconstructing electrons, photons, jets, and missing transverse
+energy. Just as tracks are reconstructed from hits in the ID,
+calorimeter cells are grouped into clusters that represent the
+transverse energy of incident particles. With the energy and direction
+information from the clusters, it is possible to reconstruct the
+4-momentum of a particle. Morever, cluster shapes are used to identify
+the particles in the collision. Two types of clustering algorithms are
+used in ATLAS: sliding window and topological clustering~\cite{bib:Lampl:2008zz}. The former
+is effective in the reconstruction of electrons, photons, and hadronic
+$\tau$ decays, while the latter is most performant for jets and
+missing transverse energy.
+
+\subsection{Sliding window clustering}
+\label{chap:reconstruction:sec:cluster:subsec:sliding_window}
+
+In sliding window clustering, calorimeter cells in a fixed rectangular
+$\eta-\phi$ window are summed, and clusters are built around windows
+for which \et~is maximized. The first step is to partition the
+calorimeter into an $\eta-\phi$ grid with each grid element having dimension
+$\Delta{\eta}\times \Delta{\phi} = 0.025 \times 0.025$. For each grid
+element, the enclosed cell energies are summed across the calorimeter layers,
+yielding a ``tower'', the object from which clusters are
+constructed. A window of area $\eta_{\textrm{window}} \times
+\phi_{\textrm{window}}$ is scanned across the grid of towers, and at
+each point, the transverse energy sum of all towers within the window
+is computed. If a local maximum above an energy threshold is found, the location associated with
+this point is computed as the weighted vector sum of the tower
+energies, and the resulting $(\eta,\phi)$ coordinate is used to seed the final step in which the
+clusters are built. If two of these seeds fall within two $\eta$ or
+two $\phi$ grid units of eachother, the seed with the lower \et~is
+discarded. 
+
+Calorimeter cells are assigned to a cluster if they are enclosed by the
+rectangle of size $\eta_{\textrm{cluster}} \times
+\phi_{\textrm{cluster}}$ centered at the seed defined in the previous
+step. The dimensions of the cluster rectangle as well as the seed
+location depend on the calorimeter layer. Furthermore,
+$\eta_{\textrm{cluster}}$ and $\phi_{\textrm{cluster}}$ vary depending on
+the predicted particle type. In the barrel region, the window size for electrons and
+converted photons is $3 \times 7$ in units of $\Delta{\eta}\times
+\Delta{\phi}$. Because electrons bend in the $\phi$ direction in the ID
+$B$-field and emit {\it Bremsstrahlung} photons, electron calorimeter
+showers tend to be elongated in the $\phi$ direction. Similarly,
+photons that convert to electron-positron pairs also have showers that
+are elongated in $\phi$, and therefore the window is set to $3 \times
+7$. Unconverted photons, on the other hand, tend to shower in a
+smaller $\phi$ region, and consequently the window dimension is $3
+\times 5$. 
+
+\subsection{Topological clustering}
+\label{chap:reconstruction:sec:cluster:subsec:topo}
+
+In contrast to sliding window clustering, the topological clustering
+algorithm iteratively adds neighboring cells to seed cells, resulting in variable
+size clusters. Seed cells are calorimeter cells with a signal-to-noise
+ratio that falls above a large threshold $t_{\textrm{seed}}$. Signal
+is defined as the energy deposited in the cell for the EM calorimeter,
+and as the absolute value of the energy in the hadronic
+calorimeter. There are two sources of noise: readout electronics and
+pileup. Noise from the electronics is computed based on the cell
+gain, while the expected noise to due pileup is estimated from the
+beam conditions, and the two components are added in quadrature. The
+noise in hadronic calorimeter cells in the outermost barrel layer as a
+function of the mean number of interactions per bunch crossing is
+shown in figure~\ref{chap:reconstruction:fig:tile_noise}. In these
+cells, the pileup noise increases fairly linearly with $\mu$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{fig/reconstruction/noise_D5D6_8TeV_25ns_newLVPS.eps}
+    \caption[]{Noise in hadronic calorimeter cells located in the
+    outermost layer in $0.9 < |\eta| < 1.3$ as a function of
+    $\mu$. Collision data at $\rts = 7 \tev$ with 25 ns bunch spacing
+    is shown in blue and red. Data points at $\mu > 20$ are from
+    simulation. The dashed line is the expected noise from
+    electronics.\cite{bib:Araque:1561207}}
+\label{chap:reconstruction:fig:tile_noise}
+\end{figure}
+
+Seed cells, called proto-clusters, are ranked according to $S/N$ and for
+each seed, if a neighboring cell passes another $S/N$ threshold,
+$t_{\textrm{neighbor}}$, the neighbor is added to the
+proto-cluster. In cases where the neighboring cell is adjacent to two
+nearby seeds, the two proto-clusters are merged. In the next
+iteration, the neighbors with $S/N > t_{\textrm{neighbor}}$ become the
+new seeds, and the procedure is repeated. Neighboring cells
+which pass a threshold $t_{\textrm{cell}}$, but fall below
+$t_{\textrm{neighbor}}$ are added to the protocluster, but do not
+become seeds in the subsequent iteration. These low $S/N$ cells are
+retained to better model the tails of the calorimeter shower. Cluster
+building continues until the list of seeds is exhausted. Because
+neighboring cells include those in adjacent calorimeter layers, the
+resulting topological clusters are three-dimensional objects which
+can span across the EM and hadronic calorimeters. 
+
+For events with low particle multiplicity, the clustering algorithm
+descibed above is sufficient. However, due to the high energy density
+of actual ATLAS events, the above algorithm creates clusters
+that span large regions of the calorimeter. To resolve individual
+particles, the clusters are split into sub-clusters, using local energy
+maxima within the clusters. If a cell has $E > 400$~\mev, this energy
+is greater than that of the neighboring cells, and four or more
+neighbors have $S/N$ above a threshold, the cell is added to a list of
+seeds. These seeds are then used to grow clusters with the same
+algorithm in the previous step, except that only the cells that fall
+within the parent cluster are added, no threshold is applied, and
+overlapping clusters are not merged, i.e. cells can be associated with
+two clusters, and the energy of the cell is shared between the two
+clusters. The resulting collection of clusters is combined with
+the parent clusters without local maxima to form the final list of
+topological clusters in the event. 
+
+There are two topological cluster typles in ATLAS, defined by
+the $S/N$ thresholds for cluster building. The ``electromagnetic 633''
+(``combined 420'') cluster type has $t_{\textrm{seed}}=6~(4)$,
+$t_{\textrm{neighbor}}=3~(2)$, and $t_{\textrm{seed}}=3~(0)$. Electromagnetic
+633 clusters only use cells from the EM calorimeter, while combined
+420 clusters can include cells from either calorimeter. With higher
+$S/N$ thresholds, the rate at which noise results in a cluster, is
+smaller for EM 633 clusters. Combined 420 clusters, on the other hand,
+have been optimized to find low energy deposits, with sufficient noise
+rejection power. 

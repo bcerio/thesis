@@ -3,12 +3,12 @@ In the \eemm channel, the dominant background, \ZDY, is significantly
 suppressed by requiring the events to fall at high values of
 \etmiss. Processes which produce a $Z/\gamma^{*}$ in association with
 jets do not have ``real'' \etmiss from invisible final state
-particles. Instead, \etmiss arises due to the mismeasurement of
+particles. Instead, \etmiss arises due to the mis-measurement of
 leptons or jets in the final state, as well as soft QCD activity from the underlying
 event or pile-up. Such instrumental effects are difficult to model in
 MC simulation, motivating the use of data-driven approaches. 
 
-To correct for mismodeling of calorimeter-based \etmiss in \ZDY MC, the
+To correct for mis-modeling of calorimeter-based \etmiss in \ZDY MC, the
 efficiency of the \calomet$>45$~\gev~cut is taken from data. After
 applying the common preselection cuts and the track \etmiss cut, the
 \mll-\etmiss plane is partitioned into four orthogonal regions, labeled A, B, C,
@@ -26,7 +26,7 @@ estimate in region A can be written,
 
 \begin{equation}
 \label{chap:analysis:equation:dy_est1}
-N_{\mathrm{DY},i}^A = \frac{N_{\mathrm{DY},\mathrm{data}}^{C}}{N_{\mathrm{DY},\mathrm{data}}^{D}}\dot{N_{\mathrm{DY},\mathrm{data},i}^{B}}
+N_{\mathrm{DY},i}^{A,est.} = \frac{N_{\mathrm{DY},\mathrm{data}}^{C}}{N_{\mathrm{DY},\mathrm{data}}^{D}}\dot{N_{\mathrm{DY},\mathrm{data},i}^{B}}
 \end{equation}
 
 \noindent
@@ -36,7 +36,10 @@ subtracted. The index $i$ labels the BDT bin. The \etmiss efficiency
 is not binned in BDT-- i.e. the same ratio is applied for each bin. As
 for the top estimate, due to limited statistics in the high BDT bins,
 the control regions for these bins are merged. Therefore, the relative
-rates in these two bins are taken from the MC prediction. 
+rates in these two bins are taken from the MC prediction. The
+resulting NFs, defined as
+$N_{\mathrm{DY},i}^{A,est.}/N_{\mathrm{DY,i}}^{A,MC}$, are $1.0 \pm
+0.2$ in the lowest BDT bin, and $0.9 \pm 0.3$ in the two highest bins.
 
 \begin{table}
 \centering
@@ -139,7 +142,7 @@ correlated to \mll, is true for the leading order $Z$+$2j$
 processes. However, for higher order processes with ISR, the
 lepton-jet system recoils against the QCD radiation, thereby
 increasing \mll. The soft hadronic activity associated with ISR is
-more susceptible to mismeasurement, translating to a larger calorimeter
+more susceptible to mis-measurement, translating to a larger calorimeter
 \etmiss resolution. With larger \etmiss tails and higher \mll in ISR
 events, a correlation between these two quantities is
 induced. Therefore, the efficiency of the \calomet$>45$~\gev~cut in the $Z$ peak is expected
@@ -160,16 +163,9 @@ scaled by this factor $f_{\textrm{non-closure}}$ to account for the
 $f_{\textrm{non-closure}}$ and unity (17\%) is assigned as an
 uncertainty. (discuss study of non-closure in data?). The \etmiss
 efficiency in the $Z$ peak ($N_C/N_D$), as measured in data, is $0.43
-\pm 0.03$, which is constitent with the value from \ZDY MC of $0.47
+\pm 0.03$, which is constituent with the value from \ZDY MC of $0.47
 \pm 0.04$. The statistical uncertainty on this efficiency is taken as
 an uncertainty.
-
-There is a final uncertainty due to the fact that the relative yields
-in the last two bins are taken from MC. Three sources of uncertainty
-on the relative yields have been considered: (1) QCD scale, (2) parton
-shower, (3) PDF. Of these three sources, evaluated with \SHERPA, the
-largest is QCD scale, corresponding to an uncertainty of 11\% in the
-last BDT bin. The other two sources are neglected.
 
 The $Z$ boson processes in which the $Z$ decays to $\tau\tau$
 contribute in both the \emme and \eemm channels. The normalization of
@@ -177,10 +173,10 @@ this background is taken from a control region that includes all of
 the preselection cuts with the exception of the
 $Z\rightarrow{\tau\tau}$ veto. Instead, $Z\rightarrow{\tau\tau}$ is
 enhanced by requiring that $|\mtt - m_Z| < 25 \gev$. Additionally, the
-cut $\mll < 80 \gev$~is applied to \emme events, and to pick out a
+cut $\mll < 80 \gev$~is applied to \eemm events, and to pick out a
 more signal-like phase space region, $\textrm{BDT} > -0.48$ is
 required. In order to increase the statistics in this region, thereby
 decreasing the statistical uncertainty on the NF, the \emme and \eemm
-channels are merged for a common NF. The resulting NF is $0.9 \pm
+channels are merged for a common NF. The resulting NF is $1.2 \pm
 0.3$. The same normalization is applied across the BDT spectrum due to
 limited $Z\rightarrow{\tau\tau}$ statistics at high BDT. 

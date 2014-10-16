@@ -1,0 +1,320 @@
+
+\subsection{Electrons}
+\label{chap:analysis:sec:objects:subsec:electrons}
+
+With two leptons in the final state, it is crucial to efficiently
+select leptons, while minimizing contamination from backgrounds with
+jets faking leptons. Such backgrounds are \wjets and multijet production
+via QCD. Because these backgrounds fall off quickly with increasing
+lepton \pt, lepton selections have been optimized in bins of \pt. For
+electron identification, the likelihood-based identification category
+\textsc{very tight}
+(section~\ref{chap:reco:section:electron:subsec:ident}), which has the
+highest background-rejecting power of all of the identification
+categories, is required at low electron \et~($\et < 25 \gev$). To
+recover efficiency at high \et, where the fake background
+contribution is smaller, the identification category is relaxed to
+cut-based {\it medium}. The standard {\it medium} definition is
+modified slightly to improve rejection against electrons from photon
+conversions. Electrons are required to have a hit in the pixel b-layer
+if one is expected given the track parameters, and the electron should
+not be flagged as a conversion candidate by the reconstruction
+software (need to find reference for conversion bit). 
+
+Further rejection of fake background is accomplished by requiring
+electrons to be isolated. Cuts are placed on the ratio of the sum of
+the \et~of topological clusters in a
+cone of radius $R$ around the electron to the electron \et,
+$E_{R=r}/\et$, where $r$ and the cut value have been optimized in bins
+of \et. To avoid including the energy from the electron itself, the
+energy in a window of dimension $\Delta \eta \times \Delta \phi =
+0.125 \times 0.175$ centered on the electron candidate is removed from
+the isolation energy sum. An additional correction to the isolation
+energy is applied on an event-by-event basis to account for
+calorimeter energy arising from pileup and the underlying
+event~\cite{bib:Cacciari:2007fd}.
+
+In addition to this calorimeter-based
+isolation cut, electrons are required to satisfy track-based isolation
+requirements in which
+the \pt~sum of the tracks in a cone of radius $R$ divided by the
+electron \et~is the discrimating variable. Track-based isolation is
+more robust against pileup, making it a more powerful discriminant
+against fakes. Finally, cuts are placed the transverse
+electron impact parameter significance ($d_0/\sigma (d_0) < 3$), as well as the
+longitudinal impact parameter ($z_0\sin(\theta) < 0.4$~mm), for
+rejection against fake electrons arising from pileup
+vertices. Table~\ref{chap:analysis:tab:electron_selection} summarizes
+the electron selection.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.1}
+\resizebox{0.9\textwidth}{!}{
+\begin{tabular}{c|c|c|c|c}
+\hline
+  \et &  & & & impact \\
+ (\gev) & electron ID  & calo.~isolation & track isolation &
+  parameters \\
+\hline
+10-15 & \multirow{3}{0.18\textwidth}{\centering \textsc{very tight} likelihood} &
+  $\et^{R=0.3}/\et<0.20$ & $p_T^{R=0.4}/\et<0.06$
+  & \multirow{5}{0.22\textwidth}{\centering $d_0/\sigma{(d_0)} < 3.0$,
+  $z_0 \sin{\theta}<0.4$~mm} \\
+   \cline{1-1}\cline{3-4}
+15-20 & & $\et^{R=0.3}/\et<0.24$ & $p_T^{R=0.3}/\et<0.08$ & \\
+   \cline{1-1}\cline{3-4}
+20-25 & & \multirow{3}{*}{$\et^{R=0.3}/\et<0.28$} &
+\multirow{3}{*}{$p_T^{R=0.3}/\et<0.10$} & \\
+   \cline{1-2}
+\multirow{2}{*}{$>25$} & {\it medium} &  & \\
+       & $+$~conversion &  & \\
+\hline
+\end{tabular}
+}
+\caption[Electron selection summary in \et~bins.]{Electron selection summary in
+  \et~bins.}
+\label{chap:analysis:tab:electron_selection}
+\end{table}
+
+To account for mismodeling of electron variables in simulation,
+scale factors (SF) are applied to each electron selected in the MC
+prediction
+(section~\ref{chap:reco:section:electron:subsec:ident}). These SFs
+correct the efficiency differences between data and simulation for the
+trigger, reconstruction, identification, isolation, and impact
+parameter requirements. All of these efficiencies are measured with an
+electron-rich $Z\rightarrow{ee}$ sample in data with the tag-and-probe
+technique described in chapter~\ref{chap:reco}. The total electron
+efficiency is shown in table~\ref{chap:analysis:tab:lepton_eff} in
+bins of \et~for a \hww sample at $m_H = 125 \gev$. Due to the use of \textsc{very tight} identification for
+$\et < 25 \gev$, the efficiency in the low \et~bins is relatively low,
+ranging from 40\% to 70\%. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|c|c}
+\hline
+$E_{T}$ & $\epsilon_{\textrm{electron}}$ & $\epsilon_{\textrm{muon}}$
+\\ \hline
+10-15 & $0.412 \pm 0.016 \pm 0.016$ & $0.574 \pm 0.027 \pm 0.005$ \\
+15-20 & $0.619 \pm 0.009 \pm 0.024$ & $0.808 \pm 0.012 \pm 0.005$ \\
+20-25 & $0.668 \pm 0.008 \pm 0.027$ & $0.904 \pm 0.007 \pm 0.005$ \\
+25-30 & $0.755 \pm 0.007 \pm 0.014$ & $0.924 \pm 0.006 \pm 0.005$ \\
+30-35 & $0.770 \pm 0.007 \pm 0.005$ & $0.932 \pm 0.006 \pm 0.005$ \\
+35-40 & $0.796 \pm 0.006 \pm 0.003$ & $0.942 \pm 0.005 \pm 0.005$ \\
+40-45 & $0.798 \pm 0.006 \pm 0.002$ & $0.943 \pm 0.005 \pm 0.005$ \\
+45-50 & $0.813 \pm 0.006 \pm 0.002$ & $0.944 \pm 0.005 \pm 0.005$ \\
+\hline
+\end{tabular}
+\caption[Total lepton selection efficiencies and associated
+  relative uncertainties.]{Total lepton selection efficiencies and associated
+  relative uncertainties for a $m_H= 125$ \gev~Higgs signal
+  sample. The uncertainties are split into isolation and
+  reconstruction/identification, respectively. If the relative
+  uncertainty is less than 0.005, then 0.005 is shown in the
+  table. The total uncertainty can be obtained by adding the two
+  components in quadrature.}
+\label{chap:analysis:tab:lepton_eff}
+\end{table}
+
+\subsection{Muons}
+
+This analysis requires muons to be of the ``combined'' type in which
+the combined muon track is a statistical combination of independent ID and MS
+track fits (section~\ref{chap:reco:sec:muon}). The ID track associated
+with the muon must satisfy the requirements: (1) the sum of pixel hits
+and dead pixel sensors crossed by the track must be greater than zero,
+(2) the sum of SCT hits and dead SCT sensors cross by the track must
+be greater than four, the number of missing hits in a cross sensor
+that is not dead must be less than three, and (4) a TRT extension is
+found if the track falls within the TRT acceptance. These cuts have
+been studied rigorously by a dedicated performance group that also
+computes the SFs associated with such a selection using
+tag-and-probe. 
+
+Although muons are less prone than electrons to being faked by jets in $W$+jets and
+QCD multijet processes, and by electrons from photon conversions,
+requirements are placed on isolation variables as well as
+the transverse and longitudinal impact parameters. Isolation cut
+values have been optimized in bins of muon \pt. To account for pileup
+dependence, the calorimeter isolation is corrected event-by-event
+according to \nvtx (show equation?). To determine the
+optimal impact parameter cut values, a sensitivity scan has been
+performed over the two-dimensional parameter space for the
+$d_0/\sigma{(d_0)}$ and $z_0\sin(\theta)$ cuts. The resulting
+selection is shown in table~\ref{chap:analysis:tab:muon_selection}.
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.1}
+\resizebox{0.9\textwidth}{!}{
+\begin{tabular}{c|c|c|c}
+\hline
+  \pt & & & impact \\
+ (\gev) & calo.~isolation & track isolation & parameters \\
+\hline
+10-15 & $\et^{R=0.3}/\pt<0.06$ & $\pt^{R=0.4}/\pt<0.06$
+ & \multirow{4}{0.22\textwidth}{\centering $d_0/\sigma{(d_0)} < 3.0$,
+  $z_0 \sin{\theta}<1.0$~mm} \\
+   \cline{1-3}
+15-20 & $\et^{R=0.3}/\pt<0.12$ & $\pt^{R=0.3}/\pt<0.08$ & \\
+   \cline{1-3}
+20-25 & $\et^{R=0.3}/\pt<0.18$ & \multirow{2}{*}{\centering $p_T^{R=0.3}/\pt<0.12$} & \\
+   \cline{1-2}
+$>25$ & $\et^{R=0.3}/\pt<0.30$ & & \\
+\hline
+\end{tabular}
+}
+\caption[Muon selection summary in \pt~bins.]{Muon selection summary in
+  \pt~bins.}
+\label{chap:analysis:tab:muon_selection}
+\end{table}
+
+Data-derived efficiencies associated with the impact parameter and isolation cuts
+are also measured with tag-and-probe and those from simulation are
+corrected to reflect data. The resulting total efficiency for
+selecting a muon is shown in
+table~\ref{chap:analysis:tab:lepton_eff}. Compared to electrons, the
+muon efficiencies associated with the optimal cuts are 20\%-40\%
+higher, due to the reduced background from jets and photons faking
+muons.
+
+\subsection{Jets}
+
+As discussed in section~\ref{chap:reco:sec:jet}, jets are
+reconstructed with the \antikt $R=0.4$ algorithm and calibrated with
+LCW. These jets are required to satisfy the quality criteria for the
+L\textsc{ooser} category, which has the highest efficiency of all of
+the jet cleaning categories. The remaining jet cuts are optimized for
+maximum sensitivity, while minimizing fake jets from pileup which
+induce migrations into and out of the signal regions. In the
+optimization, cut values for the jet \pt~and the JVF (defined in
+section~\ref{chap:reco:sec:jet:subsec:quality}) are simultaneously
+scanned, extracting both an estimate of the expected significance, as
+well as the uncertainty due to bin migrations. The optimal
+configuration has been found to be jet $\pt > 25 \gev$ and
+$\textrm{JVF} > 0.5$ in the $|\eta| < 2.4$ region. In the region
+outside of the tracker, $2.4 \leq |\eta| < 4.5$, where JVF is
+unavailable, the \pt~threshold is increased to $30 \gev$ to compensate
+for the absence of a cut on JVF. Finally, jets in $|\eta| < 2.4$ with
+$\pt > 50 \gev$ do not have any JVF requirement, since the rate of
+pileup jets in this \pt~range is relatively small, and therefore a JVF
+requirement only serves to degrade the efficiency. The resulting
+uncertainty due to jet bin migrations for these cuts is 6.3\% in a
+VBF-rich region of phase space, significantly smaller than
+uncertainties due to JES. 
+
+\noindent -JVF uncertainties \\
+\noindent -JES uncertainties \\
+
+The jet definition above defines the tag jets in the VBF topology. In
+addition to these jets, another jet collection is considered in the
+VBF analysis. Jets which fall in between the pseudorapidity range
+defined by the two tag jets with $\pt > 15 \gev$ and which satisfy the
+same JVF requirement as the tag jets are placed into a separate jet
+collection. This central jet collection is used to veto events with
+high \pt~central jets.
+
+\subsection{$b$-hadron Jets}
+
+The tagging of heavy flavor jets ($b$-jets), described in
+section~\ref{chap:reco:sec:btag}, is crucial for (1) rejecting
+background processes with top quarks, and (2) establishing a control
+region from which the normalization of such backgrounds is
+extrapolated. In this analysis, $b$-tagging is performed with the MV1
+algorithm, a multi-layered neural network approach that incorporates
+impact parameter and reconstructed vertex information from tracks
+associated with jets. Each jet is assigned a score quantifying the
+probability that it is a $b$ jet, and if the score falls over a
+threshold, then the jet is tagged. For this analysis, the threshold
+has been chosen such that 85\% of $b$-jets are tagged. 
+
+The associated $b$-tagging efficiencies are measured in a \ttbar-rich
+control region in data, using the likelihood procedure described in
+section~\ref{chap:reco:sec:btag}. Scale factors, defined as the ratio
+of the tagging efficiency in data to that in simulation, are then
+applied in simulation. These SFs, which are evaluated in six \pt~bins,
+are shown with their associated uncertainties, in
+table~\ref{chap:analysis:tab:btag_sfs}. The SFs deviate from unity by
+less than 5\% and are consistent with unity within statistical and
+systematic uncertainties. 
+
+For the uncertainties on scale factors, the eigenvector method is used
+to reduce the number of uncorrelated variations. A covariance matrix
+is constructed for each source of uncertainty, and the total
+covariance matrix is then obtained by summing each source matrix. The
+total covariance matrix is transformed to its eigenbasis, and the
+square root of the matrix eigenvalues are then taken as the fully
+uncorrelated systematic variations on the $b$-tag SFs. 
+
+In addition to the $b$-tag SFs, there are SFs to correct the mis-tag
+efficiency for $c$-jets and light flavor jets. The uncertainties on
+these two factors consider the same sources as those for $b$-tag SFs,
+but in this case, the uncertainties for each source are summed in
+quadrature for a single variation. 
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c || c | c | c | c }
+  \hline
+  \multirow{2}{*}{\pt~bin} & Scale & Statistical & Systematic & Total
+  \\
+   & Factor & Uncertainty & Uncertainty & Uncertainty \\
+  \hline
+  $20-30$ & 0.999 & 1.5\% & 4.7\% & 4.9\% \\
+  $30-60$ & 1.006 & 0.5\% & 1.8\% & 1.9\% \\
+  $60-90$ & 0.989 & 0.5\% & 1.6\% & 1.6\% \\
+  $90-140$ & 0.996 & 0.6\% & 1.4\% & 1.5\% \\
+  $140-200$ & 0.965 & 1.2\% & 2.9\% & 3.1\% \\
+  $200-300$ & 1.046 & 2.9\% & 6.6\% & 7.2\% \\
+  \hline
+  \end{tabular}
+  \caption[$b$-tagging scale factors and uncertainties in
+    \pt~bins.]{$b$-tagging scale factors and uncertainties in
+    \pt~bins.}
+  \label{chap:analysis:tab:btag_sfs}
+\end{table}
+
+\subsection{\etmiss}
+
+Missing transverse momentum (\etmiss) is discussed at length in
+section~\ref{chap:reco:sec:met}. In the VBF BDT analysis, \etmiss
+arises due to the presence of undetected neutrinos from the $W$ boson
+decays. Two different \etmiss definitions are used. Calorimeter-based
+\etmiss (\calomet) reconstructs the transverse energy in the event
+with calibrated physics objects and the soft energy in the event is
+reconstructed with calorimeter topoclusters. Track-based \etmiss, on
+the other hand, uses tracks matched to the primary vertex to
+reconstruct the soft energy, and is therefore less sensitive to
+in-time pileup. Moreover, \calomet is a standardized
+definition which is used across ATLAS analyses, while \trkmet uses
+physics object definitions from analysis-specific optimizations,
+yielding better scale and angular resolution than \calomet. 
+
+Quality cuts on the tracks entering \trkmet are enumerated in
+section~\ref{chap:reco:sec:met}. If a track fails this selection, but
+is associated with either an electron or a muon, it is added to the
+track collection. Electrons are required to satisfy either (1) {\it
+  medium} identification requirements, $\et^{\textrm{cluster}} > 10
+\gev$, and $|\eta| < 2.47$ or (2) the analysis-level electron
+requirements described in
+section~\ref{chap:analysis:sec:objects:subsec:electrons}. Muons are
+required to satisfy cuts which are looser than those in the analysis,
+namely combined muons with $\pt > 6 \gev$, $|\eta| < 2.5$ and
+$|z_0\sin (\theta)| < 1$~mm. Tracks that overlap with reconstructed
+electrons and muons are removed from the track collection, as are tracks
+that fall within a cone of 0.4 of an analysis-level jet. This improves
+the resolution because neutral hadrons associated with jets which do
+not produce tracks but do deposit energy in the calorimeter are not
+excluded. 
+
+\noindent Show table of MET resolution?
+
+%\begin{table}
+%\begin{center}
+%\renewcommand{\arraystretch}{1.2}
+%\resizebox{0.8\textwidth}{!}{
+%\begin{tabular}{ | l | c c c}
+%\hline \hline
+

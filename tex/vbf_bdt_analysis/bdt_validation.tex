@@ -7,7 +7,7 @@ the BJV. For \eemm events, the two \etmiss cuts are also applied
 CJV, OLV, and \Ztautaunody veto are not applied for training as these
 cuts considerably decrease the background sample size, making it difficult for
 the training algorithm to learn the kinematics of the
-backgrounds. Morever, a smaller training sample is more susceptible to
+backgrounds. Moreover, a smaller training sample is more susceptible to
 overtraining, a phenomenon in which the BDT has learned the
 statistical or systematic fluctuations of the training sample and therefore does not
 generalize to statistically independent samples
@@ -40,13 +40,13 @@ they include MC events with negative event weights, which are ignored
 in the TMVA BDT implementation. The only Higgs process considered to
 be signal in training is VBF. Given that the aim of the analysis is to
 probe the signal strength of VBF, gluon fusion Higgs production is
-treated as a background. Morever, despite the fact that the $V$H
+treated as a background. Moreover, despite the fact that the $V$H
 processes are considered signal in the likelihood fit, in the BDT
 training they are ignored. Due to the negligible contribution of these
-backgrounds in the \lnln channel, the impact of removing these
-processes in the training is small. 
+processes in the \lnln channel, the impact of removing them in the
+training is small. 
 
-Ascertaining the level of overtraining for a BDT is done by plotting
+Ascertaining the level of overtraining for the BDT is done by plotting
 the BDT response distribution $F(\vect{x})$ for two statistically
 independent samples. Disagreement in the shape is evidence of
 overtraining. A comparison of the $F_{\textrm{even}}(\vect{x})$ distributions for the
@@ -97,14 +97,14 @@ in a suboptimal BDT.
 
 The BDT training relies on MC simulation to model the shapes of, and
 the correlations among, the BDT inputs. In order to validate the
-modelling, the level of agreement between data and MC in the BDT input
+modeling, the level of agreement between data and MC in the BDT input
 distributions is quantified in signal-depleted validation
 regions. There are three such regions in this analysis: a low BDT
 region, a top-rich region, and a \ZDY-rich region. The latter two will
 be discussed in sections~\ref{} and~\ref{}, respectively. 
 
 The low BDT validation region has the same preselection cuts as the signal
-region, with an additional cut on the BDT score-- BDT < -0.48. The cut
+region, with an additional cut on the BDT score-- $\textrm{BDT} < -0.48$. The cut
 value for this region has been determined through a binning optimization
 algorithm for the BDT distribution. Binning optimization is performed
 on the BDT distribution because the binned likelihood fit is performed
@@ -135,7 +135,7 @@ Z_{\textrm{Pois}}(S,B) = \sqrt{2((S+B)\log{(1+S/B)}-S)},
 \end{equation}
 
 \noindent
-where $S$($B$) is the signal(background) event count normalized to
+where $S$ ($B$) is the signal (background) event count normalized to
 luminosity, is computed. When a maximum in $Z_{\textrm{Pois}}(S,B)$ is
 reached, the event yield for each background is checked, and if each
 background is represented, a bin boundary is set at that BDT
@@ -192,7 +192,7 @@ plots is shown in figure~\ref{chap:analysis:fig:bdt_corr_vr} for the
 low BDT VR. The background color in each subplot is based on the
 $p$-value for the $\chi^2$ test. If the $p$-value falls below 0.05,
 the background is set to red. In this region, the MC models the correlations observed in
-data well. Mismodeling in the correlations will also manifest as
+data well. Mis-modeling in the correlations will also manifest as
 data-MC discrepancies in the BDT response distribution. 
 
 (insert plot of log(BDT) in low BDT VR.)

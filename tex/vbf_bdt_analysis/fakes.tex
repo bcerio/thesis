@@ -1,3 +1,112 @@
 
-Section on fake background estimation here. To be completed after
-object selection section is written.
+Although \wjets and QCD multijet processes (figure~\ref{}) do not contain two
+leptons in the final state, they are expected to contribute in the
+signal region in cases where a jet is mis-reconstructed as a prompt
+lepton.  Such leptons are considered ``fake'', whether they are
+mis-reconstructed from charged hadron tracks or from heavy hadron
+decays to true non-prompt leptons. Given that this background is due
+to instrumental effects, a reliable estimate can only be obtained with
+data-driven methods. In contrast to the data-driven estimates
+described above, the procedure described in the following section
+is purely data-driven in the sense that both the normalization and the
+kinematic shapes are derived from a control region. In other words,
+\wjets MC templates are not used at all.
+
+The \wjets CR is the same as the analysis signal region except that
+the object selection has been adjusted to enrich the region with fake
+leptons. This is accomplished by loosening the quality criteria for
+one of the leptons and requiring that it does not pass the analysis-level
+lepton selection, while the other lepton is required to pass. The
+former lepton type is referred to as ``anti-identified''. For
+anti-identified electrons, the calorimeter isolation requirement is
+loosened to $\et^{R=0.3}/\et<0.30$, the track isolation requirement
+is $p_T^{R=0.3}/\et<0.16$, the conversion flag and $b$-layer
+requirements are removed and the electron is required to fail the {\it
+  medium} identification requirement. For muons, the calorimeter
+isolation requirements are also loosened, the track isolation
+requirements are completely removed, and the transverse impact parameter
+significance cut is removed.
+
+To extrapolate from the \wjets CR to the SR, first the non-\wjets
+background is subtracted, and then an extrapolation factor, called the
+fake factor, is applied. The fake factor is defined as
+
+\begin{equation}
+\label{chap:analysis:equation:fake_factor}
+f_{\textrm{fake}} =
+\frac{N_{\textrm{id}}}{N_{\textrm{anti-id}}}
+\end{equation}
+
+\noindent
+where $N_{\textrm{id}}$ is the number of jets that pass the
+full lepton selection and $N_{\textrm{anti-id}}$ is the number
+of jets which pass the anti-identified selection. \fakefact is
+evaluated with jets in a jet-rich $Z$ CR in bins of lepton \pt~and
+$\eta$. From the fake factor, the \wjets estimate in the SR is given
+by
+
+\begin{equation}
+\label{chap:analysis:equation:wjets_est}
+N_{id+id}^{\wjets} = \fakefact\cdot (N_{\textrm{id+anti-id}} -
+N_{\textrm{id+anti-id}}^{\textrm{QCD}} -
+N_{\textrm{id+anti-id}}^{\textrm{non-fake,MC}})
+\end{equation}
+
+\noindent
+where $N_{\textrm{id+anti-id}}$ is the total number of events in the
+\wjets CR, $N_{\textrm{id+anti-id}}^{\textrm{QCD}}$ is data-driven QCD
+multijet estimate in the \wjets CR, which is described below, and
+$N_{\textrm{id+anti-id}}^{\textrm{non-fake,MC}}$ is the MC prediction
+for the non-fake contribution in the \wjets CR. 
+
+The dijet control region is similar to the \wjets control region,
+except that instead of the requirement of one anti-identified lepton,
+both of the leptons satisfy this requirement. The fake factors for
+this background are obtained using the same procedure as \wjets,
+except that the control region is rich in QCD dijets. Because there
+are two fake leptons, two fake factors are derived, where the second
+fake factor accounts for bias introduced with the requirement of an
+additional anti-identified lepton. The QCD estimate in the signal
+region is then expressed as
+
+\begin{equation}
+N_{id+id}^{\textrm{QCD}} = \fakefact^{\prime\prime}\cdot\fakefact^{\prime}\cdot (N_{\textrm{anti-id+anti-id}} -
+N_{\textrm{anti-id+anti-id}}^{\wjets\textrm{,MC}} -
+N_{\textrm{anti-id+anti-id}}^{\textrm{non-fake,MC}})
+\end{equation}
+
+\noindent
+where $\fakefact^{\prime\prime}$ and $\fakefact^{\prime}$ are the two
+dijet fake factors, $N_{\textrm{anti-id+anti-id}}$ is the total number
+of data events in the dijet CR,
+$N_{\textrm{anti-id+anti-id}}^{\wjets\textrm{,MC}}$ is the \wjets
+contamination predicted by simulation in the CR, and
+$N_{\textrm{anti-id+anti-id}}^{\textrm{non-fake,MC}}$ is the non-fake
+contamination. 
+
+To estimate the QCD contamination in the \wjets CR
+($N_{\textrm{id+anti-id}}^{\textrm{QCD}}$ in
+equation~\ref{chap:analysis:equation:wjets_est}), there is an
+extrapolation from the dijet CR to the \wjets CR, given by
+
+\begin{equation}
+N_{id+anti-id}^{\textrm{QCD}} = 2\cdot\fakefact^{\prime\prime}\cdot (N_{\textrm{anti-id+anti-id}} -
+N_{\textrm{anti-id+anti-id}}^{\wjets\textrm{,MC}} -
+N_{\textrm{anti-id+anti-id}}^{\textrm{non-fake,MC}})
+\end{equation}
+
+\noindent
+where the factor of two arises due to the fact that events with two
+anti-identified leptons can enter the \wjets CR if either lepton is
+identified. 
+
+Backgrounds due to fakes are relatively small in the BDT signal
+region. The primary reason for this is that the jets in \wjets and QCD
+processes tend to be more central in rapidity, but the BDT selects a
+region of phase space with forward jets. The \wjets estimate in the
+\emme channel relative to the total background prediction is 2\%, 3\%,
+and 0\%, in the respective BDT fit bins and the QCD estimate is even
+smaller-- 0.4\%, 0\%, and 0\%. 
+
+\noindent Systematics go here or later?
+

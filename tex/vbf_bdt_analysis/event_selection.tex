@@ -1,16 +1,19 @@
-\subsection{Preselection}
 
-With the physics objects defined, a series of pre-selection cuts
-designed to isolate the $\ell\nu\ell\nu$ final state is applied. These
-cuts are applied in both the VBF analysis and the other jet
-bins. First, exactly two leptons with opposite charge are required,
-with the leading lepton \pt~$>22$~\gev and the subleading lepton
-\pt~$>10$~\gev. These cuts have been optimized to maximize signal
+With the physics objects defined, event-level selection
+cuts are applied sequentially in order to enhance signal. These cuts
+can be categorized into those which are shared with the ggF analyses,
+and those which are specific to the VBF analysis.
+
+\subsection{Common Preselection}
+
+For all \hwwlnln analyses, exactly two leptons with opposite charge
+are required, with the leading lepton $\pt>22 \gev$ and the subleading lepton
+$\pt>10 \gev$. These cuts have been optimized to maximize signal
 acceptance, while minimizing contamination from background due to jets
 faking leptons. A dilepton mass cut of
-\mll~$>$~10 (12)~\gev~is applied in the \emme (\eemm) lepton channel,
-and to reject background from \ZDY, events with dilepton mass falling
-within 15~\gev~of the Z pole mass are cut away. Lepton and jet
+$\mll> 10$ $(12) \gev$ is applied in the \emme (\eemm) lepton channel,
+and to reject background from \ZDY in the \eemm channel, events with dilepton mass falling
+within $15 \gev$ of the $Z$ pole mass are cut away. Lepton and jet
 kinematic distributions are shown in
 figures~\ref{chap:analysis:fig:lead_lep,chap:analysis:fig:sublead_lep,chap:analysis:fig:lead_jet},
 and both calo and track \etmiss are shown in figure~\ref{}. The MC models the data
@@ -40,7 +43,7 @@ adequately in this phase space region.
 \centering
 \includegraphics[width=0.45\textwidth]{fig/analysis/preselection_kinematics/CutMll_jetPtLead_mh125_log.eps}
 \includegraphics[width=0.45\textwidth]{fig/analysis/preselection_kinematics/CutMll_jetEtaLead_mh125_lin.eps}
-\caption{The leading jet \pt~(left) and $\eta$ (right) at pre-selection (\mll) for all lepton flavours combined. The
+\caption{The leading jet \pt~(left) and $\eta$ (right) at pre-selection (\mll) for all lepton flavors combined. The
 error band includes statistical uncertainties only.}
 \label{chap:analysis:fig:lead_jet}
 \end{figure}
@@ -67,11 +70,11 @@ channel, although signal has real \etmiss from the neutrinos in the
 $W$ decays, there is not an \etmiss cut applied, due to the nature of
 the backgrounds which also contain real \etmiss. Without a cut on
 \etmiss, there is a gain in signal acceptance corresponding to an expected
-significance gain of 6\% compared to the cut value of 20~\gev~in the previous
+significance gain of 6\% compared to the cut value of $20 \gev$ in the previous
 analysis~\cite{bib:hww_moriond_2013}. In the \eemm channel, on the other hand, two cuts are
-applied: track \etmiss~$>40$~\gev~and calo \etmiss~$>45$~\gev. These
+applied: track $\etmiss>40 \gev$ and calo $\etmiss>45 \gev$. These
 cuts suppress \ZDY, a process with ``fake'' \etmiss that arises from
-the mismeasurement of jets and soft tracks. 
+the mis-measurement of jets and soft tracks. 
 
 Additionally, the number of jets is required to be greater than or
 equal to two to pick out the tag jets in the VBF process. To suppress
@@ -85,12 +88,21 @@ that arise from QCD vertices and are kinematically similar to the tag jets in VB
 rapidity gap, have more soft QCD activity at central rapidity due to
 color exchange. The central jet veto (CJV) exploits this by requiring
 that the highest \pt~jet that falls between the two leading jets has
-\pt~$<20$~\gev. This cut retains events without any central jets
+$\pt<20 \gev$. This cut retains events without any central jets
 because the lead \pt~of the central jets is set to a value of -1 in
 this case. In addition to the CJV, an outside lepton veto (OLV) is
 applied, exploiting the tendency for leptons resulting from the top decay,
 $t\rightarrow{Wb}\rightarrow{\ell\nu b}$, to fall outside of the
 pseudorapidity of the jets. The OLV is defined such that if either of
 the leptons falls outside of the pseudorapidity gap, the event is
-vetoed. 
+vetoed. The final preselection cut rejects \Ztautaunody processes,
+which contribute in the signal region if both $\tau$s decay
+leptonically. If the tauon decay products have momenta which is
+far less than their mass, then to a good approximation, the direction
+of the tauons is given by the direction of the reconstructed
+leptons. The invisible products of the tauon decays are assumed to
+have \pt~given by the \etmiss, allowing the tauon momentum to be
+reconstructed. From this, the invariant mass of the $\tau\tau$ system
+is computed, and \Ztautaunody background is rejected by
+requiring that $\mtt < m_Z - 25 \gev$. 
 

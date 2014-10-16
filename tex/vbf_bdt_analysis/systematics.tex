@@ -1,0 +1,272 @@
+All Monte-Carlo-based predictions rely on the best estimate for a set
+of parameters $\hat{\vect{\theta}}$. These parameters can be
+theoretical in nature, such as the cross section to which the
+prediction is scaled, or intrinsic to the ATLAS detector, such as the
+efficiency for selecting an electron. The uncertainties on these
+parameters are propagated to uncertainties on event yields in the
+signal and control regions, and as we will see in the following
+chapter, these uncertainties are ultimately propagated to an error on
+the measured VBF signal strength. Uncertainties are always computed at a
+working point corresponding to $\pm 1\sigma$ and propagated to the
+statistical fit as such.
+
+\subsection{Theoretical sources}
+
+Monte Carlo generators are approximate models for any scattering
+process. To assess theoretical uncertainties, approximations are
+varied, and the resulting change in the prediction is
+quantified. The following sources of uncertainty are considered:
+parton distribution function (PDF), QCD scale, parton showering
+program, hard-scattering program, and underlying event tune. Depending
+on the source, these uncertainties are split into two kinds:
+normalization and acceptance. Normalization uncertainties are those
+that vary the overall normalization of a prediction without changing
+the underlying distributions. Acceptance uncertainties are computed
+for sources that change kinematic distributions and therefore
+selection efficiences. Because the BDT spectrum spans a large and
+relatively unknown region of phase space, acceptance uncertainties are
+computed separately in each BDT fit bin.
+
+Varying the factorization ($\mu_F$) and renormalization scales
+($\mu_R$) probes sensitivity to the corrections from the next order in
+the perturbative expansion. For the VBF process, $\mu_F$ and $\mu_R$
+are varied up and down by a factor of two, and the resulting change in
+event rates in the signal region is on the order of 0.5\%. Since the
+scale change impacts the BDT input distributions associated with tag
+jets, namely \mjj and \dyjj, there is a distortion of the BDT
+spectrum of [1\%,3\%,3\%] in BDT bins. 
+
+The PDF uncertainty is also evaluated for the VBF signal process. 
+Comparing the baseline PDF \ctten to \nnpdf (reference), the
+difference in event yields in the BDT SR is found to be 4\%, with a
+negligible dependence on the BDT score. The baseline hard-scattering
+generator is \POWHEG which simulates the VBF process at NLO in
+QCD. Another generator, \aMCATNLO, utilizes a different prescription
+for matching the HS and the PS, and in order to ascertain the
+uncertainty associated with the default prescription, the predictions
+of the two generators are compared. Although the shape variation of
+the BDT distribution is negligible, \aMCATNLO predicts 4\% more events
+than \POWHEG in the BDT SR, which is assigned as a normalization
+uncertainty. Additionally, uncertainties associated with corrections
+from higher order EW corrections are assessed by turning these
+corrections on and off in the generator \VBFNLO. These corrections are
+observed to have little impact on the shape of the BDT spectrum, and
+increase the overall cross section by 3.5\%, a correction which is
+already accounted for in the NLO cross section calculation to which
+the baseline prediction is scaled~\ref{chap:analysis:sec:data_mc}.
+
+The dominant uncertainty on signal is associated with the parton
+shower program. Comparing the baseline program \PYTHIA is to \HERWIG,
+the difference in the event yield in the signal region is 3.4\%. The
+distortion of the BDT spectrum is large due to the fact that a BDT
+input, \pttot, shown in figure~\ref{}, is highly sensitive to the soft
+jet activity in an event. Though the effect is as large as 50\% in
+the \pttot distribution, in the BDT distribution the largest
+difference is 10\% in the highest BDT bin, because the BDT selects the
+region of phase space associated with the core of the \pttot
+distribution. 
+
+As discussed in
+section~\ref{chap:analysis:sec:dd_backgrounds:subsec:top}, the
+theoretical uncertainties
+for \ttbar and ST are computed by varying the PDF, QCD scale, parton
+shower, and the hard-scattering generator. Because this background is
+normalized with a control region, the change in the extrapolation
+factor $\alpha = \frac{N_{top,MC}^{SR}}{N_{top,MC}^{CR}}$
+(equation~\ref{chap:analysis:equation:top_est}) is measured in order to
+assess the uncertainty on the signal region event rate. The dominant
+uncertainty source has been found to be the hard-scattering generator,
+derived from a comparison of \MCATNLO and \ALPGEN. In the respective
+BDT fit bins, these uncertainties are 10\%, 12\%, and 21\%.
+
+Non-resonant \wwtwoj production is a large background,
+contributing \textapprox{19\%} in the \emme SR and \textapprox{9\%} in
+the \eemm SR. QCD \wwtwoj rates are predicted with an
+inclusive \SHERPA sample normalized to the NLO \MCFM cross section. To
+assess the hard-scattering and QCD scale uncertainties, \MADGRAPH interfaced
+with \PYTHIA 6 for showering is used. The sample which is generated is
+also inclusive, with up to three partons generated at the matrix
+element
+level. These final state partons are then showered in \PYTHIA with the
+MLM matching scheme (reference) at a scale of 20~\gev. The PDF in
+both \MADGRAPH and \PYTHIA is \cteqsixl, and the underlying event tune
+is AUET2B (reference). 
+
+The hard-scattering uncertainty is computed by comparing
+the truth level predictions of \MADGRAPH to those of the \SHERPA. In
+an approach similar to the one used in the evaluation of top theory
+uncertainties (section~\ref{chap:analysis:section:top}), the BDT inputs are
+evaluated at truth level, and the resulting distortion of the BDT
+spectrum is taken as an uncertainty. For the comparison, the two truth level
+samples are scaled to the integrated luminosity with their respective
+cross sections. The inclusive \MADGRAPH cross section computed after showering
+is 4.55~pb, which is significantly smaller than the cross section to
+which the \SHERPA prediction is scaled: 5.679~pb. However, because the
+fraction of events with two or more jets is larger in \MADGRAPH, the
+uncertainty after requiring two jets is mitigated. Displayed in
+figure~\ref{chap:analysis:fig:qcdww_gen_uncert} is the truth level BDT
+response. In light of the differences, uncertainties of 14\%, 8\%, and
+12\% are assigned.
+
+\begin{figure}[h]
+    \centering
+    \subfigure[QCD \ww]{
+    \includegraphics[width=0.45\textwidth]{analysis/ww/ww_shape_sys_qcd.pdf}
+    \label{chap:analysis:fig:qcdww_gen_uncert}
+    }
+    \subfigure[EW \ww]{
+    \includegraphics[width=0.45\textwidth]{analysis/ww/ww_shape_sys_ew.pdf}
+    \label{chap:analysis:fig:ewww_gen_uncert}
+    }
+    \caption[Comparison of \MADGRAPH and \SHERPA predictions
+    for \ww.]{Comparison of \MADGRAPH and \SHERPA predictions
+    for \ww.}
+\label{chap:analysis:fig:ww_gen_uncert}
+\end{figure}
+
+To assess the uncertainty from the choice of QCD scale, the
+factorization and renormalization scales in \MADGRAPH,
+which are varied dynamically event-by-event, are coherently scaled up
+and down by a factor of two. The resulting samples are scaled to their
+respective post-parton-showering cross sections, and the signal region
+differences are computed. With the scale set to 
+$\mu_R=\mu_F=\mu_{\textrm{default}}/2$, the
+predicted number of events in the SR is $27\%$ higher than the default
+scale choice, while with $\mu_R=\mu_F=2\mu_{\textrm{default}}$, the
+prediction
+falls by $2.6\%$. The larger of the two, $27\%$, is assigned as the
+uncertainty, which is consistent with the LO $\sigma(WW)$
+uncertainty computed at \sqrts$=7$~\tev ~\cite{bib:Melia:2011dw}, though in a
+looser phase space region. Because the QCD scale variations induce
+small shape differences in the BDT input distributions, the
+uncertainty is flat across the BDT fit bins. Additional QCD \ww uncertainties are
+summarized in table~\ref{chap:analysis:tab:ww_theory_uncerts}.
+
+\begin{table}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+%\resizebox{0.8\textwidth}{!}{
+    \begin{tabular}{ l | c | c }
+    \hline
+    Source & QCD \ww & EW \ww \\
+    \hline \hline
+    Generator modeling & (12\%,8\%,12\%) & (16\%,12\%,10\%) \\
+    QCD scale & 27\% & 10\% \\
+    PDF ($\sigma$) & 4\% & 3\% \\
+    PDF (acceptance) & 2\% & $-$ \\
+    QCD-EW interference & $-$ & 2\% \\
+    Higgs interference & $-$ & 1.2\% \\
+    \hline
+    \end{tabular}
+%}
+\caption[Summary of \ww~theory uncertainties.]{Summary of \ww~theory
+    uncertainties.}
+\label{chap:analysis:tab:ww_theory_uncerts}
+\end{center}
+\end{table}
+
+For EW \ww, a hard-scattering modeling uncertainty is computed by comparing
+the prediction of \SHERPA to that of an exclusive two jet \MADGRAPH
+sample interfaced
+with \PYTHIA. The cross section computed in \MADGRAPH is 27.37~fb,
+30\% lower than that of \SHERPA, resulting in fewer events
+predicted. A comparison of the absolute predictions for the two
+generators is shown in
+figure~\ref{chap:analysis:fig:ewww_gen_uncert}, corresponding to
+uncertainties of 16\%, 12\%, and 10\% in BDT bins.
+
+The QCD scale uncertainty is computed at LO
+in~\cite{bib:Jager:2006zc}. The uncertainty is computed in a generic
+VBF phase space region with cuts on \dyjj and \mjj. Such a region is
+expected to significantly overlap with the SR defined by the BDT. The
+resulting uncertainty, computed by varying $\mu_F$ and extracting the
+cross section, is 10\%.
+
+Remaining theory uncertainties for EW \ww are shown in
+table~\ref{chap:analysis:tab:ww_theory_uncerts}. The uncertainty from
+interference
+between EW \ww and Higgs-mediated \ww is computed by comparing the
+cross section of \ww and \hww diagrams without interference to the
+corresponding cross section with interference. At a Higgs mass
+hypothesis of $m_H = 125$~\gev, the uncertainty is 1.2\%, while at
+$m_H = 150$~\gev, the uncertainty is 6.4\%. Because these are small
+with respect to the modeling and QCD scale uncertainties, they are
+neglected in the fit. An uncertainty due to interference between QCD
+and EW \ww processes is evaluated in a similar way and found to
+be \textapprox{2\%}. This, too, is neglected in the fit.
+
+Gluon-gluon-fusion Higgs production (ggF) is a large background in the
+most sensitive BDT bins. In order to estimate the uncertainties from
+higher order terms in the perturbative expansion, the $\mu_F$ and
+$\mu_R$ are independently varied in \MCFM. Since the final statistical
+result is derived from a likelihood across the jet bins, it is
+important to correctly correlate the normalization uncertainty for
+each jet bin. Moreover, applying a central jet veto effectively limits
+the phase space to the exclusive two jet bin, calling for the
+uncertainty to be computed for such a region. An approach that
+accounts for these considerations has been proposed by Stewart and
+Tackmann~\ref{bib:Stewart:2011cf}. The exclusive cross section can be
+expressed as 
+
+\begin{equation}
+\sigma_{\textrm{2j}} = \sigma_{\geq\textrm{2j}} - \sigma_{\geq\textrm{3j}}
+\end{equation}
+
+where $\sigma_{\geq\textrm{2j}}$ ($\sigma_{\geq\textrm{3j}}$) is the
+inclusive two (three) jet cross section. To a good approximation,
+$\sigma_{\geq\textrm{2j}}$ and $\sigma_{\geq\textrm{3j}}$ can be
+considered to be uncorrelated, and therefore the uncertainty on the
+exclusive two jet cross section can be computed as the quadrature sum
+of the two inclusive uncertainties. To ascertain the uncertainties
+in \MCFM, the scales are varied, and the BDT preselection is
+applied. For the inclusive 2j bin, the CJV is not applied, and for the
+inclusive 3j bin, the CJV is inverted. The resulting relative
+uncertainties are $\Delta_{\geq\textrm{2j}} = 22\%$ and
+$\Delta_{\geq\textrm{3j}} = 118\%$, corresponding to a normalization
+uncertainty of $\Delta_{\textrm{2j}} = 34\%$ in the BDT signal
+region. In addition, the shape variation with QCD scale is computed
+and found to be [+2.4/-2.5,+2.6/-2.5,+13/-12]\% in the BDT fit
+bins. 
+
+Uncertainties on ggF from other sources are small with respect to the
+QCD scale uncertainty. The PDF uncertainty is 8\%. The underlying
+event and parton shower uncertainty, computed by comparing \HERWIG
+showering to the baseline program \POWHEG, is a flat 15\% across the
+BDT bins. 
+
+For \ZDYll processes, because a data-driven approach is used, the only
+prediction from MC simulation is the relative rate in the last two BDT
+bins. Three sources of uncertainty
+on this quantity have been considered: (1) QCD scale, (2) parton
+shower, (3) PDF. Of these three sources, evaluated with \SHERPA, the
+largest is QCD scale, corresponding to an uncertainty of 11\% in the
+last BDT bin. The other two sources are neglected. In the \emme
+channel, the \Ztautaunody normalization is constrained from a control
+region, which, due to limited statistics in this region, results in a
+large statistical uncertainty of 30\%. Due to the negligible
+contribution of this background in the most sensitive BDT bins and to
+the fact that the theory uncertainties are {\it a priori} assumed to
+be smaller than the statistical uncertainties, theory uncertainties
+are not computed for this background component. 
+
+The theory uncertainties for the remaining backgrounds, which are
+small in the SRs, will not be discussed here, as they have little
+impact on the statistical result. 
+
+\subsection{Instrumental sources}
+
+\input{tex/vbf_bdt_analysis/sys_table_df}
+
+\input{tex/vbf_bdt_analysis/sys_table_sf}
+
+\input{tex/vbf_bdt_analysis/sys_table_ee_old}
+\input{tex/vbf_bdt_analysis/sys_table_mm_old}
+
+Notes and questions about the experimental uncertainty table:
+Why does trigger uncertainty double for SF?
+Electron scale uncertainty is 0 for ZDY in SF, but the JES uncertainty
+is large. Is electron scale uncertainty being propagated to JES?
+Q: what is the percentage of mm events in SF? 58\%
+Why does mu re-scaling impact SF more than DF?
+What's with the JES systematics? Why are they so much larger for SF?
+Is increase in JES systematic being driven by ee?

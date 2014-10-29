@@ -42,7 +42,7 @@ electron \et~is the discrimating variable. Track-based isolation is
 more robust against pileup, making it a more powerful discriminant
 against fakes. Finally, cuts are placed the transverse
 electron impact parameter significance ($d_0/\sigma (d_0) < 3$), as well as the
-longitudinal impact parameter ($z_0\sin(\theta) < 0.4$~mm), for
+longitudinal impact parameter ($z_0\sin(\theta) < 0.4$ mm), for
 rejection against fake electrons arising from pileup
 vertices. Table~\ref{chap:analysis:tab:electron_selection} summarizes
 the electron selection.
@@ -60,7 +60,7 @@ the electron selection.
 10-15 & \multirow{3}{0.18\textwidth}{\centering \textsc{very tight} likelihood} &
   $\et^{R=0.3}/\et<0.20$ & $p_T^{R=0.4}/\et<0.06$
   & \multirow{5}{0.22\textwidth}{\centering $d_0/\sigma{(d_0)} < 3.0$,
-  $z_0 \sin{\theta}<0.4$~mm} \\
+  $z_0 \sin{\theta}<0.4$ mm} \\
    \cline{1-1}\cline{3-4}
 15-20 & & $\et^{R=0.3}/\et<0.24$ & $p_T^{R=0.3}/\et<0.08$ & \\
    \cline{1-1}\cline{3-4}
@@ -68,12 +68,13 @@ the electron selection.
 \multirow{3}{*}{$p_T^{R=0.3}/\et<0.10$} & \\
    \cline{1-2}
 \multirow{2}{*}{$>25$} & {\it medium} &  & \\
-       & $+$~conversion &  & \\
+       & $+$ conversion &  & \\
 \hline
 \end{tabular}
 }
 \caption[Electron selection summary in \et~bins.]{Electron selection summary in
-  \et~bins.}
+  \et~bins, including the identification category, the calorimeter and
+track isolation cuts, and the impact parameter cuts.}
 \label{chap:analysis:tab:electron_selection}
 \end{table}
 
@@ -109,11 +110,11 @@ $E_{T}$ & $\epsilon_{\textrm{electron}}$ & $\epsilon_{\textrm{muon}}$
 \end{tabular}
 \caption[Total lepton selection efficiencies and associated
   relative uncertainties.]{Total lepton selection efficiencies and associated
-  relative uncertainties for a $m_H= 125$ \gev~Higgs signal
+  relative uncertainties for a $m_H= 125 \gev$ Higgs signal
   sample. The uncertainties are split into isolation and
   reconstruction/identification, respectively. If the relative
-  uncertainty is less than 0.005, then 0.005 is shown in the
-  table. The total uncertainty can be obtained by adding the two
+  uncertainty is less than 0.005, then 0.005 is shown. The total
+  uncertainty can be obtained by adding the two
   components in quadrature.}
 \label{chap:analysis:tab:lepton_eff}
 \end{table}
@@ -156,7 +157,7 @@ selection is shown in table~\ref{chap:analysis:tab:muon_selection}.
 \hline
 10-15 & $\et^{R=0.3}/\pt<0.06$ & $\pt^{R=0.4}/\pt<0.06$
  & \multirow{4}{0.22\textwidth}{\centering $d_0/\sigma{(d_0)} < 3.0$,
-  $z_0 \sin{\theta}<1.0$~mm} \\
+  $z_0 \sin{\theta}<1.0$ mm} \\
    \cline{1-3}
 15-20 & $\et^{R=0.3}/\pt<0.12$ & $\pt^{R=0.3}/\pt<0.08$ & \\
    \cline{1-3}
@@ -167,7 +168,8 @@ $>25$ & $\et^{R=0.3}/\pt<0.30$ & & \\
 \end{tabular}
 }
 \caption[Muon selection summary in \pt~bins.]{Muon selection summary in
-  \pt~bins.}
+  \pt~bins, including the identification category, the calorimeter and
+track isolation cuts, and the impact parameter cuts.}
 \label{chap:analysis:tab:muon_selection}
 \end{table}
 
@@ -203,10 +205,7 @@ pileup jets in this \pt~range is relatively small, and therefore a JVF
 requirement only serves to degrade the efficiency. The resulting
 uncertainty due to jet bin migrations for these cuts is 6.3\% in a
 VBF-rich region of phase space, significantly smaller than
-uncertainties due to JES. 
-
-\noindent -JVF uncertainties \\
-\noindent -JES uncertainties \\
+uncertainties due to JES and JER (section~\ref{chap:reco:sec:jet}). 
 
 The jet definition above defines the tag jets in the VBF topology. In
 addition to these jets, another jet collection is considered in the
@@ -217,6 +216,7 @@ collection. This central jet collection is used to veto events with
 high \pt~central jets.
 
 \subsection{$b$-hadron Jets}
+\label{chap:analysis:sec:objects:subsec:btag}
 
 The tagging of heavy flavor jets ($b$-jets), described in
 section~\ref{chap:reco:sec:btag}, is crucial for (1) rejecting
@@ -227,8 +227,8 @@ algorithm, a multi-layered neural network approach that incorporates
 impact parameter and reconstructed vertex information from tracks
 associated with jets. Each jet is assigned a score quantifying the
 probability that it is a $b$ jet, and if the score falls over a
-threshold, then the jet is tagged. For this analysis, the threshold
-has been chosen such that 85\% of $b$-jets are tagged. 
+threshold, then the jet is tagged. The threshold
+has been chosen such that 85\% of true $b$-jets are tagged. 
 
 The associated $b$-tagging efficiencies are measured in a \ttbar-rich
 control region in data, using the likelihood procedure described in
@@ -272,19 +272,21 @@ quadrature for a single variation.
   \end{tabular}
   \caption[$b$-tagging scale factors and uncertainties in
     \pt~bins.]{$b$-tagging scale factors and uncertainties in
-    \pt~bins.}
+    \pt~bins. Uncertainties are split into statistical and systematic
+    components, and the total uncertainty is the sum in quadrature of
+    the two.}
   \label{chap:analysis:tab:btag_sfs}
 \end{table}
 
 \subsection{\etmiss}
 
 Missing transverse momentum (\etmiss) is discussed at length in
-section~\ref{chap:reco:sec:met}. In the VBF BDT analysis, \etmiss
+section~\ref{chap:reco:sec:met}. In this analysis, \etmiss
 arises due to the presence of undetected neutrinos from the $W$ boson
 decays. Two different \etmiss definitions are used. Calorimeter-based
 \etmiss (\calomet) reconstructs the transverse energy in the event
 with calibrated physics objects and the soft energy in the event is
-reconstructed with calorimeter topoclusters. Track-based \etmiss, on
+reconstructed with calorimeter topoclusters. Track-based \etmiss (\trkmet), on
 the other hand, uses tracks matched to the primary vertex to
 reconstruct the soft energy, and is therefore less sensitive to
 in-time pileup. Moreover, \calomet is a standardized
@@ -302,19 +304,105 @@ requirements described in
 section~\ref{chap:analysis:sec:objects:subsec:electrons}. Muons are
 required to satisfy cuts which are looser than those in the analysis,
 namely combined muons with $\pt > 6 \gev$, $|\eta| < 2.5$ and
-$|z_0\sin (\theta)| < 1$~mm. Tracks that overlap with reconstructed
+$|z_0\sin (\theta)| < 1$ mm. Tracks that overlap with reconstructed
 electrons and muons are removed from the track collection, as are tracks
 that fall within a cone of 0.4 of an analysis-level jet. This improves
-the resolution because neutral hadrons associated with jets which do
+the \etmiss resolution because neutral hadrons associated with jets which do
 not produce tracks but do deposit energy in the calorimeter are not
-excluded. 
+excluded.
 
-\noindent Show table of MET resolution?
+The systematic uncertainties from all of the reconstructed physics objects which
+define \etmiss must be combined coherently to obtain the total
+uncertainty on \etmiss. For the hard objects, such as leptons and
+jets, the uncertainties are evaluated inpendently and propagated to
+\etmiss. For the soft term, uncertainties associated with the scale
+and resolution calibrations are evaluated with data-driven
+techniques for both \calomet~\cite{bib:ATLAS-CONF-2013-082} and
+\trkmet. For the calorimeter \etmiss uncertainties, a \Zmm~sample is
+isolated, and to simplify \etmiss such that only muons and the soft
+term contribute, exactly zero jets with \pt~greater than $20 \gev$ are
+required. To evaluate
+the scale uncertainty, the \etmiss vector is projected onto
+$\vect{$p$}_{\mathrm{T}}$ of the $Z$ boson, and the mean value of this quantity is
+evaluated in bins of $\sum{\et}$. The difference between data and MC
+simulation is assigned as the scale uncertainty on the soft term,
+which, for $\sqrts = 8 \tev$ data, is 3.6\% averaged over all
+$\sum{\et}$. The soft term resolution uncertainty is determined by
+comparing data and simulation, but the quantities of interest are the
+widths of the $x$ and $y$ components of \etmiss. Integrating over
+$\sum{\et}$, the mean uncertainty is 2.3\%. Another approach for
+evaluating the uncertainty, which utilizes the balance between hard
+and soft objects, yields similar results. 
 
-%\begin{table}
-%\begin{center}
-%\renewcommand{\arraystretch}{1.2}
-%\resizebox{0.8\textwidth}{!}{
-%\begin{tabular}{ | l | c c c}
-%\hline \hline
+The \trkmet uncertainties are evaluated with a data-driven approach that balances
+the \pt~of hard objects and the soft term. Defining the energy
+components of the hard objects as
+
+\begin{equation}
+E_{\mathrm {x(y)}}^{\mathrm {hard}} = \Sigma_{\mu}\, E_{\mathrm
+  {x(y)}}^{\mu} + \Sigma_{ele}\, E_{\mathrm{x(y)}}^{ele} +
+\Sigma_{\nu} \,  E_{\mathrm {x(y)}}^{\nu} + \Sigma_{\textrm{jets}}\,
+E_{\mathrm {x(y)}}^{\textrm{jets}},
+\end{equation}
+
+\noindent
+the neutrino term is set to zero in data and extracted from the truth
+information in simulation. The soft term is then just the reconstructed
+\trkmet with the hard objects subtracted. To evaluate the uncertainty,
+the scale and resolutions of \ptsoft~are measured in data and
+simulation as a function of $E_{\mathrm {T}}^{\mathrm {hard}}$ and the
+average number of interactions per bunch crossing $\left \langle \mu
+\right \rangle$. Binning in $E_{\mathrm {T}}^{\mathrm {hard}}$ allows
+the uncertainty to be extrapolated to events which are kinematically
+different from \Zmm~events, while separating the uncertainty into
+$\left \langle \mu \right \rangle$ bins accounts for potential effects
+from in-time pileup. 
+
+The \ptsoft~term is decomposed into the component which is parallel to
+the $E_{\mathrm {T}}^{\mathrm {hard}}$ and one which is perpindicular
+to $E_{\mathrm {T}}^{\mathrm {hard}}$. The former is sensitive to the
+modeling of the soft hadronic activity against which the hard system
+is recoiling, while the latter is a measure the intrinsic \ptsoft
+resolution. To extract the uncertainty, for the parallel component,
+the simulation is smeared with a Gaussian to reproduce the resolution
+in data and then shifted to the scale observed in data. These two
+corrections are applied as systematic uncertainties. For the
+perpindicular component, only smearing is performed. The resulting
+uncertainties are summarized in table~\ref{tab:trkmet_uncert}. Very
+little pile-up dependence has been observed, and therefore the
+uncertainties are not ultimately assigned as a function of $\left
+\langle \mu \right \rangle$. Moreover, it has been checked that these
+uncertainties are robust against different MC generators as well as
+the jet scale and resolution uncertainties, with the largest effect
+coming from the parton shower model in simulation. Uncertainties are
+adjusted accordingly to account for this. 
+
+\begin{table}
+\centering
+\resizebox{0.8\textwidth}{!}{
+\begin{tabular}{c|c|c|c}
+$E_{\mathrm {T}}^{\mathrm {hard}}$ bin (\GeV) & scale (\GeV)  &
+reso. para. (\GeV) & reso. perp. (\GeV)  \\ \hline
+0-5     & 0.28 & 1.57 & 1.68 \\
+5-10   & 0.38 & 1.60 & 1.58 \\
+10-15 & 0.58 & 1.60 & 1.61 \\
+15-20 & 0.73 & 1.75 & 1.72 \\
+20-25 & 0.82 & 1.88 & 1.72 \\
+25-30 & 0.99 & 2.13 & 1.84 \\
+35-40 & 1.12 & 2.35 & 2.10 \\
+40-45 & 1.20 & 2.58 & 2.15 \\
+50+     & 1.44 & 3.33 & 2.68 \\
+\end{tabular}
+}
+\caption{The absolute systematic variations (\gev) on the \ptsoft~term
+  of \trkmet. Scale and
+  resolution uncertainties are shown in bins of $E_{\mathrm
+    {T}}^{\mathrm {hard}}$. The scale uncertainty corresponds to the
+  shift factor which is applied to the parallel projection of
+  \ptsoft~in simulation. The resolution uncertainties, split into the
+  parallel and perpindicular components, correspond to additional
+  smearing applied to the soft terms to match the width of the
+  distribution observed in data.} 
+\label{tab:trkmet_uncert}
+\end{table}
 

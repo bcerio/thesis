@@ -10,7 +10,7 @@ data-driven methods. In contrast to the data-driven estimates
 described above, the procedure described in the following section
 is purely data-driven in the sense that both the normalization and the
 kinematic shapes are derived from a control region. In other words,
-\wjets MC templates are not used at all.
+\wjets and multijet MC templates are not used at all.
 
 The \wjets CR is the same as the analysis signal region except that
 the object selection has been adjusted to enrich the region with fake
@@ -63,7 +63,7 @@ The dijet control region is similar to the \wjets control region,
 except that instead of the requirement of one anti-identified lepton,
 both of the leptons satisfy this requirement. The fake factors for
 this background are obtained using the same procedure as \wjets,
-except that the control region is rich in QCD dijets. Because there
+but in a region that is rich in QCD multi-jets. Because there
 are two fake leptons, two fake factors are derived, where the second
 fake factor accounts for bias introduced with the requirement of an
 additional anti-identified lepton. The QCD estimate in the signal
@@ -100,13 +100,35 @@ where the factor of two arises due to the fact that events with two
 anti-identified leptons can enter the \wjets CR if either lepton is
 identified. 
 
+The uncertainties associated with this data-driven estimate are
+relatively large. As mentioned above, the \wjets fake factor is obtained from a
+$Z$ control region. In order to account for kinematic differences
+between jets in the $Z$ control region and those associated
+with \wjets, fake factors from simulated $W$ and $Z$ samples are
+compared, and the resulting difference is used to correct the
+$Z$-derived fake factor from data, and also assigned as a
+systematic. For electron (muon) fakes, the uncertainty is 20\%
+(22\%). In addition, the dependence of the fake factor on the
+electroweak contamination in the $Z$ control region is evaluated by
+computing the factor with and without these processes subtracted,
+yielding uncertainties in the range 11\%-25\% (3\%-21\%) for electron
+(muon) fakes. Finally, the statistical uncertainty from the control
+region data is considered. For electron (muon) fakes, this
+uncertainty falls in the range 18\%-52\% (10\%-34\%). Uncertainties
+associated with the fake factor from the di-jet CR are evaluated
+similarly, and shown to be dominated by the uncertainty due to the CR
+sample choice of 60\% (40\%) for electron (muon) fakes.  
+
 Backgrounds due to fakes are relatively small in the BDT signal
-region. The primary reason for this is that the jets in \wjets and QCD
-processes tend to be more central in rapidity, but the BDT selects a
-region of phase space with forward jets. The \wjets estimate in the
+region. The primary reason for this is that the cross sections of
+these processes are small in the two jet bin relative to the other jet
+bins for which the above estimation technique has been
+developed. Moreover, jets from \wjets and QCD multijet
+processes tend to be more central in rapidity, and because the BDT
+selects forward jets, these processes are kinematically
+suppressed. The \wjets estimate in the
 \emme channel relative to the total background prediction is 2\%, 3\%,
 and 0\%, in the respective BDT fit bins and the QCD estimate is even
 smaller-- 0.4\%, 0\%, and 0\%. 
 
-\noindent Systematics go here or later?
 

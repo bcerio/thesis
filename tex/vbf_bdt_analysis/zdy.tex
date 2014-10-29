@@ -22,11 +22,11 @@ corresponds to the \eemm SR. Region B is rich in \ZDY, with
 data from this control region is used to obtain the \ZDY template in
 region A. To extrapolate from region B to region A, the number of
 events is scaled by the \etmiss efficiency from regions C and D. The
-estimate in region A can be written,
+estimate in region A can be written
 
 \begin{equation}
 \label{chap:analysis:equation:dy_est1}
-N_{\mathrm{DY},i}^{A,est.} = \frac{N_{\mathrm{DY},\mathrm{data}}^{C}}{N_{\mathrm{DY},\mathrm{data}}^{D}}\dot{N_{\mathrm{DY},\mathrm{data},i}^{B}}
+N_{\mathrm{DY},i}^{A,est.} = \frac{N_{\mathrm{DY},\mathrm{data}}^{C}}{N_{\mathrm{DY},\mathrm{data}}^{D}}\cdot{N_{\mathrm{DY},\mathrm{data},i}^{B}},
 \end{equation}
 
 \noindent
@@ -46,7 +46,7 @@ $N_{\mathrm{DY},i}^{A,est.}/N_{\mathrm{DY,i}}^{A,MC}$, are $1.0 \pm
 %\vspace{0.5cm}
 {\footnotesize
     \centering
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c||c|}
         \hline
         & \\
         \textbf{Region A (SR)}                          &
@@ -69,7 +69,10 @@ $N_{\mathrm{DY},i}^{A,est.}/N_{\mathrm{DY,i}}^{A,MC}$, are $1.0 \pm
         \hline
     \end{tabular} }
 \caption[Summary of the regions used for the data-driven \ZDY~estimate.]{Summary of the regions used for the data-driven
-  \ZDY~estimate (ABCD method).}
+  \ZDY~estimate (ABCD method). Region A corresponds to the signal
+  region. The BDT template is taken from data in region B, and the
+  efficiency of the \calomet cut is determined in the $Z$ peak
+  (regions C and D).}
 \label{chap:analysis:tab:bdt_abcd_cartoon}
 \end{table}
 
@@ -104,7 +107,7 @@ uncertainties corresponding to 4\%, 10\%, and 60\% in bins of BDT.
 %{\small
 %\resizebox{0.8\textwidth}{!}
 {
-\begin{tabular}{| l | c | c |}
+\begin{tabular}{ l | c | c }
 \hline
 BDT input & \calomet & \trkmet \\
 \hline
@@ -127,13 +130,14 @@ BDT input & \calomet & \trkmet \\
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.5\textwidth]{fig/analysis/bdt_met_corr_herwig.eps}
-  \includegraphics[width=0.5\textwidth]{fig/analysis/bdt_met_corr_pythia.eps}
+  \includegraphics[width=0.45\textwidth]{fig/analysis/bdt_met_corr_herwig.eps}
+  \includegraphics[width=0.45\textwidth]{fig/analysis/bdt_met_corr_pythia.eps}
    \caption[]{Comparison of BDT template for \ZDY in
      $25 \gev < \etmiss< 45 \gev$~region (blue) and $\etmiss >
-     45 \gev$~region (red). The nominal \ZDY sample A{\sc lpgen}+H{\sc
+     45 \gev$~region (red). The baseline \ZDY sample A{\sc lpgen}+H{\sc
        erwig} is shown on the left and A{\sc lpgen}+P{\sc ythia} is on
-     the right.}
+     the right. The difference in template between low \etmiss region and
+  high \etmiss region is assigned as an uncertainty on \ZDY.}
   \label{chap:analysis:fig:bdt_met_corr}
 \end{figure}
 

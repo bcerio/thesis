@@ -14,7 +14,14 @@ background observables. The hard scattering process, subsequent
 showering and hadronization of final state quarks and gluons, and the
 response of the detector are all simulated with MC programs. The
 absolute predictions are then obtained by scaling the MC distributions
-by the factor $\mathcal{L}\cdot{\sigma}/N_{\mathrm{total}}$,
+by the factor 
+
+\begin{equation}
+\textrm{norm} = \mathcal{L}\cdot{\sigma}/N_{\mathrm{total}},
+\label{chap:analysis:equation:mc_norm}
+\end{equation}
+
+\noindent
 where $\mathcal{L}$ is the integrated luminosity, $\sigma$ is the best
 available cross section calculation for the process, and
 $N_{\mathrm{total}}$ is the total number of events generated, or in
@@ -60,8 +67,10 @@ final state integrated over all lepton combinations.
     \hline
   \end{tabular}
 }
-\caption[MC sample summary.]{MC sample summary with corresponding
-cross sections.}
+\caption[MC sample summary.]{Signal and background process summary
+    with MC generators used and process $\sigma\cdot\textrm{Br}$,
+  where the branching ratio is integrated over all flavor channels
+  resulting in two charged leptons.}
   \label{chap:analysis:tab:mc_summary}
 \end{table}
 
@@ -184,8 +193,6 @@ matrix element level. This prediction is then scaled to the NLO cross
 section computed in \MCFM. $ZZ$ processes are also modeled with
 \POWHEG. For the EW processes without QCD vertices at LO, \SHERPA is
 used for $WZ$, $W\gamma^{\ast}$, and $ZZ$. 
-
-(do I want to mention PDF sets and ME+PS shower matching?)
 
 The stable particles produced after the generation of the hard scatter
 and hadronization are then propagated through a full simulation of the

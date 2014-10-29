@@ -77,18 +77,19 @@ in a suboptimal BDT.
 \begin{figure}[h]
     \centering
     \subfigure[Overtraining check for BDT 1]{
-    \includegraphics[width=0.6\textwidth]{bdt/overtraining_check1.pdf}
+    \includegraphics[width=0.45\textwidth]{bdt/overtraining_check1.pdf}
     \label{chap:analysis:fig:overtraining1}
     }
     \subfigure[Overtraining check for BDT 2]{
-    \includegraphics[width=0.6\textwidth]{bdt/overtraining_check2.pdf}
+    \includegraphics[width=0.45\textwidth]{bdt/overtraining_check2.pdf}
     \label{chap:analysis:fig:overtraining2}
     }
     \caption[Boosted decision tree overtraining check.]{Overtraining
-      check for optimized boosted decision tree. Training set is shown
-    in hatched distributions, while the statistically independent test set
-    is shown with points. First two background bins are scaled by 20.0
-    and 2.0, respectively. The signal normalization is multiplied by a factor
+      check for the optimized boosted decision tree. Training sets are shown
+    with hatched distributions, while the statistically independent test sets
+    are shown with points. The first two background bins are scaled
+    down by factors of 20 and 2, respectively, in order to illustrate
+    agreement at high BDT values. Morever, the signal normalization is multiplied by a factor
     of 50.}
 \label{chap:analysis:fig:overtraining}
 \end{figure}
@@ -154,7 +155,10 @@ region is used to validate the modeling of BDT inputs.
   \centering
   \includegraphics[width=0.6\textwidth]{fig/analysis/bin_opt_plot.pdf}
   \caption{Poisson significance scans used in the BDT bin optimization
-  algorithm. Resulting bin boundaries shown as dashed lines.}
+  procedure. The resulting bin boundaries are shown as dashed lines:
+  [-0.48,0.3,0.78]. Events falling in the region
+  $\textrm{BDT} < -0.48$ are not included in the SR. Instead, this
+  region is used to validate the modelling of the BDT inputs.}
   \label{chap:analysis:fig:bin_opt}
 \end{figure}
 
@@ -167,7 +171,7 @@ region, as indicated by the $p$-value from the KS test for each BDT
 input. The lowest $p$-value, for \lepEtaCent, is 0.38-- less than a
 one sigma discrepancy. 
 
-\begin{figure}[h]
+\begin{figure}[p!]
   \centering
   \includegraphics[width=0.4\textwidth]{fig/analysis/low_bdt_vr/emme_CutBDTScore_Bin1_DPhill_mh125_lin.eps}
    \includegraphics[width=0.4\textwidth]{fig/analysis/low_bdt_vr/emme_CutBDTScore_Bin1_Mll_mh125_lin.eps}
@@ -178,8 +182,10 @@ one sigma discrepancy.
 
    \includegraphics[width=0.4\textwidth]{fig/analysis/low_bdt_vr/emme_CutBDTScore_Bin1_SumOFMvaMLepxJety_mh125_lin.eps}
    \includegraphics[width=0.4\textwidth]{fig/analysis/low_bdt_vr/emme_CutBDTScore_Bin1_contOLV_mh125_lin.eps}
-   \caption{Distributions of \dphill, \mll, \dyjj, \mjj, \pTtot,  \mT,
-     \SumMlj, and \lepEtaCent in the \emme VR (BDT score~$<-0.48$). }
+   \caption{Distributions of the eight BDT inputs \dphill, \mll, \dyjj, \mjj, \pTtot,  \mT,
+     \SumMlj, and \lepEtaCent in the \emme validation region (BDT
+     score~$<-0.48$). Error band represents statistical
+     uncertainties. Data-driven corrections to \ttbar~and \ZDY are not applied.}
   \label{chap:analysis:fig:low_bdt_vr_df}
 \end{figure}
 
@@ -195,9 +201,7 @@ the background is set to red. In this region, the MC models the correlations obs
 data well. Mis-modeling in the correlations will also manifest as
 data-MC discrepancies in the BDT response distribution. 
 
-(insert plot of log(BDT) in low BDT VR.)
-
-\begin{figure}[h!]
+\begin{figure}[h]
   \centering
   \includegraphics[width=1.0\textwidth]{fig/analysis/bdt_correlation_validation/correlations_PROF_lowBDT_VR.eps}
   \caption{Correlation plots of BDT inputs in the low BDT VR. Distributions of

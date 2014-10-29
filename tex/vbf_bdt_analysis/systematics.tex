@@ -56,10 +56,10 @@ already accounted for in the NLO cross section calculation to which
 the baseline prediction is scaled~\ref{chap:analysis:sec:data_mc}.
 
 The dominant uncertainty on signal is associated with the parton
-shower program. Comparing the baseline program \PYTHIA is to \HERWIG,
+shower program. Comparing the baseline program, \PYTHIA, to \HERWIG,
 the difference in the event yield in the signal region is 3.4\%. The
-distortion of the BDT spectrum is large due to the fact that a BDT
-input, \pttot, shown in figure~\ref{}, is highly sensitive to the soft
+distortion of the BDT spectrum is large due to the fact that the BDT
+input \pttot is highly sensitive to the soft
 jet activity in an event. Though the effect is as large as 50\% in
 the \pttot distribution, in the BDT distribution the largest
 difference is 10\% in the highest BDT bin, because the BDT selects the
@@ -69,7 +69,7 @@ distribution.
 As discussed in
 section~\ref{chap:analysis:sec:dd_backgrounds:subsec:top}, the
 theoretical uncertainties
-for \ttbar and ST are computed by varying the PDF, QCD scale, parton
+for \ttbar~and ST are computed by varying the PDF, QCD scale, parton
 shower, and the hard-scattering generator. Because this background is
 normalized with a control region, the change in the extrapolation
 factor $\alpha = \frac{N_{top,MC}^{SR}}{N_{top,MC}^{CR}}$
@@ -80,7 +80,7 @@ derived from a comparison of \MCATNLO and \ALPGEN. In the respective
 BDT fit bins, these uncertainties are 10\%, 12\%, and 21\%.
 
 Non-resonant \wwtwoj production is a large background,
-contributing \textapprox{19\%} in the \emme SR and \textapprox{9\%} in
+contributing \textapprox{19\%} of the total background in the \emme SR and \textapprox{9\%} in
 the \eemm SR. QCD \wwtwoj rates are predicted with an
 inclusive \SHERPA sample normalized to the NLO \MCFM cross section. To
 assess the hard-scattering and QCD scale uncertainties, \MADGRAPH interfaced
@@ -95,7 +95,7 @@ is AUET2B (reference).
 The hard-scattering uncertainty is computed by comparing
 the truth level predictions of \MADGRAPH to those of the \SHERPA. In
 an approach similar to the one used in the evaluation of top theory
-uncertainties (section~\ref{chap:analysis:section:top}), the BDT inputs are
+uncertainties, the BDT inputs are
 evaluated at truth level, and the resulting distortion of the BDT
 spectrum is taken as an uncertainty. For the comparison, the two truth level
 samples are scaled to the integrated luminosity with their respective
@@ -119,8 +119,11 @@ response. In light of the differences, uncertainties of 14\%, 8\%, and
     \label{chap:analysis:fig:ewww_gen_uncert}
     }
     \caption[Comparison of \MADGRAPH and \SHERPA predictions
-    for \ww.]{Comparison of \MADGRAPH and \SHERPA predictions
-    for \ww.}
+    for \ww.]{Comparison of \MADGRAPH and \SHERPA predictions in the
+    \emme BDT signal region for~\subref{chap:analysis:fig:qcdww_gen_uncert}
+    QCD \ww and~\subref{chap:analysis:fig:ewww_gen_uncert} EW \ww
+    processes. Comparison is at truth-level, and the difference
+    between the two generators is assigned as a modelling uncertainty.}
 \label{chap:analysis:fig:ww_gen_uncert}
 \end{figure}
 
@@ -159,8 +162,9 @@ summarized in table~\ref{chap:analysis:tab:ww_theory_uncerts}.
     \hline
     \end{tabular}
 %}
-\caption[Summary of \ww~theory uncertainties.]{Summary of \ww~theory
-    uncertainties.}
+\caption[Summary of \ww theory uncertainties.]{Summary of the
+    theoretical uncertainties assigned to the QCD and EW \ww
+    background processes.}
 \label{chap:analysis:tab:ww_theory_uncerts}
 \end{center}
 \end{table}
@@ -205,7 +209,7 @@ each jet bin. Moreover, applying a central jet veto effectively limits
 the phase space to the exclusive two jet bin, calling for the
 uncertainty to be computed for such a region. An approach that
 accounts for these considerations has been proposed by Stewart and
-Tackmann~\ref{bib:Stewart:2011cf}. The exclusive cross section can be
+Tackmann~\cite{bib:Stewart:2011cf}. The exclusive cross section can be
 expressed as 
 
 \begin{equation}
@@ -255,18 +259,112 @@ impact on the statistical result.
 
 \subsection{Instrumental sources}
 
-\input{tex/vbf_bdt_analysis/sys_table_df}
+Systematic uncertainty sources due to the reconstruction and identification of
+electrons, muons, jets, and missing transverse energy are also
+considered. These sources are evaluated by varying the relevant
+parameter in simulation and then measuring the resulting change in the
+event yields in the BDT signal region. Because the uncertainties are
+generally binned in the \pt~and $\eta$ of the object, the event yield
+variations are evaluated separately in each BDT bin and correlated.
 
+As discussed in section~\ref{chap:analysis:sec:objects}, the
+efficiencies associated with lepton selection are corrected with
+data. The uncertainties on these scale factors, summarized in
+table~\ref{chap:analysis:tab:lepton_eff}, are split into two
+uncorrelated components associated with the isolation SF and
+the identification SF. Propagated to the event yields in the SR, these
+two uncertainties are both less than 1\% for signal and background
+(tables~\ref{chap:analysis:tab:exp_sys_df}
+and~\ref{chap:analysis:tab:exp_sys_sf}). The remaining lepton
+uncertainties are due to the momentum scale and resolution calibrations,
+discussed in chapter~\ref{chap:reco}. For both signal and background event
+yields, these uncertainties are $\leq 0.5\%$ for electrons and
+negligible for muons. 
+
+\input{tex/vbf_bdt_analysis/sys_table_df}
 \input{tex/vbf_bdt_analysis/sys_table_sf}
 
-\input{tex/vbf_bdt_analysis/sys_table_ee_old}
-\input{tex/vbf_bdt_analysis/sys_table_mm_old}
+Uncertainties associated with the jet energy scale (JES) and
+resolution (JER) calibration are significantly larger than the
+corresponding lepton uncertainties. The JES uncertainties are split
+into 12 uncorrelated components (section~\ref{chap:reco:sec:jet}), which, added in quadrature,
+amount to variations of 3.2\% (5.3\%) on signal (background) event
+yields integrated over the three SR BDT bins in the \emme channel
+(table~\ref{chap:analysis:tab:exp_sys_df}). Because the VBF signal
+region is rich in forward jets, the dominant JES
+uncertainty is the one associated with the extrapolation of the scale
+calibration from the central rapidity region to the forward
+region. The source of this uncertainty is the large difference
+observed between \POWHEG and \HERWIG. When propagated to the error on
+the signal strength, this is the
+largest instrumental uncertainty in the analysis. 
 
-Notes and questions about the experimental uncertainty table:
-Why does trigger uncertainty double for SF?
-Electron scale uncertainty is 0 for ZDY in SF, but the JES uncertainty
-is large. Is electron scale uncertainty being propagated to JES?
-Q: what is the percentage of mm events in SF? 58\%
-Why does mu re-scaling impact SF more than DF?
-What's with the JES systematics? Why are they so much larger for SF?
-Is increase in JES systematic being driven by ee?
+The JER uncertainty also has a large impact on the SR predictions, at the level of 5\% for
+signal and background. As discussed in
+section~\ref{chap:reco:sec:jet}, the JER, or equivalently
+$\sigma{(\pt)}/\pt$, is measured {\it in situ}, and the relative
+uncertainties are evaluated to be 10\%-20\%, depending on
+the \pt~range. To propagate these uncertainties to this analysis,
+the \pt~of all jets with \pt~greater than some loose threshold is
+first smeared to match data. The $1\sigma$
+variation in event yields is obtained by performing additional
+smearing, in bins of jet \pt, to account for the uncertainty on the $\sigma{(\pt)}/\pt$
+measurement. This additional \pt~smearing migrates jets across the jet
+multiplicity bins, and any pre-selection cuts correlated to the \pt~of
+the tag or central jets. Morever, because the BDT
+inputs \mjj, \dyjj, \SumMlj, and \lepEtaCent are correlated with the
+jet \pt, JER is expected to induce a shape uncertainty.
+
+Uncertainties associated with the efficiencies for tagging $b$-hadron jets are
+discussed in sections~\ref{chap:reco:sec:btag}
+and~\ref{chap:analysis:sec:objects:subsec:btag}. The efficiency SFs for tagging a
+$b$-hadron jet, derived from a \ttbar-rich CR, are shown with their
+associated uncertainties in
+table~\ref{chap:analysis:tab:btag_sfs}. Since there are six \pt~bins,
+the uncertainties are split into six uncorrelated sources. In
+tables~\ref{chap:analysis:tab:exp_sys_df} and~\ref{chap:analysis:tab:exp_sys_sf},
+the six components are added in quadrature, and the resulting
+uncertainty is 2.4\% (1.3\%) on the background event yields in
+the \emme (\eemm) channel. This uncertainty primarily impacts top
+processes because they have true $b$-hadron jets. Additional
+uncertainties are assigned for the efficiencies of mis-tagging a light
+flavor or $c$-hadron jet. The former is at the level of 1\%, while the
+latter is less than 0.5\%. 
+
+As described in section~\ref{chap:reco:equation:etmiss}, \etmiss is
+the vector sum of the hard objects in the event with an additional
+term to capture the soft activity. Because the uncertainties associated with
+the leptons and jets comprising \etmiss are already accounted for, the
+only remaining uncertainties are on the soft term scale and
+resolution. In the \emme channel, no explicit \etmiss cuts are
+applied. However, because the BDT inputs \pttot and \mt use \trkmet,
+and the SR is defined by a cut on the BDT score, as well as a cut
+on \mtt, there is an event yield variation associated with the \trkmet
+soft term. Due to the relatively low QCD activity in VBF events, the
+uncertainty on this term is small for signal-- 0.3\% (0.6\%) for scale
+(resolution). For background processes, which generally have more QCD
+radiation, the event yield variations are larger. In the \eemm
+channel, where cuts are applied on both \trkmet and \calomet,
+uncertainties on both \etmiss types are assigned, with the \trkmet
+soft term uncertainties being significantly larger.
+
+The uncertainties on backgrounds from fakes--\wjets and
+multijets--discussed in
+section~\ref{chap:analysis:sec:dd_backgrounds:subsec:fakes}, are
+relatively large, but because these backgrounds account for a small
+fraction of the total background in the SR, the overall uncertainty is
+at the level of 2\% (0.1\%) in the \emme (\eemm) channel. 
+
+The uncertainty on the measured integrated luminosity has been
+evaluated to be 2.8\% for the ATLAS data integrated in Run-I at
+$\sqrts = 8 \tev$. Predictions which are purely from MC simulation are
+scaled to this integrated luminosity
+(equation~\ref{chap:analysis:equation:mc_norm}) and are therefore
+subject to the same uncertainty. Background estimates which use
+information from data-- top, \ZDY, and fakes-- are not subject to
+this uncertainty. 
+
+%\input{tex/vbf_bdt_analysis/sys_table_ee_old}
+%\input{tex/vbf_bdt_analysis/sys_table_mm_old}
+
+

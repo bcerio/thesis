@@ -13,7 +13,7 @@ shapes are similar for \ttbar~and ST, these processes share a common
 normalization. All of the selection cuts applied in the SR are also
 applied in the top CR, with the exception of the BJV. Instead of
 requiring zero $b$-tags, exactly one $b$-tag is required, enriching
-this region with top background while while minimizing contamination from
+this region with top background and minimizing contamination from
 sources without heavy flavor quarks in the final state. The top CR is
 subdivided into BDT bins, and the top
 normalization is computed separately in each bin. This approach is
@@ -85,14 +85,15 @@ by the uncertainties on the top background.
         \hline
 \end{tabular}
 }
-\caption[Cutflow in top CR.]{\ttbar, ST, non-top background, and data
-        event counts in the top control region. Yields are shown at
-        each cutflow stage}
+\caption[Cutflow in top CR.]{Event yields for \ttbar, single top,
+non-top backgrounds, and data in the top control region, shown at each
+cut stage starting with $\Nbjet = 1$. The corresponding top
+normalization factor is shown in {\color{blue}blue}.}
 \label{chap:analysis:tab:top_cr_cutflow}
 \end{center}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[p!]
   \centering
    \includegraphics[width=0.4\textwidth]{fig/analysis/top_cr_validation/emme_CutTopControl_2jetinclZttVeto_DPhill_mh125_lin.eps}
    \includegraphics[width=0.4\textwidth]{fig/analysis/top_cr_validation/emme_CutTopControl_2jetinclZttVeto_Mll_mh125_lin.eps}
@@ -104,12 +105,14 @@ by the uncertainties on the top background.
    \includegraphics[width=0.4\textwidth]{fig/analysis/top_cr_validation/emme_CutTopControl_2jetinclZttVeto_contOLV_mh125_lin.eps}
   % \includegraphics[width=0.32\textwidth]{fig/analysis/top_cr_validation/emme_CutTopControl_2jetinclZttVeto_BDT_8var_mh125_lin.eps}
    \caption{Distributions
-   of \dphill, \mll, \dyjj, \mjj, \pTtot, \mT, \SumMlj, and \lepEtaCent
-   in the \emme top CR after the $Z\rightarrow{\tau\tau}$ veto.}
+   of the eight BDT inputs \dphill, \mll, \dyjj, \mjj, \pTtot, \mT, \SumMlj, and \lepEtaCent
+   in the \emme top CR after the $Z\rightarrow{\tau\tau}$ veto. Error
+   band represents statistical uncertainty. Data-driven corrections to
+   \ttbar~and \ZDY are not applied.}
   \label{chap:analysis:fig:bdt_inputs_topcr_df}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[p!]
   \centering
   \includegraphics[width=0.4\textwidth]{fig/analysis/top_cr_validation/eemm_CutTopControl_2jetinclZttVeto_DPhill_mh125_lin.eps}
    \includegraphics[width=0.4\textwidth]{fig/analysis/top_cr_validation/eemm_CutTopControl_2jetinclZttVeto_Mll_mh125_lin.eps}
@@ -121,8 +124,10 @@ by the uncertainties on the top background.
    \includegraphics[width=0.4\textwidth]{fig/analysis/top_cr_validation/eemm_CutTopControl_2jetinclZttVeto_contOLV_mh125_lin.eps}
    %\includegraphics[width=0.48\textwidth]{fig/analysis/top_cr_validation/eemm_CutTopControl_2jetinclZttVeto_BDT_8var_mh125_lin.eps}
    \caption{Distributions
-   of \dphill, \mll, \dyjj, \mjj, \pTtot, \mT, \SumMlj, and \lepEtaCent
-   in the \eemm top CR after the $Z\rightarrow{\tau\tau}$ veto.}
+   of the eight BDT inputs \dphill, \mll, \dyjj, \mjj, \pTtot, \mT, \SumMlj, and \lepEtaCent
+   in the \eemm top CR after the $Z\rightarrow{\tau\tau}$ veto. Error
+   band represents statistical uncertainty. Data-driven corrections to
+   \ttbar~and \ZDY are not applied.}
   \label{chap:analysis:fig:bdt_inputs_topcr_sf}
 \end{figure}
 
@@ -194,15 +199,13 @@ ratio $\alpha_{\MCATNLO}/\alpha_{\ALPGEN}$ binned in BDT. The deviation
 of this ratio from unity is taken as the uncertainty-- 10\%, 12\%, and
 21\%, respectively. 
 
-Q: do I want to discuss \MCATNLO as an outlier?
-
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{fig/analysis/ttbar_sys_cjv_mcatnlo03.pdf}
-   \caption{Ratio of $\alpha$ predicted by \ALPGEN to that predicted
-  by \MCATNLO. Truth level is shown in blue and reconstruction level
-  with large statistical uncertainties is shown in red. Difference
-  from unity is taken as an uncertainty.}
+   \caption{Ratio of $\alpha$ predicted by \ALPGEN to that
+  of \MCATNLO. The ratio at truth level is shown in {\color{blue}blue} and reconstruction level
+  with large statistical uncertainties is shown in
+  {\color{red}red}. The deviation from unity for the truth level ratio is taken as an uncertainty.}
   \label{chap:analysis:fig:alpha_ratio}
 \end{figure}
 

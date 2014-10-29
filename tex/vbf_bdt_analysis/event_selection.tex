@@ -13,39 +13,61 @@ acceptance, while minimizing contamination from background due to jets
 faking leptons. A dilepton mass cut of
 $\mll> 10$ $(12) \gev$ is applied in the \emme (\eemm) lepton channel,
 and to reject background from \ZDY in the \eemm channel, events with dilepton mass falling
-within $15 \gev$ of the $Z$ pole mass are cut away. Lepton and jet
-kinematic distributions are shown in
-figures~\ref{chap:analysis:fig:lead_lep,chap:analysis:fig:sublead_lep,chap:analysis:fig:lead_jet},
-and both calo and track \etmiss are shown in figure~\ref{}. The MC models the data
-adequately in this phase space region. 
+within $15 \gev$ of the $Z$ pole mass are cut away. The \pt~and $eta$
+distributions of the lepton (jet) with the highest \pt~in the event--
+called the leading lepton (jet)-- are shown in
+figure~\ref{chap:analysis:fig:lep_lead}
+(\ref{chap:analysis:fig:jet_lead}) after the common pre-selection cuts
+have been applied. MC simulation models the data
+adequately in this phase space region. Discrepancies in the jet
+distributions at high \pt~ and $|\eta|$ which lie outside of the statistical uncertainty band
+are covered by the systematic uncertainties associated with the JES
+and JER calibrations (section~\ref{chap:reco:sec:jet}). 
 
 \begin{figure}[h]
 \centering
+\subfigure[Transverse momentum]{
 \includegraphics[width=0.45\textwidth]{fig/analysis/preselection_kinematics/CutMll_lepPtLead_mh125_log.eps}
+\label{chap:analysis:fig:lep_lead_pt}
+}
+\subfigure[Pseudo-rapidity]{
 \includegraphics[width=0.45\textwidth]{fig/analysis/preselection_kinematics/CutMll_lepEtaLead_mh125_log.eps}
-\caption{The leading lepton \pt~(left) and $\eta$~(right) at
-  pre-selection for all lepton flavors combined. The error band
+\label{chap:analysis:fig:lep_lead_eta}
+}
+\caption{The leading lepton~\subref{chap:analysis:fig:lep_lead_pt}
+  \pt~and~\subref{chap:analysis:fig:lep_lead_eta}~$\eta$ at
+  pre-selection for all lepton flavors combined. Data-driven
+  corrections to backgrounds are not applied at this stage. The error band
   includes statistical uncertainties only.}
-\label{chap:analysis:fig:lead_lep}
+\label{chap:analysis:fig:lep_lead}
 \end{figure}
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.45\textwidth]{fig/analysis/preselection_kinematics/CutMll_lepPtSubLead_mh125_log.eps}
+%\includegraphics[width=0.45\textwidth]{fig/analysis/preselection_kinematics/CutMll_lepEtaSubLead_mh125_log.eps}
+%\caption{The sub-leading lepton \pt~(left) and $\eta$~(right) at
+%  pre-selection for all lepton flavors combined. The error band
+%  includes statistical uncertainties only.}
+%\label{chap:analysis:fig:sublead_lep}
+%\end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.45\textwidth]{fig/analysis/preselection_kinematics/CutMll_lepPtSubLead_mh125_log.eps}
-\includegraphics[width=0.45\textwidth]{fig/analysis/preselection_kinematics/CutMll_lepEtaSubLead_mh125_log.eps}
-\caption{The sub-leading lepton \pt~(left) and $\eta$~(right) at
-  pre-selection for all lepton flavors combined. The error band
-  includes statistical uncertainties only.}
-\label{chap:analysis:fig:sublead_lep}
-\end{figure}
-
-\begin{figure}[h]
-\centering
+\subfigure[Transverse momentum]{
 \includegraphics[width=0.45\textwidth]{fig/analysis/preselection_kinematics/CutMll_jetPtLead_mh125_log.eps}
+\label{chap:analysis:fig:jet_lead_pt}
+}
+\subfigure[Pseudo-rapidity]{
 \includegraphics[width=0.45\textwidth]{fig/analysis/preselection_kinematics/CutMll_jetEtaLead_mh125_lin.eps}
-\caption{The leading jet \pt~(left) and $\eta$ (right) at pre-selection (\mll) for all lepton flavors combined. The
+\label{chap:analysis:fig:jet_lead_eta}
+}
+\caption{The leading jet~\subref{chap:analysis:fig:jet_lead_pt}
+  \pt~and~\subref{chap:analysis:fig:jet_lead_eta} $\eta$ at
+  pre-selection for all lepton flavors combined. Data-driven
+  corrections to backgrounds are not applied at this stage. The
 error band includes statistical uncertainties only.}
-\label{chap:analysis:fig:lead_jet}
+\label{chap:analysis:fig:jet_lead}
 \end{figure}
 
 %\begin{figure}[h]
@@ -62,29 +84,75 @@ error band includes statistical uncertainties only.}
 \subsection{VBF-specific pre-selection}
 \label{subsec:vbf_select}
 
-The VBF analysis selection departs from the 0,1j selection starting
-with the \etmiss cuts. Looking at the jet multiplicity distributions
-after pre-selection (figure XX), the dominant backgrounds are \ttbar~in
-both lepton channels and also \ZDY in the \eemm channel. In the \emme
-channel, although signal has real \etmiss from the neutrinos in the
+The VBF analysis selection departs from the common selection starting
+with a cut on the number of jets in the event, which is required to be
+greater than or equal to two, with the two leading jets considered the
+tag jets associated with VBF. Looking at the jet multiplicity
+distributions after pre-selection (figure~\ref{chap:analysis:fig:jet_mult}), the
+dominant backgrounds with $\Njet \geq 2$ are \ttbar~in
+both lepton channels and also \ZDY in the \eemm channel. Additional
+pre-selection cuts are designed to suppress these large backgrounds. 
+
+\begin{figure}[h]
+    \centering
+    \subfigure[\emme channel]{
+    \includegraphics[width=0.45\textwidth]{analysis/emme_CutMET_VBF_forPlots_m_jet_n_mh125_lin.eps}
+    \label{chap:analysis:fig:jet_mult_df}
+    }
+    \subfigure[\eemm channel]{
+    \includegraphics[width=0.45\textwidth]{analysis/eemm_CutMET_VBF_forPlots_m_jet_n_mh125_lin.eps}
+    \label{chap:analysis:fig:jet_mult_sf}
+    }
+    \caption{Jet multiplicity distributions
+      for~\subref{chap:analysis:fig:jet_mult_df} \emme channel
+      and~\subref{chap:analysis:fig:jet_mult_sf} \eemm channel after
+      common pre-selection. In~\subref{chap:analysis:fig:jet_mult_sf}
+    \etmiss cuts and $Z$ veto are also applied. Error band represents
+    statistical uncertainties.}
+\label{chap:analysis:fig:jet_mult}
+\end{figure}
+
+In the \emme channel, although signal has \etmiss from the neutrinos in the
 $W$ decays, there is not an \etmiss cut applied, due to the nature of
-the backgrounds which also contain real \etmiss. Without a cut on
+the backgrounds which also contain \etmiss. Without a cut on
 \etmiss, there is a gain in signal acceptance corresponding to an expected
 significance gain of 6\% compared to the cut value of $20 \gev$ in the previous
-analysis~\cite{bib:hww_moriond_2013}. In the \eemm channel, on the other hand, two cuts are
-applied: track $\etmiss>40 \gev$ and calo $\etmiss>45 \gev$. These
-cuts suppress \ZDY, a process with ``fake'' \etmiss that arises from
-the mis-measurement of jets and soft tracks. 
+analysis~\cite{bib:hww_moriond_2013}. 
 
-Additionally, the number of jets is required to be greater than or
-equal to two to pick out the tag jets in the VBF process. To suppress
-top background, events with one or more $b$-tagged jets are vetoed
-(BJV), a cut that removes 94\% of \ttbar~and 87\% of ST, while
+Calorimeter and track \etmiss distributions in the \eemm channel after the $\Njet \geq 2$
+cut are shown in figure~\ref{met_preselect}. \ZDYll lies at low \etmiss,
+as this process does have neutrinos in the final state. Therefore, to reject this
+background, \etmiss cuts are applied, with the optimal cuts being
+$\trkmet>40 \gev$ and $\calomet >45 \gev$.
+
+\begin{figure}[h]
+    \centering
+    \subfigure[Calorimeter \etmiss]{
+    \includegraphics[width=0.45\textwidth]{analysis/preselection_kinematics/met_plots_old_style/eemm_Cut_TwoJet_noMET_caloMET_mh125_lin.eps}
+    \label{chap:analysis:fig:met_calo}
+    }
+    \subfigure[Track \etmiss]{
+    \includegraphics[width=0.45\textwidth]{analysis/preselection_kinematics/met_plots_old_style/eemm_Cut_TwoJet_noMET_trackMET_mh125_lin.eps}
+    \label{chap:analysis:fig:met_track}
+    }
+    \caption{Distributions of~\subref{chap:analysis:fig:met_calo}
+      \calomet and~\subref{chap:analysis:fig:met_track} \trkmet in
+      the \eemm channel with the common pre-selection cuts and $\Njet
+      \geq 2$. Data-driven background corrections are not applied at
+      this stage, and the error band represents statistical
+      uncertainties only.}
+\label{chap:analysis:fig:met_preselect}
+\end{figure}
+
+To suppress top background, events with one or more $b$-tagged jets
+are vetoed (BJV), a cut that removes 94\% of \ttbar~and 87\% of ST, while
 retaining \textapprox{70\%} of signal. The remaining top background
 consists of heavy flavor jets that fall outside of the tracking volume for
 $b$-tagging, jets within the tracking volume that are not tagged due
-to inefficiency in the algorithm, or ISR jets from gluons. Jet pairs
-that arise from QCD vertices and are kinematically similar to the tag jets in VBF, i.e. a large
+to inefficiency in the algorithm, or ISR jets from gluons. 
+
+Jet pairs that arise from QCD vertices and are kinematically similar
+to the tag jets in VBF, i.e. a large
 rapidity gap, have more soft QCD activity at central rapidity due to
 color exchange. The central jet veto (CJV) exploits this by requiring
 that the highest \pt~jet that falls between the two leading jets has
@@ -95,7 +163,9 @@ applied, exploiting the tendency for leptons resulting from the top decay,
 $t\rightarrow{Wb}\rightarrow{\ell\nu b}$, to fall outside of the
 pseudorapidity of the jets. The OLV is defined such that if either of
 the leptons falls outside of the pseudorapidity gap, the event is
-vetoed. The final preselection cut rejects \Ztautaunody processes,
+vetoed. 
+
+The final preselection cut rejects \Ztautaunody processes,
 which contribute in the signal region if both $\tau$s decay
 leptonically. If the tauon decay products have momenta which is
 far less than their mass, then to a good approximation, the direction

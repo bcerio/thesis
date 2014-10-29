@@ -1,5 +1,187 @@
 
-test
+The BDT analysis has been optimized for the $20.3~\ifb$ dataset
+collected by the ATLAS detector
+at $\sqrts = 8 \tev$. In addition to this dataset, a smaller dataset
+of $4.5~\ifb$ integrated at $\sqrts = 7 \tev$ has been analyzed. Since
+this dataset is substantially smaller, expected gains in sensitivity
+are expected to be smaller, and therefore an independent optimization
+has not been performed for this analysis. Instead, the BDT developed
+for the $8 \tev$ dataset is applied in the $7 \tev$ analysis, under
+the assumption that the difference in $\sqrt{s}$ and pile-up conditions do
+not have a significant impact on the kinematics of the final state
+objects. Another compelling consideration motivating the use of the
+same BDT is that because the BDT defines the signal region of phase
+space, and the $8 \tev$ theory uncertainties have been computed for
+this region, the theory uncertainties can be recycled for the $7 \tev$
+analysis. In the following section, the $\sqrts = 7 \tev$ BDT analysis
+is briefly documented. 
+
+\subsection{Backgrounds}
+\label{chap:analysis:sec:reanalysis:subsec:back}
+
+Backgrounds for the $7 \tev$ analysis are predicted with MC
+simulation and, when necessary, data-driven estimates. The MC
+generators are identical to those of the $8 \tev$ analysis, with the
+exception of the QCD $WW$ generator, for which \POWHEG interfaced to
+\PYTHIA 6 is used, due to the unavailability of \SHERPA. Since \POWHEG
+is only able to generate inclusive $WW$ at NLO, the second
+high-\pt~jet is produced in the parton shower, leading to potential
+mis-modeling of di-jet kinematic variables. Due to the absence of a
+sufficiently pure \wwtwoj control region, the modelling of this
+background can not be validated. Instead, large theory systematics are
+assigned. The MC predictions are normalized to their respective cross
+sections at $\sqrts = 7 \tev$, shown in
+table~\ref{chap:analysis:tab:mc_summary_2011}, which are generally on
+the order of 20\% smaller than those at $8 \tev$. The VBF cross
+section decreases by 22\%, which is compensated for by smaller
+background cross sections. 
+
+\begin{table}[h]
+\centering
+\resizebox{0.8\textwidth}{!}{
+\begin{tabular}{l|r|r}
+\hline
+Process & \hspace*{-3mm}$\sigma\cdot\mathrm{Br}$(7 \tev)
+(pb) & change w.r.t. $8 \tev$\\
+\hline
+VBF $H\rightarrow WW$ & $28\cdot 10^{-3}$ & -22\%\\
+ggF $H\rightarrow WW $ & 0.341 & -22\%\\
+$WH/ZH$ $H\rightarrow WW $ & $21\cdot
+10^{-3}$ & -16\%\\
+\hline
+$\ttbar$ dileptonic & 18.6 & -30\%\\
+$tW/tb$ leptonic & 3.15 & -24\%\\
+$tqb$ leptonic   & 20.7 & -27\%\\
+QCD $WW + 2$ jets \textdagger & 0.468 & -18\%\\
+EW $WW + 2$ jets & 0.027 & -31\%\\
+$gg\rightarrow WW$ & 0.14 & -30\%\\
+inclusive $W$ & $31\cdot 10^{3}$ & -16\%\\
+inclusive $Z/\gamma^{\star} (m_{ll} \ge 10 GeV)$ & $14.9\cdot 10^{3}$ & -10\%\\
+EW $Z/\gamma^{\star}$ & 2.26 & n/a \\ 
+$W(Z/\gamma^{\ast}) $ & 10.8 & -15\%\\
+$W(Z/\gamma^{\ast}) (m_{(Z/\gamma^{\ast})} < 7~\GeV)\ $ & 10.6 & -13\%\\
+$Z^{(\ast)}Z^{(\ast)} \to 4l(2l2\nu)$ & 0.64(0.42) & -12\%(-16\%)\\
+EW $WZ + 2$ jets & $8.5\cdot 10^{-3}$ & -35\%\\
+EW $ZZ + 2$ jets $(4l,ll\nu\nu)$ & $53\cdot
+10^{-5}(8.8\cdot 10^{-4})$ & -27\%(-27\%)\\
+$W\gamma$ & 313 & -15\%\\
+\hline
+\end{tabular}
+}
+\caption[Cross section summary for $\sqrts = 7 \tev$ analysis.]{Cross
+  sections for $\sqrts = 7 \tev$ MC predictions and associated change
+  with respect to
+  $\sqrts = 8 \tev$. MC generators are the same as those in the
+  $8 \tev$ analysis, shown in
+  table~\ref{chap:analysis:tab:mc_summary}, except for QCD \ww \textdagger.}
+\label{chap:analysis:tab:mc_summary_2011}
+\end{table}
+
+Due to limited data statistics in CRs and
+limited MC simulation statistics in the SRs, the binning of the BDT
+response is coarser than that of the $8 \tev$ analysis. However, in
+order to use the BDT-dependent theory
+systematics computed at $8 \tev$, the same bin boundaries are used and
+low statistics bins are merged. In
+the \emme channel, the two high BDT bins in the $8 \tev$ analysis are
+merged, resulting in two bins with boundaries [-0.48,0.3,1.0]. In the
+\eemm channel, the fit is performed on a single BDT bin [-0.48,1.0].
+
+Data-driven background estimation techniques are inherited from the
+$8 \tev$ analysis. The top background is normalized from the same CR,
+with the exception of the BDT binning. Due to limited stats, the NF is
+computed with a control region with all BDT bins merged and is applied across
+the BDT spectrum. The resulting purity is 91\% and the NF is $0.8 \pm 0.3$. \ZDYll is
+estimated with the ABCD method for a single BDT bin, resulting in an
+estimate of $N_{\mathrm{DY}}^{A,est.} = 2.3 \pm 1.0$, which is
+compatible with the prediction from MC simulation of $1.4 \pm 0.5$
+events. 
+
+\input{tex/vbf_bdt_analysis/sys_table_df_2011}
+\input{tex/vbf_bdt_analysis/sys_table_sf_2011}
+
+\subsection{Results}
+\label{chap:analysis:sec:reanalysis:subsec:results}
+
+The predicted and observed event yields for the $7 \tev$ analysis are
+shown in table~\ref{chap:analysis:tab:signal_region_cutflow_2011}. In
+the \emme channel, the expected number of background events in the
+first bin is 3.5, with 6 events observed, and in the second BDT bin
+0 events are observed with the expected background prediction of 0.9
+events. In the single \eemm BDT bin, 4.7 background events are
+predicted with 0.8 signal events, and the number of events observed is
+3. 
+
+\begin{table}[h]
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\resizebox{1.0\textwidth}{!}{
+%\begin{tabular}{ +l^| c^ c^ c^ | c^ c^ c^ c^ c^ c }
+\begin{tabular}{l || c c c | c c c c c c }
+\hline
+% & & & Total & & & & Non-$WW$ & & \\
+\multirow{2}{*}{Cut stage} & \multirow{2}{*}{Observed} &
+\multirow{2}{*}{Signal} & Total &
+\multirow{2}{*}{top} & \multirow{2}{*}{$WW$} & \multirow{2}{*}{ggF} &
+Non-$WW$ & \multirow{2}{*}{\ZDY} & \multirow{2}{*}{Fakes} \\
+ & & & Back & & & & Diboson & & \\
+\hline
+$\Njet \geq 2$ & $155205$ & $16$ & $151286$ & $13809$ & $289$ & $27$ &
+$226$ & $135668$ & $1268$ \\
+\hline
+$\boldsymbol{\emme~\textrm{\bf channel}}$ & $8042$ & $8$ & $7668$ & $6831$ & $143$ &
+$13$ & $54$ & $507$ & $119$ \\
+$\Nbjet = 0$ & $949$ & $5$ & $950$ & $372$ & $102$ & $10$ & $39$ &
+$363$ & $65$ \\
+$\textrm{CJV}$ & $799$ & $5$ & $798$ & $294$ & $91$ & $8$ & $34$ &
+$310$ & $61$ \\
+$\textrm{OLV}$ & $194$ & $3$ & $172$ & $66$ & $18$ & $2$ & $6$ & $65$
+& $14$ \\
+$Z\rightarrow{\tau\tau}~\textrm{veto}$ & $100$ & $2$ & $92$ & $43$ &
+$11$ & $2$ & $4$ & $21$ & $10$ \\
+$\textrm{BDT} > -0.48$ & $6$ & $1$ & $5$ & $2$ & $1$ & $1$ & $0$ & $1$
+& $0$ \\
+\hline
+{\bf\color{blue} BDT bin 1} & $6$ & $0.6 \pm 0.0$ & $3.5 \pm 0.5$ & $1.1$ &
+$0.6$ & $0.4$ & $0.4$ & $0.9$ & $0.1$ \\
+{\bf\color{blue} BDT bin 2} & $0$ & $0.9 \pm 0.0$ & $0.9 \pm 0.2$ & $0.4$ &
+$0.3$ & $0.2$ & $0.0$ & $0.0$ & $0.0$ \\
+\hline
+$\boldsymbol{\eemm~\textrm{\bf channel}}$ & $147163$ & $8$ & $143618$ & $6978$ & $146$
+& $14$ & $172$ & $135160$ & $1149$ \\
+$\calomet > 45 \gev$ & $10251$ & $5$ & $9560$ & $5054$ & $103$ & $8$ &
+$85$ & $4230$ & $79$ \\
+$\trkmet > 40 \gev$ & $6415$ & $4$ & $6108$ & $4691$ & $96$ & $7$ &
+$75$ & $1200$ & $39$ \\
+$Z~\textrm{veto}$ & $4272$ & $4$ & $4134$ & $3697$ & $76$ & $7$ & $22$
+& $310$ & $22$ \\
+$\mll < 75 \gev$ & $2322$ & $4$ & $2221$ & $1888$ & $37$ & $7$ & $13$
+& $258$ & $18$ \\
+$\Nbjet = 0$ & $328$ & $3$ & $322$ & $106$ & $26$ & $5$ & $9$ & $173$
+& $4$ \\
+$\textrm{CJV}$ & $261$ & $3$ & $263$ & $83$ & $23$ & $4$ & $8$ & $142$
+& $4$ \\
+$\textrm{OLV}$ & $56$ & $2$ & $56$ & $20$ & $5$ & $1$ & $2$ & $27$ &
+$1$ \\
+$Z\rightarrow{\tau\tau}~\textrm{veto}$ & $39$ & $1$ & $36$ & $17$ &
+$4$ & $1$ & $1$ & $12$ & $1$ \\
+\hline
+{\bf\color{blue} BDT bin 1} & $3$ & $0.8 \pm 0.0$ & $4.7 \pm 1.5$ & $0.7$ &
+$0.6$ & $0.2$ & $0.2$ & $2.8$ & $0.2$ \\
+\hline
+\end{tabular}
+}
+\caption[]{Observed and expected event yields for the $7 \tev$
+analysis at each cut stage,
+starting with the \Njet cut. Expected event yields are split into the
+background components. The expected signal includes VBF and VH
+contributions. Highlighted in {\color{blue}blue} are the yields in the
+three signal region BDT bins, which go into the likelihood fit. The uncertainties
+shown are statistical only. Normalization factors are applied to top
+and \ZDY in the SR, but not at other cut stages.}
+\label{chap:analysis:tab:signal_region_cutflow_2011}
+\end{center}
+\end{table}
 
 
 

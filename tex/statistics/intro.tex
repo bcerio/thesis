@@ -1,0 +1,124 @@
+
+Quantum mechanical scattering processes fulfill the requirements of a
+homogeneous Poisson process~\cite{bib:Cassandras:2006:IDE:1205892}. Letting $N$ denote the number of
+events observed for a given process, the following requirements are
+satisfied for a Poisson process:
+
+\begin{enumerate}[nolistsep]
+\item[(1)] The probability of observing $k$ events at time $t + \Delta{t}$ is
+  independent of the number of events observed at time $t$, i.e.
+
+\begin{equation}
+\textrm{Pr}\left [N(t + \Delta{t})=k\,|\,N(t) = j\right] = \textrm{Pr}\left[N(t +
+  \Delta{t})=k\right].
+\end{equation}
+
+\item[(2)] For a time interval, $\Delta{t}$, the
+  probability of observing a single event depends only on
+  $\Delta{t}$. Mathematically, this can be expressed as
+
+\begin{equation}
+\textrm{Pr}\left[N(t + \Delta{t}) - N(t) = 1\right] = \lambda\Delta{t} + O(\Delta{t}^2),
+\end{equation}
+
+where $\lambda$ is a time-independent constant representing the rate at
+which the process occurs per unit time. 
+
+\item[(3)] At $t = 0$, zero events have been observed,
+  i.e. $\textrm{Pr}\left[N(0) = 0\right] = 1$.
+
+\item[(4)] In an infinitesimal time interval, either zero or one event
+can be observed. With requirement (2), this implies that
+
+\begin{equation}
+%\begin{aligned}
+\textrm{Pr}\left[N(t + \Delta{t}) - N(t) = 0\right] = 1 - \lambda\Delta{t} - O(\Delta{t}^2).
+%\end{aligned}
+\end{equation}
+
+\end{enumerate}
+
+\noindent
+From the above four requirements, it is possible to compute the probability
+density function for $N$, the number of scattering events observed at
+fixed time $t$. The probability of observing 0 events at time
+$t+\Delta{t}$ is, according to the above requirements,
+
+\begin{equation}
+\begin{aligned}
+\textrm{Pr}\left[N(t+\Delta{t}) = 0 \right] & = \textrm{Pr}\left[N(t)
+= 0\right]\cdot\textrm{Pr}\left[N(\Delta{t}) = 0\right] \\
+& = \textrm{Pr}\left[N(t) = 0\right]\left(1 - \lambda\Delta{t} - O(\Delta{t}^2)\right),
+\end{aligned}
+\end{equation}
+
+\noindent
+where the first equality follows from (1) and the second equality
+follows from (4). Re-arranging and taking
+$\lim{\Delta{t} \to 0}$ results in a differential equation for
+$\textrm{Pr}\left[N(t)= 0\right]$
+
+\begin{equation}
+\frac{dP_0(t)}{dt} = -\lambda{P_0(t)}.
+\end{equation}
+
+\noindent
+The notation has been changed from $\textrm{Pr}\left[ N(t) =
+k \right]$ to $P_k(t)$ to make the time-dependence more clear. Using
+the initial condition (3), the solution to this equation is $P_0(t) =
+e^{-\lambda{t}}$. The differential equation for the more general
+scenario of observing $k$ events in time $t$ is 
+
+\begin{equation}
+\frac{dP_k(t)}{dt} = -\lambda\left[P_k(t) - P_{k-1}(t)\right],
+\end{equation}
+
+\noindent
+which can be solved recursively starting with the solution for
+$P_0(t)$, yielding
+
+\begin{equation}
+P(N\,|\,\lambda,t) = \frac{(\lambda{t})^N e^{-\lambda{t}}}{N!}.
+\end{equation}
+
+\noindent
+This is the PDF for observing $N$ scattering events for a process
+that occurs at a rate $\lambda$ in a duration of time $t$, also known
+as the Poisson distribution. The
+product of $\lambda$ and $t$ is the mean number of events expected in
+time $t$ at a rate of $\lambda$ and
+$\sqrt{\lambda{t}}$ is the standard deviation. Due to the Poisson
+nature of the scattering process itself, the number of events falling
+into any phase space region also is also Poisson-distributed. 
+
+In a collider experiment, the expected number of events, $\lambda{t}$,
+is generally computed with MC simulation. For a given phase space
+region, if the predicted number of events for background $X$ is $b_X$
+and the prediction for background $Y$ is $b_Y$,
+then $P(N|b_X+b_Y) = (b_X+b_Y)^N e^{-(b_X+b_Y)}/N!$ is the probability for observing $N$
+events in this region, assuming that the background is properly
+accounted for by the prediction $b_X+b_Y$. In the situation where $N$ is
+measured, there is information to be gained about the expected number
+of events by recasting the PDF as a likelihood function:
+
+\begin{equation}
+\mathscr{L}(\mu) = P(N\,|\,\mu s + b)
+\label{chap:statistics:equation:simple_likelihood}
+\end{equation}
+
+\noindent
+This function is no longer a PDF for $N$. Instead, it is a function
+of the parameter $\mu$, called the parameter of interest (POI), which
+scales the signal prediction $s$. The total
+background prediction, $b$, is from MC simulation. If
+$s$ is the SM prediction, then $\mu$ is interpreted as the signal
+strength
+$\left[\sigma\cdot\textrm{Br}\right]_{\textrm{measured}}/\left[\sigma\cdot\textrm{Br}\right]_{\textrm{SM}}$. In
+order to extract the measured
+$\mu$, the likelihood function is maximized by computing
+$\partial \mathscr{L}/\partial \mu$, setting it to zero, and solving
+for $\hat{\mu}$. In the case above, this yields, $\hat{\mu} = (N -
+b)/s$. If $N$ is measured to be equal to the background-only hypothesis
+$b$, then $\hat{\mu} = 0$; if, instead, the observed number of events
+is consistent with signal produced at the SM rate, $N = s + b$, then
+$\hat{\mu} = 1$.

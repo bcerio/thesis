@@ -1,0 +1,232 @@
+
+The simplified likelihood function defined in
+equation~\ref{chap:statistics:equation:simple_likelihood} does not
+account for the fact that (1) some of the components in $b$ are
+normalized with control regions, (2) predictions $s$ and $b$ are inherently
+uncertain (3) the number of events $N$ is generally measured in
+several phase space bins for some observable $x$. 
+
+If the normalization of a background is constrained in a control
+region, the normalization factor (NF) can be incorporated as an
+additional parameter in the likelihood:
+
+%\begin{equation}
+%\mathscr{L}(\mu,\mu_b) = P(N|\mu s + \mu_b b^{\textrm{SR}} +
+%b_{\textrm{other}})\cdot P(M|\mu_b b^{\textrm{CR}} + \mu
+%s^{\textrm{CR}} + b_{\textrm{other}}^{\textrm{CR}})
+%\end{equation}
+\begin{equation}
+\mathscr{L}(\mu,\mu_b) = P(N\,|\,\mu s + \mu_b b^{\textrm{SR}} +
+b_{\textrm{other}}) \cdot P(M\,|\,\mu_b b^{\textrm{CR}})
+\label{chap:statistics:equation:likelihood_CR}
+\end{equation}
+
+\noindent
+The second term represents the auxiliary measurement $M$ in the CR,
+with an expectation
+%$\mu_b b^{\textrm{CR}}+\mu s^{\textrm{CR}} +
+%b_{\textrm{other}}^{\textrm{CR}}$, where the residual signal $\mu
+%s^{\textrm{CR}}$ and other background components
+%$b_{\textrm{other}}^{\textrm{CR}}$ are expected to be small with
+%respect to $\mu_b b^{\textrm{CR}}$. This $\mu_b$ factor then
+which is the product of the MC prediction and a strength parameter:
+ $\mu_b b^{\textrm{CR}}$.
+% assuming that the contamination from signal
+% and other backgrounds in this region is small. 
+The $\mu_b$ parameter then
+scales the prediction in the SR, $b^{\textrm{SR}}$. Again, the
+best-fit values of $\mu$ and $\mu_b$ are obtained by maximizing the
+likelihood. 
+
+The predictions from MC simulation which enter the likelihood function
+are inherently uncertain, since they rely on assumptions about
+theoretical (e.g. renormalization scale) or instrumental (e.g. JES)
+parameters. Moreover, the number of events falling into the SR in MC
+simulation is also Poisson-distributed
+and therefore subject to statistical uncertainties. Because such
+parameters are not of fundamental interest in the measurement, they
+are called nuisance parameters (NPs), denoted
+$\theta_i$. Uncertainties associated with $\theta_i$ are generally computed
+independently and this information is incorporated into the likelihood
+in two ways. First, the signal and background predictions, denoted
+generically as $E$, are written in terms of $\theta_i$:
+
+\begin{equation}
+E(\theta_i) = E_0\nu(\theta_i)
+%\label{}
+\end{equation}
+
+\noindent
+where $\nu(\theta_i)$ is chosen {\it a priori} to give $E(\theta_i)$ the
+expected $\theta$ dependence for a given source. Additionally, the
+uncertainty on $\theta_i$ is incorporated with a response term in the
+likelihood function, denoted
+$\mathscr{A}(\tilde{\theta_i}\,|\,\theta_i)$, where $\tilde{\theta_i}$ has
+been determined to be the best guess for $\theta_i$. In the
+frequentist interpretation, $\mathscr{A}(\tilde{\theta_i}\,|\,\theta_i)$
+is the sampling distribution for $\theta_i$, and $\tilde{\theta_i}$
+is the mean value. 
+
+In the analysis presented in this thesis, three different
+$\nu(\theta_i)$ and $\mathscr{A}(\tilde{\theta_i}\,|\,\theta_i)$ are used
+in the likelihood function, depending on the
+nature of the uncertainty. For both theoretical and instrumental
+uncertainties, 
+
+\begin{equation}
+\begin{aligned}
+\nu(\theta_i) &= (1+\epsilon)^{\theta_i} \\
+\mathscr{A}(\tilde{\theta_i}\,|\,\theta_i)
+&= \mathcal{G}(\tilde{\theta_i}\,|\,\theta_i,1)
+\label{chapter:statistics:equation:nu_theta_A_theta}
+\end{aligned}
+\end{equation}
+
+\noindent
+where $\mathcal{G}(\tilde{\theta_i}\,|\,\theta_i,1)$ is a unit width Gaussian distribution
+centered at $\theta_i$. The parameter $\epsilon$ is obtained by
+measuring the event yield expectations at their $\pm 1\sigma$
+points. Letting $E(1) = (1+\epsilon_{+})^{1}$ and $E(-1) =
+(1+\epsilon_{-})^{-1}$, the expectation is written
+
+\begin{equation}
+E(\theta) = \left\{
+\begin{array}{ll} 
+E_0(1+\epsilon_+)^{\theta} & \, \theta\geq 0 \\
+E_0(1+\epsilon_-)^{\theta} & \, \theta < 0
+\end{array}
+\right.
+\label{chapter:statistics:equation:E_theta}
+\end{equation}
+
+%\begin{equation}
+%E(\theta) = \left\{\begin{matrix}
+%E_0(1+\epsilon_+)^{\theta} \; \theta\geq0  \\ 
+%E_0(1+\epsilon_-)^{\theta} \; \theta<0
+%\end{matrix}
+%\end{equation}
+
+\noindent
+If, for example, the expectation value for an uncertainty source is
+3\% greater than the nominal
+expectation value $E_0$ at $E(1)$, then $(1+\epsilon_+)^1 = E(1)/E_0 =
+1.03$, implying that $\epsilon_+ = 3\%$. Therefore, $\epsilon$
+represents the fractional change in the yields due to a given NP. With
+the choices in equation~\ref{chapter:statistics:equation:nu_theta_A_theta}, the
+sampling distribution for the expectation value $E(\theta)$ is a
+log-normal distribution centered at $E_0$. An alternative choice is the same
+$\mathscr{A}(\tilde{\theta_i}\,|\,\theta_i)$ with $\nu(\theta) =
+(1+\delta\theta)$, which yields an $E(\theta)$ that is normally
+distributed about $E_0$ with a width $\sigma = E_0\delta$. If $\theta
+< -1/\delta$, the expectation value is negative. To avoid such a
+situation, $E(\theta)$ is set to zero in these cases, resulting in a
+discontinuity in the expectation value as a function of
+$\theta$. For this reason, the log-likelihood sampling distribution is
+chosen. Each NP $i$ is then factorized such that $E(\vec{\theta}) =
+E_0\prod_i \nu_i(\theta_i)$.
+
+Similar to the statistical uncertainty on the observed number of
+data events in the SR, there are statistical uncertainties on the
+expected number of events
+due to Poisson fluctuations in the MC sample~\cite{bib:Barlow:1993dm}. The expectation value,
+$E$, for a given process can be expressed as the product
+$\mathscr{L}\cdot \sigma \cdot \epsilon_{\textrm{SR}}$, where
+$\mathscr{L}$ is the integrated luminosity, $\sigma$ is the process
+cross section, and $\epsilon_{\textrm{SR}}$ is the efficiency for
+selecting an event in the SR. Re-expressing the efficiency in terms of
+the raw number of MC events selected in the SR and the total number of
+events generated, the expectation is
+
+\begin{equation}
+E(\vec{\theta}) = \mathscr{L}(\vec{\theta})\cdot \sigma(\vec{\theta}) \cdot \frac{N_{\textrm{SR}}(\vec{\theta})}{N_{\textrm{total}}}
+\label{chapter:statistics:figure:expect_factors}
+\end{equation}
+
+\noindent
+where the dependence on $\vec{\theta}$ has been explicitly
+indicated. The random variable $N_{\textrm{SR}}$ is expected to be
+Poisson-distributed for the source due to statistical uncertainties,
+with a mean of $\hat{N}_{\textrm{SR}}$, and a standard deviation of
+$\sqrt{\hat{N}_{\textrm{SR}}}$, where $\hat{N}_{\textrm{SR}}$ is the
+measured number of raw events in the SR. Using the fact
+that $\mathscr{L}$ and $\sigma$ are constants for this NP,
+the ratio of $E(\theta)$ to $E_0$ is equivalent to the ratio of
+$N_{\textrm{SR}}$ and $\hat{N}_{\textrm{SR}}$, allowing $E(\theta)$ to
+be expressed as a fixed constant multiplying $E_0$:
+$E(\theta)= E_0\theta$. With this parameterization, the constraint term
+is set to give the {\it a priori}~sampling distribution:
+
+\begin{equation}
+\begin{aligned}
+\nu(\theta) &= \theta \\
+\mathscr{A}(\tilde{\theta}\,|\,\theta) &=
+P(\hat{N}_{\textrm{SR}}\,|\,\theta N_{\textrm{SR}})
+\end{aligned}
+\end{equation}
+
+\noindent
+Under these definitions, the most likely value of $E(\theta)$ is $E_0$
+and the width $\Delta_E$ is
+$E_0/\sqrt{\hat{N}_{\textrm{SR}}}$. To keep the number of NPs to a
+minimum, the parameter for the statistical uncertainty is integrated
+across all processes in a given bin, yielding a single NP per bin. 
+
+The final type of NP is associated with the statistical uncertainty
+due to the number of data events in a control region. Like the
+statistical uncertainty from MC predictions, this NP has a constraint
+term that is Poisson:
+
+The final type of NP--- the strength parameter associated with a
+background that is constrained from a CR--- has been discussed
+(equation~\ref{chap:statistics:equation:likelihood_CR}). To be
+consistent with the description of other NPs, the constraint term is
+written in terms of $\theta$:
+
+\begin{equation}
+\begin{aligned}
+\nu(\theta) &= \theta \\
+\mathscr{A}(\tilde{\theta}\,|\,\theta) &=
+P(\tilde{N}_{\textrm{CR}}\,|\, N_{\textrm{CR}}(\theta))
+\end{aligned}
+\end{equation}
+
+\noindent
+Here, $N_{\textrm{CR}}$ is defined as the expected number of
+events in the CR: $N_{\textrm{CR}} = \mu s_{\textrm{CR}} + \theta
+b_{\textrm{CR}}^{\textrm{target}} + \sum_k
+b_{\textrm{CR}}^{\textrm{other}}$. $s_{\textrm{CR}}$ and
+$b_{\textrm{CR}}^{\textrm{other}}$ are the expected contaminations
+from signal and backgrounds other than the target
+background. $\tilde{N}_{\textrm{CR}}$ is the observed number of events
+in the CR. In the
+likelihood expressions that follow, such NPs are explicitly separated
+from the others to illustrate which backgrounds are constrained with
+an auxiliary measurement. 
+
+Accounting for the systematic and statistical uncertainties, the
+likelihood function can be written with the additional terms outlined
+above. Additionally, if the final discriminant in the analysis is
+binned in more than one bin, a product over the likelihoods for each
+bin is performed. The likelihood in each bin can be written
+
+\begin{equation}
+\mathscr{L}_{\textrm{bin }i}(\mu,\vec{\mu}_{b},\vec{\theta}) = P(N_i\,|\,
+\mu s(\vec{\theta}) + \sum_j \mu_j b_j(\vec{\theta}) + \sum_k
+b_k(\vec{\theta})) \cdot \prod_{j=1}^J P(M_j\,|\, \mu_j
+b^{\textrm{CR}}_j(\vec{\theta})) \cdot \prod_{n=1}^K \mathscr{A}(\tilde{\theta_n}\,|\,\theta_n).
+\label{chapter:statistics:equation:LH_bin_full}
+\end{equation}
+
+\noindent
+The first term is the likelihood for bin $i$ of the SR having observed
+$N_i$ events. The second term represents the likelihood for the auxiliary
+measurement of $M_j$ events in the CR and the final term is the
+product of the constraint terms for each of the $K$ NPs considered in
+the analysis. All information in the analysis--- the event yields in the SR, NFs from
+CR measurements, and systematic uncertainties--- has been reduced to a
+single analytic function of the signal strength $\mu$, the NFs
+$\vec{\mu^{\prime}}$, and the NPs $\vec{\theta}$. To extract the
+best-fit $\mu$, the likelihood is maximized with respect to these
+arguments simultaneously using the M{\textsc INUIT}
+package~\cite{bib:James:1975dr}. 
+

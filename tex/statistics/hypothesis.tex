@@ -1,0 +1,341 @@
+
+In addition to measuring the signal strength, it is crucial to
+quantify the degree to which the observed data are compatible with
+some hypothesized $\mu$ value. In this analysis, the goal is to
+quantify the compatibility with the hypothesis that there is not any
+signal ($\mu = 0$), i.e. the background-only hypothesis. 
+
+Because the likelihood function is differentiated to obtain the
+best-fit value of the POI, its absolute magnitude is
+arbitrary. Therefore, to extract
+information from the likelihood, it is necessary to compare two points
+in parameter space. For example, if there are two competing hypotheses
+$H_a$ and $H_b$, the test statistic which is the ratio of the
+likelihoods for each parameter set, $t =
+\mathscr{L}(N\,|\,H_a)/\mathscr{L}(N\,|\,H_b)$, is greater in magnitude if the
+data $N$ are more consistent with the parameter set associated with
+$H_a$ than that of $H_b$. A test statistic is chosen to maximize the
+discriminating power between two hypotheses. In other words, if there
+is some $t$ threshold at which $H_a$ is accepted as the ``true''
+hypothesis, it is important to avoid scenarios in which $H_a$ is
+accepted as true when in fact $H_b$ is true. Similarly, a test
+statistic must be chosen to minimize the cases in which $H_a$ is
+rejected when in reality $H_a$ is true. The Neyman-Pearson
+lemma~\cite{bib:neymanp33}
+states that the ratio of likelihoods maximizes the discriminating
+power between two hypotheses. Consequently, this analysis utilizes a
+test statistic of this form. Under the frequentist interpretation, a
+test is performed by first finding the probability density function
+for the test statistic under the hypothesis being tested. The $p$-value
+for observing the test statistic in the actual realization of the
+experiment is then computed in light of the distribution of $t$.
+
+For this this analysis, the profile likelihood test statistic (PLTS), given
+by
+
+\begin{equation}
+t_{\mu} = -2\log{\frac{\mathscr{L}(\mu,\hat{\theta}_{\mu})}{\mathscr{L}(\hat{\mu},\hat{\theta})}},
+\label{chapter:statistics:equation:test_statistic}
+\end{equation}
+
+\noindent
+has been chosen. Given that the log function is monotonic, the
+Neyman-Pearson lemma still applies for the log of the likelihood
+ratio. In the numerator of this function, $\hat{\theta}_{\mu}$ is
+determined by conditionally maximizing the likelihood with respect to
+$\theta$ with $\mu$ fixed to the value for the hypothesis being tested, while in the
+denominator, the likelihood is maximized with respect to both $\mu$
+and $\theta$ simultaneously. 
+
+The PDF for the test statistic, $f(t_{\mu}\,|\,\muprime)$,
+is determined by either generating pseudo-experiments (PEs) or using
+an analytic approximation. There is a subtle distinction between $\mu$
+and $\muprime$
+in the above notation for the PDF; $\mu$ denotes the hypothesis being tested and
+$\muprime$ denotes the $\mu$ value assumed in data. In the PE
+approach, an ensemble
+of different experimental realizations is generated. Each realization
+is defined by (1) the number of events observed in the signal region
+bins $N_i$, (2) the number of events observed in control regions
+$M_j$, and (3) the auxiliary measurement for each NP
+$\tilde{\theta}_n$. Both (1) and (2) are sampled from Poisson
+distributions using the expectations shown
+in~\ref{chapter:statistics:equation:LH_bin_full}. Similarly, (3) is sampled from the auxiliary
+constraint term, $\mathscr{A}(\tilde{\theta_n}\,|\,\theta_n)$. To obtain a
+true sampling distribution, a suitable choice for the parameters
+$(\mu,\mu_j,\theta_n)$ is needed; otherwise, the mean value of, for
+example, $M_j$, is not known, since $\mu_j$ is not
+constrained. The convention is to determine the values of
+$(\mu_j,\theta_n)$ from the data in the auxiliary terms, and in the
+term corresponding to the primary measurement, $\mu$ is set to
+$\muprime$.
+
+With the PDF $f(t_{\mu}\,|\,\muprime)$ from the PEs, the
+consistency of the observed data with the $\mu$
+hypothesis is quantified with a $p$-value, defined as the probability
+of measuring a $t_{\mu}$ which is greater than or equal to the
+observed value of the test statistic
+$t_{\mu}^{\textrm{obs}}$:
+
+\begin{equation}
+p_{\mu} = \int_{t_{\mu}^{\textrm{obs}}}^{\infty}
+f\left(t_{\mu}\,|\,\muprime\right) dt_{\mu}
+\label{chap:statistics:equation:p_value}
+\end{equation}
+
+\noindent
+If $t_{\mu}^{\textrm{obs}}$ falls in the tail of the
+$f(t_{\mu}\,|\,\muprime)$ distribution, the integral and therefore
+$p_{\mu}$ are small, indicating statistical disagreement
+between the observed data and the $\mu$ hypothesis.In the special case
+where the aim of the measurement is to reject the
+background only hypothesis in order to discover a signal, the test
+statistic is set to $t_0$, and the p-value is then
+
+\begin{equation}
+p_0 = \int_{t_{0}^{\textrm{obs}}}^{\infty}
+f\left(t_{0}\,|\,0\right) dt_0.
+\label{chap:statistics:equation:p_value_0}
+\end{equation}
+
+\noindent
+As the observed event yield increases above the expected background,
+$\hat{\mu}$ increases, and consequently $t_0^{\textrm{obs}}$ increases
+(equation~\ref{chapter:statistics:equation:test_statistic}) towards
+increasingly improbable values of $t_{0}$ under the $\muprime = 0$
+hypothesis. Taking the integral in
+equation~\ref{chap:statistics:equation:p_value_0} directly quantifies
+the probability. 
+
+In many cases, an experimenter wishes to know at what level the
+background only hypothesis is expected to be rejected assuming an alternative
+hypothesis to be true. Generally, the alternative hypothesis is
+$\mu^{\prime} = 1$--- i.e. the assumption is that the signal model is
+true. To compute the expected $p_0$, two PDFs, $f(t_{0}\,|\,0)$ and
+$f(t_{0}\,|\,1)$, are determined, and the median $t_0$ is extracted
+from $f(t_{0}\,|\,1)$. Denoting this median value as
+$t_0^{\textrm{exp}}$, the expected p-value for the alternative
+hypothesis is computed by replacing
+$t_{0}^{\textrm{obs}}$ with $t_0^{\textrm{exp}}$ in
+equation~\ref{chap:statistics:equation:p_value_0}.
+
+The p-value is typically converted to the quantity $Z_{\mu}$, the number of
+standard deviations the observation falls above the mean:
+
+\begin{equation}
+\begin{aligned}
+& Z_{\mu} = \Phi^{-1}\left(1-p_{\mu}\right) \\
+& \Phi(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-t^2} dt.
+\label{chapter:statistics:equation:z_value}
+\end{aligned}
+\end{equation}
+
+\noindent
+$\Phi(x)$ is the cumulative distribution function (CDF) for the normal
+distribution, $\mathcal{G}(x\,|\,0,1)$. In the particle
+physics community, in order to claim the discovery of some signal, the
+null hypothesis is required to be rejected at the $5\sigma$ level, or
+$Z_0 \geq 5$ ($p_0 \leq 2.9 \times 10^{-7}$). ``Evidence of''
+(``observation of'') the signal process is claimed if the null
+hypothesis is rejected at $3\sigma$ ($4\sigma$). 
+
+Rejecting a hypothesis at the level of $3\sigma$
+($5\sigma$) requires measuring a p-value to 1 part in $10^3$
+($10^7$). With the PE approach, $f(t_{\mu}\,|\,\muprime)$ is subject
+to Poisson fluctuations. 
+If the number of events falling above the observed $t_{\mu}$ is
+denoted $N_{\geq t_{\mu}^{\textrm{obs}}}$, then the relative
+statistical uncertainty on $p_{\mu}$ is $1/\sqrt{N_{\geq
+t_{\mu}^{\textrm{obs}}}}$. For $3\sigma$ ($5\sigma$) rejection, to
+achieve a relative uncertainty of 10\% on the p-value, approximately
+$10^5$ ($10^9$) PEs are required, and for 1\% uncertainty on $p_{\mu}$,
+approximately $10^7$ ($10^{11}$) PEs need to be generated. Each PE
+generation requires the sampling of $K$
+$\mathscr{A}(\tilde{\theta}_n\,|\,\theta_n)$ distributions, where $K$
+is the number of NPs, and a Poisson distribution for each primary
+measurement bin and each auxiliary measurement in order to build the likelihood
+function. Additionally, each evaluation of $t_{\mu}$ requires two CPU-intensive
+likelihood minimizations.
+
+In this analysis, there are $O(10^{2})$ NPs and $O(10)$ event
+measurements. Given the sheer number of PEs needed to
+reject the null hypothesis at $3\sigma$, it is
+computationally preferable to approximate
+$f(t_{\mu}\,|\,\muprime)$ with an analytic function. Assuming that the
+data sample size is $N$, the best-fit values of the
+parameters in the likelihood $\hat{\mu}$, $\hat{\mu}_b$, and $\hat{\theta}_i$ are
+approximately distributed according to a multivariate normal
+distribution, with corrections at the level of
+$1/\sqrt{N}$~\cite{bib:wilks1938,bib:wald1943tests}. From this, it
+follows that for a single POI, the PDF of the log-
+likelihood ratio is given by
+
+\begin{equation}
+-2\log{\frac{\mathscr{L}(\mu,\hat{\theta}_{\mu})}{\mathscr{L}(\hat{\mu},\hat{\theta})}}
+= \frac{\left(\mu-\hat{\mu}\right)^2}{\sigma^2} + O\left(1/\sqrt{K}\right).
+\end{equation}
+
+\noindent
+where $\hat{\mu}$ is a normally distributed random
+variable with a mean of $\muprime$
+and width $\sigma$, which can be determined from the expectation value
+of the Fisher information matrix~\cite{bib:Reinert}, or as described in the
+following section~\cite{bib:Cowan:2010js}. Corrections to
+this analytic expression decrease as $1/\sqrt{N}$, implying that this
+relationship becomes exact in the limit that the data sample size is
+infinite. Neglecting the $O(1/\sqrt{N})$ term,
+$f(t_{\mu}\,|\,\muprime)$ can be derived using the fact that
+$\hat{\mu}$ is normally distributed.
+
+In this analysis, the test statistic in
+equation~\ref{chapter:statistics:equation:test_statistic} is modified
+slightly, treating cases in which $\mu \leq \hat{\mu}$ differently
+from those in which $\mu > \hat{\mu}$:
+
+\begin{equation}
+q_{\mu} = \left\{
+\begin{array}{ll}
+-2\log{\frac{\mathscr{L}\left(\mu,\hat{\theta}_{\mu}\right)}{\mathscr{L}\left(\hat{\mu},\hat{\theta}\right)}}
+& \, \hat{\mu} < \mu \\
++2\log{\frac{\mathscr{L}\left(\mu,\hat{\theta}_{\mu}\right)}{\mathscr{L}\left(\hat{\mu},\hat{\theta}\right)}}
+& \, \hat{\mu} \geq \mu
+\end{array}
+\right.
+\label{chapter:statistics:equation:test_statistic_runsig}
+\end{equation}
+
+\noindent
+This test statistic allows $\hat{\mu}$ to go below the test $\mu$ in the
+likelihood, and is therefore more robust than test statistics which
+limit the range of $\hat{\mu}$ based on physical grounds. Under the Wald
+approximation, $q_{\mu}$ can be written
+
+\begin{equation}
+q_{\mu} = \left\{
+\begin{array}{ll}
+\frac{\left(\mu-\hat{\mu}\right)^2}{\sigma^2} & \, \hat{\mu} < \mu \\
+\frac{-\left(\mu-\hat{\mu}\right)^2}{\sigma^2} & \, \hat{\mu} \geq \mu
+\end{array}
+\right.
+\label{chapter:statistics:equation:qmu_wald}
+\end{equation}
+
+\noindent
+and given that the PDF of $\hat{\mu}$ is $\mathcal{G}(\hat{\mu}\,|\,\muprime,\sigma)
+= 1/(\sqrt{2\pi}\sigma)\exp{\left[-(\hat{\mu}-\muprime)^2/2\sigma^2\right]}$, the
+PDF of $q_{\mu}$ is
+
+\begin{equation}
+f\left(q_{\mu}\,|\,\mu = \muprime\right) = \left\{
+\begin{array}{ll}
+\frac{1}{2\sqrt{2\pi}}\frac{1}{\sqrt{q_{\mu}}}\exp{\left[-\frac{1}{2}\left(
+    \sqrt{q_{\mu}} + \frac{\mu - \muprime}{\sigma} \right)^2\right]} & \, q_{\mu} > 0 \\
+\frac{1}{2\sqrt{2\pi}}\frac{1}{\sqrt{-q_{\mu}}}\exp{\left[-\frac{1}{2}\left(\sqrt{-q_{\mu}}
+    - \frac{\mu - \muprime}{\sigma} \right)^2\right]} & \, q_{\mu} \leq 0
+\end{array}
+\right.
+\label{chapter:statistics:equation:pdf_qmu}
+\end{equation}
+
+\noindent
+Instead of computing a p-value from a sampling distribution derived
+from PEs, it is possible to compute $p(\mu,\muprime)$ with the
+analytic expression for $f(q_{\mu}\,|\,\mu = \muprime)$. A comparison of
+the sampling distribution for $q_0$ from PEs to that derived from the
+Wald approximation is shown
+in figure~\ref{chap:statistics:fig:f_qmu_PE_wald} for the simple likelihood function, $\mathscr{L}(s,b) =
+P(N\,|\,s+b)\mathcal{G}(b_0\,|\,b,\sigma_b)$, illustrating the validity of the
+Wald approximation. 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{fig/statistics/pe_wald_comp_100k_pretty.eps}
+\caption{Comparison of the PDF for the test statistic $q_{\mu}$
+derived from pseudo-experiments to that from the Wald approximation
+for a simple likelihood function, $\mathscr{L}(s,b) =
+P(N\,|\,s+b)\mathcal{G}(b_0\,|\,b,\sigma_b)$. \note{Update with
+different $N$ values?}}
+\label{chap:statistics:fig:f_qmu_PE_wald}
+\end{figure}
+
+Given that the p-value is easily obtained from the CDF of $f(q_{\mu}\,|\,\mu =
+\muprime)$, it is useful to compute this function:
+
+\begin{equation}
+F\left(q_{\mu}\,|\, \muprime\right) = \left\{
+\begin{array}{ll}
+\Phi\left(\sqrt{q_{\mu}} + \frac{\mu - \muprime}{\sigma}\right) & \, q_{\mu} > 0 \\
+\Phi\left(\sqrt{-q_{\mu}} - \frac{\mu - \muprime}{\sigma}\right) & \,
+q_{\mu} \leq 0
+\end{array}
+\right.
+\label{chapter:statistics:equation:cdf_qmu}
+\end{equation}
+
+\noindent
+where $\Phi$ is defined in
+equation~\ref{chapter:statistics:equation:z_value}. Using this form of
+the CDF, the p-value for the $\mu=0$ hypothesis and
+the data distributed as $\muprime = 0$, the significance of the
+observed data is simply
+
+\begin{equation}
+\begin{aligned}
+p_0 &= \left\{
+\begin{array}{ll}
+1 - \Phi\left(\sqrt{|q_0|}\right) & \, q_{\mu} > 0 \\
+1 - \Phi\left(\textrm{-}\sqrt{|q_0|}\right) & \, q_{\mu} \leq 0 \\
+\end{array}
+\right. \\
+Z_0 &= \left\{
+\begin{array}{ll}
+\Phi^{-1}\left(1-p_0\right) = \sqrt{|q_0|} & \, q_{\mu} > 0 \\
+\Phi^{-1}\left(1-p_0\right) = \textrm{-}\sqrt{|q_0|} & \, q_{\mu} \leq 0 \\
+\end{array}
+\right.
+\label{chapter:statistics:equation:signif_discovery}
+\end{aligned}
+\end{equation}
+
+\noindent
+Therefore, the only quantity which needs to be computed is the test
+statistic, $q_0$, which can be directly computed
+from~\ref{chapter:statistics:equation:test_statistic_runsig} without the Wald
+approximation. In other words, the Wald approximation is only needed
+to approximate the tail of the sampling distribution of the $q_{\mu}$;
+it is not used in the evaluation of $q_{\mu}$. The observed test statistic,
+$q_0^{\textrm{obs}}$, is obtained from the data likelihood. To quantify
+the expected significance assuming that the signal
+is produced at the SM rate, a single realization of the experiment,
+called the Asimov dataset, is defined such that
+the the likelihood is maximized with respect to $N_i$, $M_j$, and
+$\tilde{\theta}_n$ at fixed $\mu = \muprime$, $\mu_j = 1$, and $\theta
+= \tilde{\theta}_n$~\cite{bib:Cowan:2010js}. Then the likelihood is defined by the
+Asimov dataset instead of the observed data, and the PLTS is written in terms of the $\mathscr{L}_A$:
+
+\begin{equation}
+\begin{aligned}
+q_{\mu}^{\textrm{Asimov}} &=
+ -2\log{\frac{\mathscr{L}_A(\mu,\hat{\theta}_{\mu})}{\mathscr{L}_A(\muprime,\tilde{\theta})}}\\
+ &= \frac{(\mu-\muprime)^2}{\sigma_A^2}
+\end{aligned}
+\end{equation}
+
+\noindent
+Calculating the expected significance involves computing the median
+$q_{0}^{\textrm{Asimov}}$ with the $\muprime = 1$ Asimov dataset, and then using this
+test point in
+equation~\ref{chapter:statistics:equation:signif_discovery}, which
+defines the p-value for the $\mu = 0$, $\muprime = 0$ case. 
+
+%Therefore, the only quantity which needs to be computed is the test
+%statistic $q_0 = \hat{\mu}^2/\sigma^2$, for which the the width of the $\hat{\mu}$
+%distribution, $\sigma$, is needed. Defining the vector of parameters
+%to include the strength parameters in addition to the NPs,
+%$\vec{\theta} = \left[\mu,\mu_1, ... , \mu_J, \theta_1,
+%... , \theta_K\right]$, $\sigma = V^{-1}_{00}$,
+%where $V$ is the Fisher information matrix,
+%$-E\left[\partial^2 \log{\mathscr{L}}/\partial \theta_i\theta_j\right]$,
+%which can be evaluated by computing derivatives
+%numerically. 
+

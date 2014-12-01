@@ -1,0 +1,107 @@
+In the VBF BDT analysis, a likelihood of the form shown in
+equation~\ref{chapter:statistics:equation:LH_bin_full} is defined. The
+term that represents the measurement in the signal region is a Poisson
+product over the lepton flavor channels and the three BDT bins:
+
+\begin{equation}
+\mathscr{L}_{\textrm{SR}}(\mu,\vec{\mu}^{\prime},\vec{\theta}) =
+\prod_{\textrm{bin }i}^{1,2,3} \prod_{j}^{\emme,\eemm}
+P[N_{ji} \,|\,
+\mu\cdot s_{ji}(\vec{\theta}) + \sum_{\ell}^{\textrm{top},\ZDY}
+\mu^{\ell}_{i}\cdot b^{\ell}_{ji}(\vec{\theta}) + \sum_{k}
+b^{k}_{ji}(\vec{\theta})]
+\label{chapter:statistics:equation:LH_bdt_SR}
+\end{equation}
+
+\noindent
+Background processes indexed by $\ell$, top and \ZDY, are constrained with an auxiliary
+strength measurement $\mu^{\ell}_{i}$. In the case of top, this
+parameter is shared between the two channels, while for \ZDY, the
+strength parameter is applied only to the \eemm SR bins. The background predictions indexed by $k$,
+$b^{k}_{ji}$, are derived from MC simulation, except for backgrounds
+from fake leptons, which are estimated with a data-driven technique
+(section~\ref{chap:analysis:sec:dd_backgrounds:subsec:fakes}) that is
+external to the likelihood. The next term,
+representing the auxiliary measurement of the $\mu^{\ell}_{i}$, can be
+written explicitly as 
+
+\begin{equation}
+\mathscr{L}_{\textrm{CR}}(\mu,\vec{\mu}^{\prime},\vec{\theta}) =
+\prod_{k}^{\textrm{top},\ZDY} \prod_{\textrm{bin }i}^{1,2}
+P(M_{i}^{k} \,|\, \mu_{i}^{k}\cdot \beta^{k}_i)
+\label{chapter:statistics:equation:LH_bdt_auxiliary}
+\end{equation}
+
+\noindent
+where $\beta$ is the background $k$ prediction from MC in bin $i$. The
+product over bins does not run over the three SR bins, because a
+common strength parameter is applied in the two high SR bins, i.e. in
+equation~\ref{chapter:statistics:equation:LH_bdt_SR}, $\mu^{\ell}_{2}
+= \mu^{\ell}_{3}$. The likelihood terms defined in equations~\ref{chapter:statistics:equation:LH_bdt_SR}
+and~\ref{chapter:statistics:equation:LH_bdt_auxiliary} are shown
+pictorally in figure~\ref{chap:analysis:fig:fit_model}. The final term
+contrains the NPs based on auxiliary measurements:
+
+\begin{equation}
+\mathscr{L}_{\textrm{NP}}(\vec{\theta}) = \prod_i^{N_{\textrm{NP}}}
+\mathscr{G}(\tilde{\theta}_i \,|\,
+\theta_i,1) \prod_j P(\tilde{\theta}_j \,|\, \theta_j M_j)
+\label{chapter:statistics:equation:LH_bdt_NP}
+\end{equation}
+
+\noindent
+The first term is a product over all NPs which do not represent
+statistical uncertainties, including both theory and instrumental
+systematics. Each NP is constrained with a single unit Gaussian
+term. The additional term, with index $j$ running over all SR and CR bins in
+equations~\ref{chapter:statistics:equation:LH_bdt_SR}
+and~\ref{chapter:statistics:equation:LH_bdt_auxiliary}, is the Poisson
+response to account for statistical uncertainties on the MC
+prediction. In each bin, all processes are combined for a single
+term. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\textwidth]{fig/statistics/fit_model_tiff_1.eps}
+   \caption{Summary of the likelihood terms,
+  $\mathscr{L}_{\textrm{SR}}$ and $\mathscr{L}_{\textrm{CR}}$ for the VBF
+  analysis, split into lepton channels. The top CR (c) is used to
+  constrain the \ttbar and single top normalizations in both flavor
+  channels. The \ZDY CR constrains \ZDYll in the \eemm channel only.}
+  \label{chap:analysis:fig:fit_model}
+\end{figure}
+
+The likelihood model for the $7 \tev$ analysis is adjusted to account for
+the fact that there are only two (one) BDT bins in the \emme (\eemm)
+channel. In addition, the $\mathscr{L}_{\textrm{NP}}$ term is modified
+for cases in which the uncertainty sources are not the same as those
+in the $8 \tev$ analysis. When the uncertainties are from the same
+source, they are represented by the same term in
+$\mathscr{L}_{\textrm{NP}}$, and are therefore fully correlated. 
+
+Higgs production by gluon fusion receives special treatment, as there
+is information to be gained from other \hwwlnln
+measurements about the rate of ggF. In particular, due to the relative dominance of ggF in
+the zero and one jet bins, terms associated with the measurements in
+these bins are added to the likelihood~\cite{}. Moreover, an additional
+measurement in the two jet bin, optimized to measure ggF and orthogonal
+to the VBF regions, is included in the likelihood. In these
+additional terms, the normalization of ggF is promoted to a nuisance
+parameter, and correspondingly, the ggF term in
+$\mathscr{L}_{\textrm{SR}}$ is changed from $b^{\textrm{ggF}}_{ji}$ to
+$\mu_{\textrm{ggF}}\cdot b^{\textrm{ggF}}_{ji}$. The auxiliary ggF
+measurements bring with them another set of
+$\mathscr{L}_{\textrm{NP}}$ and $\mathscr{L}_{\textrm{CR}}$ terms,
+which are collectively denoted as
+$\mathscr{L}_{\textrm{other}}(\mu_{VBF},\mu_{ggF},\vec{\mu}_b,\vec{\theta})$. The
+auxiliary $\mu_{ggF}$ measurements are subject to the same
+instrumental systematics as the VBF analysis, motivating the
+correlation of all such NP terms in the likelihood. In most cases,
+uncertainties from theoretical sources are not correlated, as they
+were evaluated in different phase space regions. The final likelihood
+can then be written as the product of the likelihoods outlined above:
+
+\begin{equation}
+\mathscr{L}_{\textrm{full}} = \mathscr{L}_{\textrm{SR}}\cdot\mathscr{L}_{\textrm{CR}}\cdot\mathscr{L}_{\textrm{NP}}\cdot\mathscr{L}_{\textrm{2011}}\cdot\mathscr{L}_{\textrm{other}}.
+\end{equation}
+

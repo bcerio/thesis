@@ -1,0 +1,37 @@
+As discussed, the best-fit $\mu$ is determined by maximizing the
+likelihood with respect to $\mu$, the auxiliary strengths $\mu_j$, and
+the NPs $\theta_n$ simultaneously. To extract the variance on the measured
+value of $\mu$, the Wald approximation is invoked again~\cite{bib:Cowan:2010js}. Using the
+asymptotic test statistic defined
+in~\ref{chapter:statistics:equation:qmu_wald}, the variance of $\mu$
+can be expressed in terms of $\mu$, $\hat{\mu}$, and $q_{\mu}$:
+
+\begin{equation}
+\sigma(\mu,\muprime) = \left\{
+\begin{array}{ll}
+\frac{|\mu-\hat{\mu}|}{\sqrt{q_{\mu}}} & \,
+\mu > \hat{\mu}  \\
+\frac{|\mu-\hat{\mu}|}{\sqrt{-q_{\mu}}} & \, \mu \leq
+\hat{\mu} \\
+\end{array}
+\right.
+\label{chapter:statistics:equation:muhat_error}
+\end{equation}
+
+\noindent
+In the asymptotic regime, $q_{\mu}$ evaluated at $\mu
+= \hat{\mu} \pm \sigma$ is $\pm 1$. Therefore, $\sigma$ can be
+determined by iteratively computing $q_{\mu}$ and
+extracting the $\mu$ value at which $q_{\mu} = \pm 1$.
+This procedure is carried out with the non-asymptotic $q_{\mu}$,
+making it a more accurate estimate of $\sigma$ in cases where the PDF
+of $\hat{mu}$ deviates from the normal distribution. 
+
+It is often useful to enumerate the degree to which an individual NP
+contributes to the variance on $\mu$.  Fixing all NPs, except the NP of
+interest ($\theta_i$), to their best-fit values, the likelihood is
+conditionally
+maximized with respect to $\mu$ and $\theta_i$, and the resulting
+$q_{\mu}$ is computed.  The $\hat{\mu}$ error due to $\theta_i$ is
+extracted as the difference between the $\mu$ yielding $q_{\mu} = 1$
+and $\hat{\mu}$.

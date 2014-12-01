@@ -115,33 +115,10 @@ following chapter.
 \label{chap:analysis:fig:cutbased_mt}
 \end{figure}
 
-\subsection{Comparison to BDT}
-
-By comparing the cut-based and BDT analyses, one gains insight into
-the phase space being selected by the BDT, and consequently a better
-understanding of why the BDT analysis out-performs the cut-based
-analysis. As indicated in
-table~\ref{chap:analysis:tab:signal_region_cutflow}, the three BDT
-SR bins in the \emme channel have increasing $S/B$-- 0.1, 0.5, and
-2.1, respectively-- and the total signal captured in the SR is 11.8
-events, or \textapprox{20\%} of all of the \emme events with two jets.
-The \mT bins, on the other hand, have $S/B$ of 0.5,
-0.8, and 0.0, and only 8\% of the signal is retained. In
-table~\ref{chap:analysis:tab:bdt_mt_overlap}, the fraction of signal
-events in the BDT SR that pass the cut-based selection is shown in bins of \mT and
-BDT. The overlap between the third BDT bin and the
-first two \mT bins is at the level of 80\%. In the first two BDT bins,
-the respective fractions passing the cut-based selection are 16.1\%
-and 45.8\%, suggesting that the gain in acceptance is primarily from
-these bins. The fraction of signal events in the
-cut-based signal region which fall into the BDT SR, on the other hand,
-is significantly higher, \textapprox{90\%} for the first and third \mT
-bins. For the most sensitive \mT bin, bin 2, the fraction is 100\%. 
-
 \begin{table}[h]
 \centering
 %\renewcommand{\arraystretch}{1.1}
-\resizebox{0.5\textwidth}{!}{
+\resizebox{0.4\textwidth}{!}{
 \begin{tabular}{|c|c|c|c|c|}
 %\cline{3-5}
 \hline
@@ -166,6 +143,44 @@ bins. For the most sensitive \mT bin, bin 2, the fraction is 100\%.
   the fraction when integrated over all \mT bins.}
 \label{chap:analysis:tab:bdt_mt_overlap}
 \end{table}
+
+\subsection{Comparison to BDT}
+
+By comparing the cut-based and BDT analyses, one gains insight into
+the phase space being selected by the BDT, and consequently a better
+understanding of why the BDT analysis out-performs the cut-based
+analysis. As indicated in
+table~\ref{chap:analysis:tab:signal_region_cutflow}, the three BDT
+SR bins in the \emme channel have increasing $S/B$-- 0.1, 0.5, and
+2.1, respectively-- and the total signal captured in the SR is 11.8
+events, or \textapprox{20\%} of all of the \emme events with two jets.
+The \mT bins, on the other hand, have $S/B$ of 0.5,
+0.8, and 0.0, and only 8\% of the signal is retained. In
+table~\ref{chap:analysis:tab:bdt_mt_overlap}, the fraction of signal
+events in the BDT SR that pass the cut-based selection is shown in bins of \mT and
+BDT. The overlap between the third BDT bin and the
+first two \mT bins is at the level of 80\%. In the first two BDT bins,
+the respective fractions passing the cut-based selection are 16.1\%
+and 45.8\%, suggesting that the gain in acceptance is primarily from
+these bins. The fraction of signal events in the
+cut-based signal region which fall into the BDT SR, on the other hand,
+is significantly higher, \textapprox{90\%} for the first and third \mT
+bins. For the most sensitive \mT bin, bin 2, the fraction is 100\%. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{fig/analysis/data_scatter_mjj_mt.pdf}
+\caption{Scatter plot of the \mjj and \mT values for data events falling in
+the BDT or cut-based signal regions (\emme channel only). The dashed
+lines indicate the binning for the cut-based analysis ($\mjj < 600
+\gev$ events fail the selection). Events which fall into BDT bin 1 are
+shown in {\bf black}, bin 2 in {\bf\color{blue}blue}, bin 3 in
+{\bf\color{red}red}. Solid markers indicate that an event has passed
+the BDT selection and not the cut-based selection, and hollow markers
+indicate that both have been passed. Finally, events that pass the
+cut-based selection and not the BDT are shown in {\bf\color{green}green}.}
+\label{chap:analysis:fig:scatterplot_mjj_mt}
+\end{figure}
 
 From the above numbers, it is clear that the BDT analysis retains more
 signal events and achieves better background rejection. Given the
@@ -210,18 +225,5 @@ run. The selections can be split into three categories---
 with each set of cuts independently optimized in each category. In essence, this is
 a primitive BDT.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{fig/analysis/data_scatter_mjj_mt.pdf}
-\caption{Scatter plot of the \mjj and \mT values for data events falling in
-the BDT or cut-based signal regions (\emme channel only). The dashed
-lines indicate the binning for the cut-based analysis ($\mjj < 600
-\gev$ events fail the selection). Events which fall into BDT bin 1 are
-shown in {\bf black}, bin 2 in {\bf\color{blue}blue}, bin 3 in
-{\bf\color{red}red}. Solid markers indicate that an event has passed
-the BDT selection and not the cut-based selection, and hollow markers
-indicate that both have been passed. Finally, events that pass the
-cut-based selection and not the BDT are shown in {\bf\color{green}green}.}
-\label{chap:analysis:fig:scatterplot_mjj_mt}
-\end{figure}
+\note{Perhaps a reference for 0,1j analyses?}
 

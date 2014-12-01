@@ -16,8 +16,16 @@
 
 \usepackage{multirow}
 \usepackage{xspace}
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\usepackage{array}
+%\usepackage{slashbox}
+%\usepackage{makecell}
 
-\title{Evidence of Vector Boson Fusion Higgs Boson production in the $WW\rightarrow{l\nu l\nu}$ decay channel with the ATLAS detector}
+\title{Achieving Fusion: Evidence of Higgs Boson Production via Vector
+Boson Fusion}
 \author{Benjamin Cerio}
 
 \department{Physics}
@@ -34,6 +42,12 @@
         {Creative Commons Attribution-Noncommercial License}
 }
 
+\newcolumntype{+}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+#1\ignorespaces
+}
+
 \newcommand{\vect}[1]{\ensuremath{\boldsymbol{#1}}\xspace}
 \DeclareMathOperator{\sgn}{sign}
 \newcommand{\ignore}[1]{}
@@ -44,12 +58,33 @@
 \newcommand{\PERUGIA}{\textsc{Perugia}\xspace}
 \newcommand{\POWHEGns}{P\textsc{owheg}}
 \newcommand{\PYTHIAns}{P\textsc{ythia}}
+\newcommand{\Ztautaunody}{\ensuremath{Z\rightarrow{\tau\tau}}\xspace}
+\newcommand{\ctten}{\textsc{CT10}\xspace}
+\newcommand{\nnpdf}{\textsc{NNPDF}\xspace}
+\newcommand{\textapprox}{\raisebox{0.5ex}{\texttildelow}}
+\newcommand{\ww}{\ensuremath{WW}\xspace}
+\newcommand{\wwtwoj}{$WW+2\textrm{j}$\xspace}
+\newcommand{\cteqsixl}{\textsc{CTEQ6L1}\xspace}
+\newcommand{\hdecay}{\textsc{hdecay}\xspace}
+\newcommand{\HqT}{\textsc{HqT}\xspace}
+%\newcommand{\pt}{$p_{\mathrm{T}}$\xspace}
+\newcommand{\lnln}{\ensuremath{\ell\nu\ell\nu}\xspace}
+\newcommand{\dzero}{\ensuremath{d_0}\xspace}
+\newcommand{\zzero}{\ensuremath{z_0}\xspace}
+\newcommand{\antikt}{\ensuremath{\textrm{anti-}k_{\textrm{T}}}\xspace}
+\newcommand{\fastjet}{F\textsc{astjet}}
+%\newcommand{\etmiss}{\ensuremath{E_{\mathrm{T}}^{\rm miss}}\xspace}
+\newcommand{\fakefact}{\ensuremath{f_{\textrm{factor}}}\xspace}
+\newcommand{\muprime}{\ensuremath{\mu^{\prime}}\xspace}
+\newcommand{\hzz}{\ensuremath{H{\rightarrow\,}ZZ^{(\ast)}}\xspace}
+\newcommand{\hgg}{\ensuremath{H{\rightarrow\,}\gamma\gamma}\xspace}
+\newcommand{\note}[1]{{\color{red} (#1)}\xspace}
 
 \newcommand{\metrel}{\ensuremath{E_{\mathrm{T, rel}}^{\rm miss, CAL}}\xspace}
 \newcommand{\mpt}{\ensuremath{p_{\mathrm{T}}^{\rm miss}}\xspace}
 \newcommand{\mptrel}{\ensuremath{p_{\mathrm{T, rel}}^{\rm miss}}\xspace}
-\newcommand{\calomet}{\ensuremath{E_{\mathrm{T}}^{\rm miss, CAL}}\xspace}
-\newcommand{\calometrel}{\ensuremath{E_{\rm T,rel}^{\rm miss, CAL}}\xspace}
+\newcommand{\calomet}{\ensuremath{E_{\mathrm{T}}^{\rm miss, CALO}}\xspace}
+\newcommand{\calometrel}{\ensuremath{E_{\rm T,rel}^{\rm miss, CALO}}\xspace}
 \newcommand{\trkmet}{\ensuremath{E_{\rm T}^{\rm miss, TRK}}\xspace}
 \newcommand{\trkmetrel}{\ensuremath{E_{\rm T,rel}^{\rm miss, TRK}}\xspace}
 \newcommand{\vmet}{\ensuremath{\boldsymbol{E}_{\mathrm{T}}^{\rm miss}}\xspace}
@@ -83,12 +118,12 @@
 \newcommand{\pTjj}{\ensuremath{p_{\rm T}^{jj}}\xspace}
 \newcommand{\dyjj}{\ensuremath{\Delta Y_{jj}}\xspace}
 \newcommand{\pTtot}{\ensuremath{p_{\rm T}^{\rm tot}}\xspace}
-\newcommand{\vpTtot}{\ensuremath{{\bf p}_{\rm T}^{\rm tot}}\xspace}
+\newcommand{\vTptot}{\ensuremath{{\bf p}_{\rm T}^{\rm tot}}\xspace}
 \newcommand{\njets}{\ensuremath{N_{\rm jets}}\xspace}
 \newcommand{\lhood}{\ensuremath{{\cal L}}}
 \newcommand{\hwwlnln}{\ensuremath{H{\rightarrow\,}WW^{(\ast)}{\rightarrow\,}\ell\nu\ell\nu}\xspace}
-\newcommand{\wwlnln}{\ensuremath{WW^{(\ast)}{\rightarrow\,}\ell\nu\ell\nu}}
-\newcommand{\wjets}{$W$~+~jets\xspace}
+\newcommand{\wwlnln}{\ensuremath{WW^{(\ast)}{\rightarrow\,}\ell\nu\ell\nu}\xspace}
+\newcommand{\wjets}{\ensuremath{W+\textrm{jets}}\xspace}
 \newcommand{\zjets}{$Z$~+~jets\xspace}
 
 \newcommand{\ZeroJet}{\ensuremath{N_\textrm{jet}\,{=}\,0}\xspace}
@@ -125,7 +160,7 @@
 \newcommand{\mtt}{\mtautau}
 \newcommand{\Ncentjet}{\ensuremath{N_{\textrm{central-jet}}}\xspace}
 \newcommand{\pTllj}{\ensuremath{\pT^{\ell\ell,jets}}}
-\newcommand{\ZDY}{\ensuremath{Z/\mathrm{DY}}}
+\newcommand{\ZDY}{\ensuremath{Z/\mathrm{DY}}\xspace}
 \newcommand{\NFt}{\ensuremath{NF\mathrm{\tau}}}
 \newcommand{\NFVBF}{\ensuremath{NF\mathrm{VBF}}}
 \newcommand{\emme}{\ensuremath{e\mu/\mu e}\xspace}
@@ -134,14 +169,14 @@
 \newcommand{\Ee}{\ensuremath{ee}}
 \newcommand{\Mumu}{\ensuremath{\mu\mu}}
 \newcommand{\Mue}{\ensuremath{\mu e}}
-\newcommand{\muhat}{\ensuremath{\hat{\mu}}}
+\newcommand{\muhat}{\ensuremath{\hat{\mu}}\xspace}
 \newcommand{\METphiC}{\ensuremath{E_{\mathrm{T, \phi-centrality}}^{\rm miss}}\xspace}
 \newcommand{\SumMlj}{\ensuremath{\sum_{\ell,j} M_{\ell j}}\xspace}
 \newcommand{\pTtottrackj}{\ensuremath{p_{\mathrm{T}}^{\rm tot,track,jetCorr}}\xspace}
-\newcommand{\lepEtaCen}{\ensuremath{\eta_{\mathrm{lep}}} centrality\xspace}
+\newcommand{\lepEtaCent}{\ensuremath{\eta_{\mathrm{lep}}} centrality\xspace}
 
 % mu and npv
-\newcommand{\nvtx}{\ensuremath{N_{Vtx}}}
+\newcommand{\nvtx}{\ensuremath{N_{\textrm{PV}}}\xspace}
 \newcommand{\Mu}{$\mu$~}
 
 % from Nika's VBF top studies
@@ -151,6 +186,7 @@
 \newcommand{\ALPGEN}{A\textsc{lpgen}\xspace}
 \newcommand{\MADGRAPH}{MadGraph\xspace}
 \newcommand{\MCATNLO}{MC@NLO\xspace}
+\newcommand{\VBFNLO}{\textsc{VBFNLO}\xspace}
 \newcommand{\aMCATNLO}{aMC@NLO\xspace}
 \newcommand{\GGTOWW}{G\textsc{G2WW}\xspace}
 \newcommand{\SHERPA}{S\textsc{herpa}\xspace}
@@ -158,12 +194,11 @@
 \newcommand{\HDECAY}{H\textsc{decay}\xspace}
 \newcommand{\GEANT}{G\textsc{eant}\xspace}
 \newcommand{\PHOTOS}{P\textsc{hotos}\xspace}
-\newcommand{\MCFM}{MCFM\xspace}
+\newcommand{\MCFM}{\textsc{MCFM}\xspace}
 
 \newcommand{\sbr}{\ensuremath{\sigma \times {\rm BR}}}
 \newcommand{\zp}{\ensuremath{Z^\prime}}
 \newcommand{\kkg}{\ensuremath{g_{KK}}}
-
 
 \newcommand{\smallr}{small-$R$}
 \newcommand{\larger}{large-$R$}

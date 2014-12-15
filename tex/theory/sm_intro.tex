@@ -1,0 +1,221 @@
+
+The SM seeks to predict the spectrum of, and
+interactions among, the particles that constitute matter. Since these
+elementary particles are infinitesimally small, their behavior is
+governed by the postulates of quantum mechanics (QM). More
+specifically, the SM is built on a theoretical framework known as
+quantum field theory (QFT), a relativistic extension of classical
+QM. QFT improves on classical QM by allowing particle number
+to be violated in a closed system, a phenomenon that is observed in,
+for example, an atomic energy level transition whereby a photon is
+created or annihiliated. Particles in QFT are described as excited states
+of space-time fields that are realized as mathematical
+operators. These operators serve to create or annihilate particles. The
+dynamics of a field, and its associated
+particles, is obtained from a Lagrangian density,
+$\mathcal{L}(\phi,\partial_{\mu}\phi)$, the field-theoretic
+analogue of the Lagrangian in classical mechanics. In the context of
+QFT, if two different fields appear in the same term of $\mathcal{L}$, the two
+particles associated with these fields are said to ``couple''. It is
+these couplings that lead to the fundamental interactions. 
+
+Elementary particles broadly fall into two categories: half-integer
+spin fermions and integer spin bosons. Quarks and leptons, for example, are fermions
+with spin-1/2, while the particle that mediates the electromagnetic
+(EM) interaction, the photon, is a spin-1 boson. Dirac formulated a
+relativistic analogue of the Schrodinger equation for spin-1/2
+particles, and the corresponding Lagrangian is
+
+\begin{equation}
+\mathcal{L}_{\textrm{fermion}} =
+i\bar{\psi}\gamma_{\mu}\partial^{\mu}\psi - m\bar{\psi}\psi.
+\label{chap:theory:equation:dirac_lagrangian}
+\end{equation}
+
+\noindent
+To incorporate the two spin states of the fermion and the
+fact that each particle has an antiparticle, the field $\psi$ has four
+degrees of freedom. In the above equation, $\bar{\psi} =
+\psi^{\dagger}\gamma^0$, where $\psi^{\dagger}$ denotes the
+adjoint. The $\gamma^{\mu}$ are the Dirac $\gamma$-matrices,
+whose anticommutators form the Dirac algebra:
+$\left\{\gamma^{\mu},\gamma^{\nu}\right\} = 2g^{\mu\nu}$. The first term
+of equation~\ref{chap:theory:equation:dirac_lagrangian} is the kinetic
+energy term, and the second is the mass term that gives a mass $m$ to
+the particle associated with the field. 
+
+Particles that are excitations of the fields described by
+equation~\ref{chap:theory:equation:dirac_lagrangian} do not interact
+with eachother, which is empirically known to be false. Charged
+electrons experience an electromagnetic force from the atomic nucleus,
+whose constituents are bound together by the strong interaction. Some
+of these nuclei emit radiation as a consequence of the weak interaction. In the
+SM, these three forces are incorporated as additional terms in
+$\mathcal{L}_{\textrm{fermion}}$. The fourth fundamental interaction,
+gravity, has not been successfully included in the model. Inter-field
+interactions arise when a local gauge symmetry is imposed. These
+so-called symmetries are in fact just internal mathematical degrees of
+freedom that are not expected to impact the observed behavior of a field. For
+example, the local phase of a field, $\alpha(x)$, does not correspond
+to a physical quantity. Therefore, the Lagrangian should be
+invariant under the transformation $\psi\rightarrow
+e^{-ig\alpha(x)}\psi$. The non-interacting Lagrangian
+in equation~\ref{chap:theory:equation:dirac_lagrangian} does not fulfill this
+requirement. However, if a new field is introduced through a
+term of the form $g\bar{\psi}\gamma^{\mu}\psi A_{\mu}$,
+$\mathcal{L}_{\textrm{fermion}}$ becomes invariant as long as the new
+field transforms as $A_{\mu}\rightarrow{A_{\mu}
++ \partial_{\mu}\alpha(x)}$. The vector field
+$A_{\mu}$ is called a gauge field, and it represents the photon. 
+Because this new field represents a
+physical particle, a kinetic energy term associated with $A_{\mu}$
+needs to be introduced. A choice that preserves gauge and Lorentz
+invariance is a kinetic energy term of the form $-(1/4)F_{\mu\nu}F^{\mu\nu}$,
+where $F_{\mu\nu}$ is the EM field strength tensor. A mass term for $A_{\mu}$ is not included in the
+Lagrangian, because it breaks gauge invariance. The photon, therefore,
+is considered to be massless. It can be shown
+that a Lagrangian of this form for $A_{\mu}$ recovers Maxwell's
+equations.
+
+An important property of the gauge transformation
+$e^{-ig\alpha(x)}$ is that it forms a Lie group under
+multiplication~\cite{}. In general, any element of a Lie group can be
+written as $e^{-i\alpha_j(x)X_j}$, where the $X_j$ are the group
+generators and the parameters $\alpha_j(x)$ identify each element of the
+group. For a gauge theory, the number of generators is equal to the
+number of gauge fields that arise when invariance is imposed in the
+Lagrangian. Furthermore, the nature of the resulting gauge interactions is defined
+by the commutation relations among the generators:
+$\left[X_i,X_j\right] = if_{ijk}X_k$, where the $f_{ijk}$ are real
+constants called the structure constants.
+
+For the EM interaction, the symmetry group is $U(1)$, an Abelian group which
+has a single generator, which, as discussed above, results in the photon. For the weak
+interaction, the internal symmetry is weak isospin, which is described by the Lie group
+$SU(2)$. With three generators, $SU(2)$ gauge invariance produces three
+fields associated with the weak vector bosons $W^+$, $W^-$, and
+$Z$. In the theory of the strong interaction, called quantum chromodynamics
+(QCD), an $SU(3)$ color symmetry is required, resulting in eight gauge
+fields associated with gluons. Apart from producing more gauge fields,
+the $SU(2)$ and $SU(3)$ symmetries differ from the $U(1)$ symmetry of
+the EM interaction because they have non-zero
+structure constants. A consequence of this differing group structure
+is that self-interaction terms arise in the Lagrangian. Hence, both
+gluons and weak vector bosons can couple to themselves. 
+
+In EM, the inclusion of a mass term for $A_{\mu}$ breaks the $U(1)$
+gauge symmetry. This is easily resolved by setting the mass of the
+photon to zero. The same problem arises in both strong and weak
+Lagrangians. In the case of QCD, the eight gluon masses are set to
+zero, and color symmetry is restored. The masses of the three weak
+gauge bosons, on the other hand, have been measured to be non-zero. In
+fact, these particles are quite massive: $m_W = 80.4 \gev$ and $m_Z =
+90.1 \gev$. If the gauge symmetry is broken by introducing mass
+terms, infinities are induced in the perturbative
+expansion of the path integral which can not be renormalized,
+rendering the theory non-predictive. 
+
+In addition to the weak
+boson mass terms, the fermion mass terms
+in the weak Lagrangian violate the $SU(2)$ symmetry. Since the weak
+interaction has been measured to maximally violate the discrete
+symmetry known as parity, gauge invariance is only required for
+left-handed fields, though both left and right-handed fermion fields
+exist in nature and hence, in the Lagrangian. With a mixture of
+helicity states in the mass term, each transforming differently under
+$SU(2)$, the symmetry is broken. The prediction implied by setting all
+fermion masses to zero is at odds with a myriad of experimental
+evidence. These theoretical problems with the weak boson and fermion
+masses led to the development of spontaneous symmetry breaking. 
+
+An approach for simultaneously introducing both gauge boson and
+fermion mass terms
+into the Lagrangian, while preserving gauge symmetry and
+renormalizability, was developed in the 1960s~\cite{}, and was
+subsequently adapted for the unified electroweak theory~\cite{}. A
+complex scalar field that transforms as a weak isospin doublet, and is
+described by the Lagrangian
+
+\begin{equation}
+\mathcal{L}_{\textrm{Higgs}} =
+\left(D_{\mu}\phi^{\dagger}\right)\left(D^{\mu}\phi\right)
+- \left[ \mu^2 \phi^{\dagger}\phi + \lambda (\phi^{\dagger}\phi)^2\right]
+\label{chap:theory:equation:higgs_lagrangian}
+\end{equation}
+
+\noindent
+is introduced into the Lagrangian describing both EM and weak
+interactions. This form is chosen to be invariant under the gauge
+symmetry $SU(2) \times U(1)$, and due to the restrictions $\mu^2 < 0$
+and $\lambda > 0$, to yield non-zero $\phi$ at the potential energy
+minimum. In the QFT context, the $\phi$ value that minimizes the
+potential energy, denoted $\phi_0$, corresponds to the physical
+absence of particle excitations associated with the field, and is
+therefore known as the vacuum expectation value (vev). The manifold on
+which the potential is minimized is, from the invariance of
+$\mathcal{L}_{\textrm{Higgs}}$, manifestly invariant under
+$SU(2) \times U(1)$. The $SU(2)$ symmetry is then broken ``spontaneously''
+when a point on the manifold is chosen, or, equivalently, when a gauge
+is chosen. This process is spontaneous in the sense that there is not
+a dynamical theory for why it occurs; it is merely postulated that it
+has occurred. 
+
+By performing a gauge transformation on the resulting isospin doublet
+$\phi_0$, the non-zero expectation value can be projected into the
+real part of the neutral component of the doublet, leaving the three
+remaining real scalar degrees of freedom with a magnitude of zero.
+To recover the dynamics, the remaining scalar component is perturbed
+about the vacuum expectation value--- $v + H(x)$--- where the field
+$H(x)$ is a real scalar field known as the Higgs field. Putting this
+expression for $\phi$ into
+equation~\ref{chap:theory:equation:higgs_lagrangian}, mass terms for
+$W^{\pm}$ and $Z$ are generated in the mixing of the $v$ part of the
+field and bilinear gauge boson terms in the covariant derivative
+$D_{\mu}$. Additional gauge invariant terms that mix $\phi$
+and bilinear fermion terms are added to the Lagrangian, resulting in
+mass terms when $\phi$ acquires a vev. This mechanism, therefore, is successful in mitigating the two
+deficiencies outlined above. An important bi-product of this mechanism
+for generating masses is the prediction of the existence of a spin-0
+particle, hereafter referred to as the Higgs boson or the
+Higgs. The Higgs boson couples to fermions and gauge bosons with a
+strength proportional to their masses, implying that direct production of
+such a particle is possible at colliders. Moreover, such couplings
+induce higher order corrections in measureable quantities such as the
+top quark and $W$ boson masses. Consequently, the existence of the
+Higgs boson can be indirectly established by measuring deviations in
+these observables. Though the
+Lagrangian~\ref{chap:theory:equation:higgs_lagrangian} appears to
+introduce two new parameters to the SM, one can be related to existing
+SM input parameters, leaving only one parameter that can be expressed
+in terms of the mass of the Higgs boson ($m_H$).
+
+The above procedure, known popularly as the Higgs mechanism, restores the gauge
+symmetry of the SM Lagrangian, thereby ensuring
+renormalizability. The underlying $SU(2)$ symmetry of the weak
+interaction is hidden, or spontaneously broken, resulting in a
+tangible prediction, the existence of a massive, spin-0 boson whose
+coupling to other particles is linear with their masses. Other scalar
+degrees of freedom in the field $\phi$ become the longitudinal
+polarization of the weak gauge bosons, a necessary property of massive
+spin-1 particles. This form of the Higgs mechanism is not unique; the
+chosen representation of $SU(2)$, namely that $\phi$ is a complex
+scalar doublet, is merely the most parsimonious. Additional degrees of
+freedom arise if another representation is chosen or if an additional
+$SU(2)$ invariant Higgs fields are introduced. In some cases, these
+extended Higgs scenarios, which predict additional Higgs particles,
+fix other theoretical limitations of the SM. However, because every
+incarnation of the Higgs mechanism has at least one neutral scalar Higgs boson,
+the minimalistic form is chosen in the SM. 
+
+In its current form, the SM is a gauge theory obeying $SU(3) \times
+SU(2) \times U(1)$ symmetry, resulting in a total of 12 gauge bosons:
+8 massless, bi-colored gluons, 3 massive weak vector bosons, and a
+single massless photon. Three fermion generations, each with a charged
+lepton, a neutrino, two quarks, as well as their corresponding
+anti-matter particles, have been observed, totaling 48
+fermions. Adding to the list the all-important Higgs boson, 61
+particles are predicted to exist by the SM, all of which have been
+experimentally observed. 
+
+
+

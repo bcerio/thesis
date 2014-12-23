@@ -1,0 +1,68 @@
+
+Due to limited resources, it is not possible to store the information
+associated with each collision event at the design collision rate of
+1~GHz. The trigger system selects potentially interesting events,
+thereby reducing the effective collision rate, before events are
+stored for downstream analysis. It is organized into three levels---
+Level-1 (L1), Level-2 (L2), and event filter (EF). This three level
+structure seeks to deal with a
+fundamental problem of selecting potentially interesting events,
+namely that such a decision requires partial event reconstruction,
+which by its nature, requires time and memory. The levels progress
+from very fast and coarse reconstruction applied to events which are
+collected at a high rate to a more refined reconstruction
+applied to a small subset of these events. 
+
+The L1 trigger integrates a limited amount of information from all of
+the calorimeter
+subsystems and the muon trigger chambers to identify high
+\et~electrons, photons, jets, and muons. The calorimeter trigger
+system searches for energy deposits in a coarse granularity cell of
+$\Delta\eta \times \Delta\phi = 0.1 \times 0.1$ that fall above a
+series of configured thresholds. If the multiplicity of these deposits
+falls above an energy-threshold-dependent cut-off value, then the
+event passes the trigger. The muon trigger system uses RPC (TGC)
+measurements in the barrel (end-caps) to identify patterns that are
+consistent with a muon originating from the collision point. Starting
+with a muon hit in the second chamber layer, the trigger searches for
+additional hits along a path formed by extrapolating to the collision
+point, and if a minimum number of hits is found, the pattern is
+considered a muon candidate. If the number of muon candidates for the
+same bunch crossing falls above a threshold, the L1 muon trigger is
+accepted. The trigger is binned into 6 transverse momentum bins. The
+L1 trigger reduces the event rate from 1~GHz to 75~kHz with each
+trigger decision executed in less than $2.5 \mu$s. L1 trigger
+processing is done in the front-end electronics system on the
+detector, as is the storage of event data in buffers. Once the L1
+trigger is passed, the data are sent away from the detector to readout
+drivers, awaiting the L2 trigger. 
+
+The L2 trigger is considered a high level trigger (HLT) in that it makes a
+trigger decision based on the full granularity of the detector and
+even some information from the ID. As opposed to the L1 triggers that
+use front-end hardware to process an event, the L2 trigger system is
+built around a specialized software-based framework that runs on a
+computer farm. L2 triggers consider small event data fragments
+associated with regions of interest (ROIs) that are defined by the L1
+trigger. Data for each ROI is typically on the order of 1\% of the
+total data in the event, which speeds up the L2 trigger processing and
+minimizes the amount of data transferred to the farm. The L2 trigger
+algorithms iteratively pull data from the readout drivers and determine
+whether an ROI satisfies the hypothesis for a given particle. If the
+algorithm determines that the ROI is not consistent with a particle,
+the next ROI data is pulled and the process repeats. If none of the
+ROIs are found to be consistent with particles, the event is
+rejected. In its current form, the L2 system can only accomodate an
+event rate of 40~kHz, about half of the design trigger rate for the L1
+trigger. L2 further reduces the trigger rate to 3.5~kHz, with a
+processing time of around 40~ms for each event. 
+
+The final trigger level is the event filter (EF) trigger. It is also a
+HLT, but instead of using full granularity portions of the event (ROIs), it
+improves on the L2 trigger by incorporating all of the event data into
+the processing algorithms. Event processing is done offline in
+computer clusters at an average rate of four seconds
+per event, and the resulting trigger rate is reduced to 200~Hz. Events
+that pass the EF trigger are transferred to the CERN computer center
+for permanent storage. The raw data for each event amounts to around
+1.3~MB on average. 
